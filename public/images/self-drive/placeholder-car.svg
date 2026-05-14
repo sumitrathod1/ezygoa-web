@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <rect width="400" height="240" fill="#f1f5f9"/>
+  <!-- Car body -->
+  <rect x="60" y="120" width="280" height="70" rx="12" fill="#cbd5e1"/>
+  <!-- Car roof -->
+  <path d="M120 120 L150 75 L250 75 L280 120 Z" fill="#94a3b8"/>
+  <!-- Windows -->
+  <rect x="158" y="82" width="35" height="32" rx="4" fill="#e2e8f0"/>
+  <rect x="200" y="82" width="35" height="32" rx="4" fill="#e2e8f0"/>
+  <!-- Front bumper -->
+  <rect x="56" y="148" width="30" height="18" rx="6" fill="#94a3b8"/>
+  <!-- Rear bumper -->
+  <rect x="314" y="148" width="30" height="18" rx="6" fill="#94a3b8"/>
+  <!-- Headlights -->
+  <rect x="64" y="130" width="20" height="10" rx="3" fill="#fde68a"/>
+  <rect x="316" y="130" width="20" height="10" rx="3" fill="#fde68a"/>
+  <!-- Wheels -->
+  <circle cx="130" cy="192" r="28" fill="#475569"/>
+  <circle cx="130" cy="192" r="14" fill="#94a3b8"/>
+  <circle cx="270" cy="192" r="28" fill="#475569"/>
+  <circle cx="270" cy="192" r="14" fill="#94a3b8"/>
+  <!-- Door line -->
+  <line x1="200" y1="122" x2="200" y2="188" stroke="#94a3b8" stroke-width="2"/>
+  <!-- Camera icon -->
+  <rect x="172" y="100" width="16" height="12" rx="2" fill="#64748b" opacity="0.4"/>
+  <circle cx="180" cy="106" r="3" fill="#94a3b8" opacity="0.4"/>
+  <!-- Text -->
+  <text x="200" y="228" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8">Image Coming Soon</text>
+</svg>

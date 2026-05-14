@@ -1,65 +1,150 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import BookingWidget from "@/components/BookingWidget";
+import ServicesSection from "@/components/ServicesSection";
+import FleetSection from "@/components/FleetSection";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import PriceCalculator from "@/components/PriceCalculator";
+import PopularRoutes from "@/components/PopularRoutes";
+import GoaExperiences from "@/components/GoaExperiences";
+import Reviews from "@/components/Reviews";
+import FAQ from "@/components/FAQ";
+import CTASection from "@/components/CTASection";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import CallButton from "@/components/CallButton";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title:
+    "EzyGoa Taxi Service | Best Taxi in Goa | Airport Taxi & Car Rental",
+  description:
+    "Goa's most trusted taxi service. Airport transfers from Mopa & Dabolim, sightseeing, self-drive cars. 24/7 service. Best rates. Book now!",
+  keywords: [
+    "Goa taxi service",
+    "airport taxi Goa",
+    "Mopa airport taxi",
+    "Dabolim airport taxi",
+    "Goa car rental",
+    "self drive Goa",
+    "Goa sightseeing tours",
+    "EzyGoa",
+    "taxi Calangute",
+    "taxi Panjim",
+  ],
+  openGraph: {
+    title: "EzyGoa Taxi Service | Best Taxi in Goa",
+    description:
+      "Goa's most trusted taxi service. Airport transfers, sightseeing, self-drive cars. 24/7 service.",
+    type: "website",
+    locale: "en_IN",
+    siteName: "EzyGoa Taxi Services",
+  },
+};
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "TaxiService",
+  "name": "EzyGoa Taxi Services",
+  "url": "https://www.ezygoa.in",
+  "telephone": "+917026889254",
+  "email": "ezygoataxiservices@gmail.com",
+  "image": "https://www.ezygoa.in/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Parra",
+    "addressLocality": "North Goa",
+    "addressRegion": "Goa",
+    "postalCode": "403510",
+    "addressCountry": "IN",
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 15.58,
+    "longitude": 73.74,
+  },
+  "priceRange": "₹₹",
+  "currenciesAccepted": "INR",
+  "paymentAccepted": "Cash, UPI, Bank Transfer",
+  "areaServed": {
+    "@type": "Place",
+    "name": "Goa, India",
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59",
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "500",
+    "bestRating": "5",
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Taxi & Car Rental Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Airport Taxi Goa" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Goa Sightseeing Tours" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Self Drive Car Rental Goa" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outstation Taxi from Goa" } },
+    ],
+  },
+};
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+      />
+      {/* Sticky Header */}
+      <Header />
+
+      <main className="flex-1">
+        {/* Hero — full screen */}
+        <Hero />
+
+        {/* Quick Booking Widget — overlaps hero bottom */}
+        <BookingWidget />
+
+        {/* Popular Services Grid */}
+        <ServicesSection />
+
+        {/* Fleet Showcase — horizontal scroll */}
+        <FleetSection />
+
+        {/* Why Choose EzyGoa */}
+        <WhyChooseUs />
+
+        {/* Price Calculator */}
+        <PriceCalculator />
+
+        {/* Popular Routes */}
+        <PopularRoutes />
+
+        {/* Goa Experiences Gallery */}
+        <GoaExperiences />
+
+        {/* Customer Reviews Carousel */}
+        <Reviews />
+
+        {/* FAQ Accordion */}
+        <FAQ />
+
+        {/* Big CTA */}
+        <CTASection />
       </main>
-    </div>
+
+      {/* Footer */}
+      <Footer />
+
+      {/* Floating Buttons — always visible */}
+      <WhatsAppButton />
+      <CallButton />
+    </>
   );
 }
