@@ -5,6 +5,7 @@ import { MessageCircle, ArrowRight, User, Phone, Mail, FileText } from "lucide-r
 import { Button } from "@/components/ui/button";
 import { vehicles } from "@/lib/data";
 import { BUSINESS } from "@/lib/constants";
+import { trackBookingComplete } from "@/lib/analytics";
 
 const SERVICES = [
   "Airport Pickup",
@@ -131,6 +132,7 @@ export default function BookingForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    trackBookingComplete(selectedVehicle?.name ?? form.vehicle);
     window.open(buildMessage(), "_blank");
   };
 

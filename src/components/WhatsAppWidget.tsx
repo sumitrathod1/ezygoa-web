@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP ?? "917026889254";
 
@@ -14,7 +15,8 @@ const quickActions = [
 export default function WhatsAppWidget() {
   const [open, setOpen] = useState(false);
 
-  function openChat(message: string) {
+  function openChat(message: string, label: string) {
+    trackWhatsAppClick(`floating_${label}`);
     const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank", "noopener,noreferrer");
     setOpen(false);
@@ -48,7 +50,7 @@ export default function WhatsAppWidget() {
               {quickActions.map((action) => (
                 <button
                   key={action.label}
-                  onClick={() => openChat(action.message)}
+                  onClick={() => openChat(action.message, action.label.toLowerCase().replace(/\s+/g, "_"))}
                   className="w-full flex items-center gap-3 p-2.5 rounded-xl hover:bg-gray-50 transition-colors text-left border border-gray-100 hover:border-gray-200"
                 >
                   <span className="text-lg flex-shrink-0">{action.emoji}</span>
@@ -59,7 +61,7 @@ export default function WhatsAppWidget() {
             </div>
             <button
               onClick={() =>
-                openChat("Hi EzyGoa! I'd like to get in touch.")
+                openChat("Hi EzyGoa! I'd like to get in touch.", "open_chat")
               }
               className="w-full mt-3 py-2.5 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90"
               style={{ background: "#25d366" }}

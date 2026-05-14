@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Phone, MessageCircle, Menu, X, Car, ChevronDown } from "lucide-react";
 import { BUSINESS, NAV_LINKS, buildWhatsAppUrl } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
+import { trackWhatsAppClick, trackCallClick } from "@/lib/analytics";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -101,6 +102,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-2">
             <a
               href={`tel:${BUSINESS.phone}`}
+              onClick={() => trackCallClick("header_desktop")}
               className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                 scrolled
                   ? "text-brand-primary hover:bg-primary/5"
@@ -114,6 +116,7 @@ export default function Header() {
               href={buildWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("header_nav")}
             >
               <Button
                 size="sm"
@@ -191,6 +194,7 @@ export default function Header() {
             <div className="pt-3 border-t border-border space-y-2">
               <a
                 href={`tel:${BUSINESS.phone}`}
+                onClick={() => trackCallClick("header_mobile")}
                 className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl text-sm font-semibold text-brand-primary border border-brand-primary/20 hover:bg-primary/5 transition-colors"
               >
                 <Phone className="w-4 h-4" />
@@ -200,6 +204,7 @@ export default function Header() {
                 href={buildWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("header_mobile")}
                 className="flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl text-sm font-semibold text-white bg-brand-success hover:opacity-90 transition-opacity"
               >
                 <MessageCircle className="w-4 h-4" />

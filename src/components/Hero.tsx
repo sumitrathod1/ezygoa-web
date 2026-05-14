@@ -5,6 +5,7 @@ import Image from "next/image";
 import { MessageCircle, Car, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TRUST_BADGES, buildWhatsAppUrl } from "@/lib/constants";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 export default function Hero() {
   return (
@@ -90,6 +91,7 @@ export default function Hero() {
               href={buildWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("hero_section")}
             >
               <Button
                 size="lg"
