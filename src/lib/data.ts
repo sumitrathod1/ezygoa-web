@@ -442,16 +442,16 @@ export const vehicles: Vehicle[] = [
 ];
 
 export const routes: Route[] = [
-  { from: "Mopa Airport", to: "Calangute", distance: 42, duration: "1h 10m", prices: { dzire: 1200, ertiga: 1500, innova: 2000 } },
-  { from: "Mopa Airport", to: "Panjim", distance: 32, duration: "50m", prices: { dzire: 900, ertiga: 1200, innova: 1600 } },
-  { from: "Mopa Airport", to: "Anjuna", distance: 48, duration: "1h 20m", prices: { dzire: 1400, ertiga: 1700, innova: 2300 } },
-  { from: "Dabolim Airport", to: "Calangute", distance: 45, duration: "1h 30m", prices: { dzire: 1500, ertiga: 1800, innova: 2200 } },
-  { from: "Dabolim Airport", to: "Panjim", distance: 29, duration: "45m", prices: { dzire: 900, ertiga: 1200, innova: 1600 } },
-  { from: "Calangute", to: "Dudhsagar", distance: 70, duration: "2h", prices: { dzire: 3500, ertiga: 4500, innova: 5500 } },
-  { from: "Panjim", to: "Old Goa", distance: 10, duration: "20m", prices: { dzire: 500, ertiga: 700, innova: 1000 } },
-  { from: "Calangute", to: "South Goa", distance: 55, duration: "1h 30m", prices: { dzire: 2500, ertiga: 3000, innova: 3500 } },
-  { from: "Panjim", to: "Anjuna", distance: 18, duration: "35m", prices: { dzire: 600, ertiga: 800, innova: 1100 } },
-  { from: "Panjim", to: "Arambol", distance: 48, duration: "1h 20m", prices: { dzire: 1400, ertiga: 1800, innova: 2400 } },
+  { from: "Mopa Airport", to: "Calangute", distance: 42, duration: "1h 10m", prices: { dzire: 1200, ertiga: 1500, innova: 2000, t12: 2800, t14: 3200, t20: 4200, urb: 5500 } },
+  { from: "Mopa Airport", to: "Panjim", distance: 32, duration: "50m", prices: { dzire: 900, ertiga: 1200, innova: 1600, t12: 2200, t14: 2600, t20: 3400, urb: 4500 } },
+  { from: "Mopa Airport", to: "Anjuna", distance: 48, duration: "1h 20m", prices: { dzire: 1400, ertiga: 1700, innova: 2300, t12: 3200, t14: 3700, t20: 4800, urb: 6200 } },
+  { from: "Dabolim Airport", to: "Calangute", distance: 45, duration: "1h 30m", prices: { dzire: 1500, ertiga: 1800, innova: 2200, t12: 3200, t14: 3700, t20: 4800, urb: 6200 } },
+  { from: "Dabolim Airport", to: "Panjim", distance: 29, duration: "45m", prices: { dzire: 900, ertiga: 1200, innova: 1600, t12: 2200, t14: 2600, t20: 3400, urb: 4500 } },
+  { from: "Calangute", to: "Dudhsagar", distance: 70, duration: "2h", prices: { dzire: 3500, ertiga: 4500, innova: 5500, t12: 7000, t14: 8000, t20: 10000, urb: 12000 } },
+  { from: "Panjim", to: "Old Goa", distance: 10, duration: "20m", prices: { dzire: 500, ertiga: 700, innova: 1000, t12: 1400, t14: 1600, t20: 2200, urb: 2800 } },
+  { from: "Calangute", to: "South Goa", distance: 55, duration: "1h 30m", prices: { dzire: 2500, ertiga: 3000, innova: 3500, t12: 5000, t14: 5800, t20: 7500, urb: 9800 } },
+  { from: "Panjim", to: "Anjuna", distance: 18, duration: "35m", prices: { dzire: 600, ertiga: 800, innova: 1100, t12: 1600, t14: 1900, t20: 2500, urb: 3200 } },
+  { from: "Panjim", to: "Arambol", distance: 48, duration: "1h 20m", prices: { dzire: 1400, ertiga: 1800, innova: 2400, t12: 3400, t14: 3900, t20: 5100, urb: 6600 } },
 ];
 
 export const services: Service[] = [

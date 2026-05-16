@@ -31,6 +31,10 @@ const PRICES = [
   { vehicle: "Maruti Dzire", seats: "1–4 people", price: 3500 },
   { vehicle: "Maruti Ertiga", seats: "1–6 people", price: 4500 },
   { vehicle: "Toyota Innova Crysta", seats: "1–7 people", price: 5500 },
+  { vehicle: "Tempo Traveller 12", seats: "1–12 people", price: 7000 },
+  { vehicle: "Tempo Traveller 14", seats: "1–14 people", price: 8000 },
+  { vehicle: "Tempo Traveller 20", seats: "1–20 people", price: 10000 },
+  { vehicle: "Force Urbania 17", seats: "1–17 people", price: 12000 },
 ];
 
 const WHAT_TO_BRING = [

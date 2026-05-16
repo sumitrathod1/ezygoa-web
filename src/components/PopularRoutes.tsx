@@ -56,7 +56,7 @@ export default function PopularRoutes() {
               <div className="space-y-1.5 mb-4">
                 {route.prices.dzire && (
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-muted-foreground">Dzire</span>
+                    <span className="text-muted-foreground">Dzire (4)</span>
                     <span className="font-semibold" style={{ color: "var(--brand-primary)" }}>
                       ₹{route.prices.dzire.toLocaleString()}
                     </span>
@@ -64,7 +64,7 @@ export default function PopularRoutes() {
                 )}
                 {route.prices.ertiga && (
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-muted-foreground">Ertiga</span>
+                    <span className="text-muted-foreground">Ertiga (6)</span>
                     <span className="font-semibold" style={{ color: "var(--brand-primary)" }}>
                       ₹{route.prices.ertiga.toLocaleString()}
                     </span>
@@ -72,9 +72,41 @@ export default function PopularRoutes() {
                 )}
                 {route.prices.innova && (
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-muted-foreground">Innova</span>
+                    <span className="text-muted-foreground">Innova (7)</span>
                     <span className="font-semibold" style={{ color: "var(--brand-primary)" }}>
                       ₹{route.prices.innova.toLocaleString()}
+                    </span>
+                  </div>
+                )}
+                {route.prices.t12 && (
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-blue-600">Tempo 12</span>
+                    <span className="font-semibold text-blue-700">
+                      ₹{route.prices.t12.toLocaleString()}
+                    </span>
+                  </div>
+                )}
+                {route.prices.t14 && (
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-blue-600">Tempo 14</span>
+                    <span className="font-semibold text-blue-700">
+                      ₹{route.prices.t14.toLocaleString()}
+                    </span>
+                  </div>
+                )}
+                {route.prices.t20 && (
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-blue-600">Tempo 20</span>
+                    <span className="font-semibold text-blue-700">
+                      ₹{route.prices.t20.toLocaleString()}
+                    </span>
+                  </div>
+                )}
+                {route.prices.urb && (
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-blue-600">Urbania 17</span>
+                    <span className="font-semibold text-blue-700">
+                      ₹{route.prices.urb.toLocaleString()}
                     </span>
                   </div>
                 )}
