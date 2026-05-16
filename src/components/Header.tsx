@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Phone, MessageCircle, Menu, X, Car, ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { Phone, MessageCircle, Menu, X, ChevronDown } from "lucide-react";
 import { BUSINESS, NAV_LINKS, buildWhatsAppUrl } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { trackWhatsAppClick, trackCallClick } from "@/lib/analytics";
@@ -32,24 +33,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-xl bg-brand-primary flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-              <Car className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <span
-                className="text-xl font-bold leading-none"
-                style={{ fontFamily: "var(--font-poppins)", color: scrolled ? "var(--brand-primary)" : "white" }}
-              >
-                EzyGoa
-              </span>
-              <p
-                className="text-[10px] leading-none font-medium tracking-wide"
-                style={{ color: scrolled ? "var(--brand-accent)" : "rgba(255,255,255,0.8)" }}
-              >
-                Taxi Services
-              </p>
-            </div>
+          <Link href="/" className="flex items-center hover:opacity-90 transition-opacity">
+            <Image
+              src={scrolled ? "/logo/logo.png" : "/logo/logo-white.png"}
+              alt="EzyGoa Taxi Services"
+              width={180}
+              height={60}
+              priority
+              className="h-14 md:h-16 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}

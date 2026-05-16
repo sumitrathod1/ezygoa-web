@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "EzyGoa Taxi Services",
+    images: [{ url: "/logo/og-image.png", width: 1200, height: 630, alt: "EzyGoa Taxi Services" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -46,10 +47,6 @@ export const metadata: Metadata = {
     description: "Goa's most trusted taxi service. Book now!",
   },
   manifest: "/manifest.json",
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/icons/icon-192x192.png",
-  },
 };
 
 export default function RootLayout({
