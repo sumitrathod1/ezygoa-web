@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { CheckCircle, XCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
-import { buildWhatsAppUrl } from "@/lib/constants";
+import { BookingButton } from "@/components/BookingButton";
 
 export const metadata: Metadata = {
   title: "North Goa Sightseeing Tour | Full Day Tour | EzyGoa Taxi",
@@ -34,11 +33,11 @@ const ITINERARY = [
 const PRICES = [
   { vehicle: "Maruti Dzire",         seats: "1–4 people",  price: 2500 },
   { vehicle: "Maruti Ertiga",        seats: "1–6 people",  price: 3000 },
-  { vehicle: "Toyota Innova Crysta", seats: "1–7 people",  price: 4000 },
-  { vehicle: "Tempo Traveller 12",   seats: "8–12 people", price: 5000 },
-  { vehicle: "Tempo Traveller 14",   seats: "8–14 people", price: 5500 },
-  { vehicle: "Tempo Traveller 20",   seats: "12–20 people",price: 7000 },
-  { vehicle: "Force Urbania 17",     seats: "up to 17",    price: 9000 },
+  { vehicle: "Toyota Innova Crysta", seats: "1–7 people",  price: 3500 },
+  { vehicle: "Tempo Traveller 12",   seats: "8–12 people", price: 4000 },
+  { vehicle: "Tempo Traveller 14",   seats: "8–14 people", price: 4500 },
+  { vehicle: "Tempo Traveller 20",   seats: "12–20 people",price: 4500 },
+  { vehicle: "Force Urbania 17",     seats: "up to 17",    price: 8000 },
 ];
 
 const INCLUDED = [
@@ -139,15 +138,15 @@ export default function NorthGoaTourPage() {
                         <p className="font-bold text-base" style={{ color: "var(--brand-primary)" }}>
                           ₹{p.price.toLocaleString()}
                         </p>
-                        <a
-                          href={buildWhatsAppUrl({ service: "North Goa Tour", vehicle: p.vehicle })}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <BookingButton
+                          asText
+                          label="Book →"
+                          modalTitle={`North Goa Tour · ${p.vehicle}`}
+                          service="North Goa Full Day Tour"
+                          vehicle={p.vehicle}
                           className="text-xs font-semibold hover:underline"
                           style={{ color: "var(--brand-accent)" }}
-                        >
-                          Book →
-                        </a>
+                        />
                       </div>
                     </div>
                   ))}
@@ -184,11 +183,13 @@ export default function NorthGoaTourPage() {
                 </ul>
               </div>
 
-              <a href={buildWhatsAppUrl({ service: "North Goa Full Day Tour" })} target="_blank" rel="noopener noreferrer">
-                <Button className="w-full h-12 text-base font-bold" style={{ background: "var(--brand-primary)", color: "white" }}>
-                  Book This Tour
-                </Button>
-              </a>
+              <BookingButton
+                label="Book This Tour"
+                modalTitle="North Goa Full Day Tour"
+                service="North Goa Full Day Tour"
+                className="w-full h-12 text-base font-bold"
+                style={{ background: "var(--brand-primary)", color: "white" }}
+              />
             </div>
           </div>
         </div>

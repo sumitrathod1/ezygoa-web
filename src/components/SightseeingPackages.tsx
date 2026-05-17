@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Clock, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BookingModal } from "./BookingModal";
 
 const VEHICLES = [
   { id: "dzire", label: "Dzire",     seats: "4",  group: false },
@@ -32,7 +33,7 @@ const PACKAGES: Package[] = [
     name: "North Goa Full Day",
     duration: "8–10 hours",
     places: ["Dolphin Sightseeing", "Fort Aguada", "Candolim Beach", "Calangute", "Baga Beach", "Anjuna Beach", "Chapora Fort", "Vagator Beach"],
-    prices: { dzire: 2500, ertiga: 3000, innova: 4000, t12: 5000, t14: 5500, t20: 7000, urb: 9000 },
+    prices: { dzire: 2500, ertiga: 3000, innova: 3500, t12: 4000, t14: 4500, t20: 5000, urb: 8000 },
     slug: "/north-goa-tour",
     popular: true,
   },
@@ -40,14 +41,14 @@ const PACKAGES: Package[] = [
     name: "South Goa Full Day",
     duration: "8–10 hours",
     places: ["Old Goa Churches", "Mangueshi Temple", "Spice Plantation", "Panjim Church", "Dona Paula", "Miramar Beach", "Boat Cruise"],
-    prices: { dzire: 3000, ertiga: 3500, innova: 4500, t12: 5500, t14: 6000, t20: 7500, urb: 9500 },
+    prices: { dzire: 2800, ertiga: 3500, innova: 4000, t12: 4500, t14: 5000, t20: 5500, urb: 9000 },
     slug: "/south-goa-tour",
   },
   {
     name: "Extreme North Beaches",
     duration: "7–8 hours",
     places: ["Morjim Beach", "Ashwem Beach", "Mandrem Beach", "Arambol Beach"],
-    prices: { dzire: 3000, ertiga: 3500, innova: 4500, t12: 5500, t14: 6000, t20: 7500, urb: 9500 },
+    prices: { dzire: 2800, ertiga: 3500, innova: 4500, t12: 5500, t14: 6000, t20: 7000, urb: 9500 },
     slug: null,
     badge: "Secluded",
   },
@@ -63,7 +64,7 @@ const PACKAGES: Package[] = [
     name: "Dudhsagar Special",
     duration: "10–12 hours",
     places: ["Dudhsagar Falls", "Spice Plantation", "Mollem", "Bhagwan Mahavir Sanctuary"],
-    prices: { dzire: 3500, ertiga: 4500, innova: 5500, t12: 7000, t14: 8000, t20: 10000, urb: 12000 },
+    prices: { dzire: 3500, ertiga: 4200, innova: 5000, t12: 7000, t14: 8000, t20: 9500, urb: 13000 },
     slug: "/dudhsagar-trip",
     popular: true,
   },
@@ -71,14 +72,14 @@ const PACKAGES: Package[] = [
     name: "Complete Goa – 2 Days",
     duration: "2 days",
     places: ["Day 1: North Goa highlights", "Day 2: South Goa highlights"],
-    prices: { dzire: 5500, ertiga: 6500, innova: 8000, t12: 10000, t14: 12000, t20: 16000, urb: 20000 },
+    prices: { dzire: 5100, ertiga: 6500, innova: 8000, t12: 10000, t14: 12000, t20: 16000, urb: 20000 },
     slug: "/booking",
   },
   {
     name: "North + South + Dudhsagar – 3 Days",
     duration: "3 days",
     places: ["Day 1: North Goa", "Day 2: South Goa", "Day 3: Dudhsagar Waterfall"],
-    prices: { dzire: 8500, ertiga: 10500, innova: 13500, t12: 17000, t14: 19500, t20: 26000, urb: 33000 },
+    prices: { dzire: 8500, ertiga: 10500, innova: 13500, t12: 17000, t14: 19500, t20: 26000, urb: 30000 },
     slug: "/booking",
     badge: "Best Value",
   },
@@ -86,7 +87,7 @@ const PACKAGES: Package[] = [
     name: "Ultimate Goa – 4 Days",
     duration: "4 days",
     places: ["Day 1: North Goa", "Day 2: South Goa", "Day 3: Extreme South", "Day 4: Extreme North"],
-    prices: { dzire: 11000, ertiga: 14000, innova: 18000, t12: 22000, t14: 26000, t20: 35000, urb: 44000 },
+    prices: { dzire: 11000, ertiga: 14000, innova: 18000, t12: 21000, t14: 25000, t20: 30000, urb: 40000 },
     slug: "/booking",
     popular: true,
   },
@@ -94,11 +95,9 @@ const PACKAGES: Package[] = [
 
 function PackageCard({ pkg }: { pkg: Package }) {
   const [selected, setSelected] = useState<VehicleId>("dzire");
+  const [bookingOpen, setBookingOpen] = useState(false);
   const price = pkg.prices[selected];
   const vehicle = VEHICLES.find((v) => v.id === selected)!;
-
-  const waMsg = `Hi EzyGoa! 🙏\n\nI'd like to book the *${pkg.name}* tour.\n\nVehicle: ${vehicle.label} (${vehicle.seats} seats)\nPrice: ₹${price.toLocaleString()}\n\nPlease confirm availability and dates.`;
-  const waUrl = `https://wa.me/917026889254?text=${encodeURIComponent(waMsg)}`;
 
   const badge = pkg.popular ? "Popular" : pkg.badge ?? null;
 
@@ -182,16 +181,22 @@ function PackageCard({ pkg }: { pkg: Package }) {
           ) : (
             <div className="flex-1" />
           )}
-          <a href={waUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
-            <Button
-              className="w-full text-xs font-semibold gap-1"
-              style={{ background: "#25d366", color: "white" }}
-            >
-              Book {vehicle.label}
-            </Button>
-          </a>
+          <Button
+            onClick={() => setBookingOpen(true)}
+            className="flex-1 text-xs font-semibold gap-1"
+            style={{ background: "#25d366", color: "white" }}
+          >
+            Book {vehicle.label}
+          </Button>
         </div>
       </div>
+      <BookingModal
+        isOpen={bookingOpen}
+        onClose={() => setBookingOpen(false)}
+        title={`${pkg.name} · ${vehicle.label}`}
+        service={pkg.name}
+        vehicle={vehicle.label}
+      />
     </div>
   );
 }

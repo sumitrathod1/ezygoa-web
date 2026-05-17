@@ -75,7 +75,7 @@ export default function Footer() {
               Premium fleet, transparent pricing, 24/7 availability.
             </p>
             {/* Social */}
-            <div className="flex gap-3">
+            {/* <div className="flex gap-3">
               {[
                 { label: "FB", href: "#" },
                 { label: "IG", href: "#" },
@@ -89,7 +89,7 @@ export default function Footer() {
                   {s.label}
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Column 2 — Quick Links */}

@@ -12,34 +12,34 @@ type Tab = typeof TABS[number];
 /* ── Static pricing data ──────────────────────────────────────────── */
 
 const PER_KM = [
-  { vehicle: "Maruti Dzire",              seats: 4,  rate: 12, minKm: 250 },
-  { vehicle: "Maruti Ertiga",             seats: 6,  rate: 16, minKm: 250 },
-  { vehicle: "Toyota Innova Crysta",      seats: 7,  rate: 20, minKm: 250 },
-  { vehicle: "Tempo Traveller 12 Seater", seats: 12, rate: 25, minKm: 300 },
-  { vehicle: "Tempo Traveller 14 Seater", seats: 14, rate: 28, minKm: 300 },
-  { vehicle: "Tempo Traveller 20 Seater", seats: 20, rate: 35, minKm: 300 },
-  { vehicle: "Force Urbania 17 Seater",   seats: 17, rate: 45, minKm: 300 },
+  { vehicle: "Maruti Dzire",              seats: 4,  rate: 14, minKm: 250 },
+  { vehicle: "Maruti Ertiga",             seats: 6,  rate: 18, minKm: 250 },
+  { vehicle: "Toyota Innova Crysta",      seats: 7,  rate: 22, minKm: 250 },
+  { vehicle: "Tempo Traveller 12 Seater", seats: 12, rate: 28, minKm: 300 },
+  { vehicle: "Tempo Traveller 14 Seater", seats: 14, rate: 30, minKm: 300 },
+  { vehicle: "Tempo Traveller 20 Seater", seats: 20, rate: 30, minKm: 300 },
+  { vehicle: "Force Urbania 17 Seater",   seats: 17, rate: 35, minKm: 300 },
 ];
 
 const PACKAGES = [
-  { vehicle: "Maruti Dzire",         seats: 4,  pkg8: 1800, pkg12: 2500 },
-  { vehicle: "Maruti Ertiga",        seats: 6,  pkg8: 2500, pkg12: 3500 },
-  { vehicle: "Toyota Innova Crysta", seats: 7,  pkg8: 3500, pkg12: 4500 },
-  { vehicle: "Tempo Traveller 12",   seats: 12, pkg8: 4000, pkg12: 5500 },
-  { vehicle: "Tempo Traveller 14",   seats: 14, pkg8: 4500, pkg12: 6000 },
-  { vehicle: "Tempo Traveller 20",   seats: 20, pkg8: 5500, pkg12: 7500 },
-  { vehicle: "Force Urbania 17",     seats: 17, pkg8: 7500, pkg12: 9500 },
+  { vehicle: "Maruti Dzire",         seats: 4,  pkg8: 3000, pkg12: 4000 },
+  { vehicle: "Maruti Ertiga",        seats: 6,  pkg8: 3800, pkg12: 5000 },
+  { vehicle: "Toyota Innova Crysta", seats: 7,  pkg8: 4500, pkg12: 6000 },
+  { vehicle: "Tempo Traveller 12",   seats: 12, pkg8: 6000, pkg12: 8000 },
+  { vehicle: "Tempo Traveller 14",   seats: 14, pkg8: 7000, pkg12: 9000 },
+  { vehicle: "Tempo Traveller 20",   seats: 20, pkg8: 7000, pkg12: 9000 },
+  { vehicle: "Force Urbania 17",     seats: 17, pkg8: 9000, pkg12: 12000 },
 ];
 
 /* Airport — columns: dzire · ertiga · innova · tempo12 · tempo14 · tempo20 · urbania */
 const AIRPORT_RATES = [
-  { route: "Mopa Airport → Calangute",    dzire: 1200, ertiga: 1500, innova: 2000, t12: 2500, t14: 3000, t20: 4500, urb: 6000 },
-  { route: "Mopa Airport → Panjim",       dzire:  900, ertiga: 1200, innova: 1600, t12: 2000, t14: 2500, t20: 4000, urb: 5500 },
+  { route: "Mopa Airport → Calangute",    dzire: 1250, ertiga: 1500, innova: 2500, t12: 3000, t14: 3500, t20: 4000, urb: 6000 },
+  { route: "Mopa Airport → Panjim",       dzire: 1000, ertiga: 1200, innova: 1600, t12: 2000, t14: 2500, t20: 4000, urb: 5500 },
   { route: "Mopa Airport → Anjuna",       dzire: 1400, ertiga: 1700, innova: 2300, t12: 2800, t14: 3200, t20: 4800, urb: 6500 },
-  { route: "Mopa Airport → Margao",       dzire: 2000, ertiga: 2500, innova: 3200, t12: 4000, t14: 4800, t20: 7000, urb: 9000 },
-  { route: "Dabolim Airport → Calangute", dzire: 1500, ertiga: 1800, innova: 2200, t12: 2800, t14: 3500, t20: 5000, urb: 7000 },
-  { route: "Dabolim Airport → Panjim",    dzire:  900, ertiga: 1200, innova: 1600, t12: 2000, t14: 2500, t20: 4000, urb: 5500 },
-  { route: "Dabolim Airport → Margao",    dzire:  500, ertiga:  700, innova: 1000, t12: 1500, t14: 2000, t20: 3000, urb: 4000 },
+  { route: "Mopa Airport → Margao",       dzire: 2500, ertiga: 2800, innova: 3500, t12: 4000, t14: 4800, t20: 7000, urb: 9000 },
+  { route: "Dabolim Airport → Calangute", dzire: 1300, ertiga: 1800, innova: 2500, t12: 3500, t14: 4000, t20: 5000, urb: 7000 },
+  { route: "Dabolim Airport → Panjim",    dzire: 1000, ertiga: 1200, innova: 1600, t12: 2000, t14: 2500, t20: 4000, urb: 5500 },
+  { route: "Dabolim Airport → Margao",    dzire: 800, ertiga:  1000, innova: 1500, t12: 2500, t14: 2500, t20: 3000, urb: 5000 },
   { route: "Dabolim Airport → Palolem",   dzire: 2500, ertiga: 3000, innova: 3800, t12: 4000, t14: 5000, t20: 7500, urb: 10000 },
 ];
 
@@ -49,7 +49,7 @@ const NOTES = [
   "Driver food & accommodation for outstation trips: ₹500/day.",
   "Night charges (10 PM – 6 AM) for outstation: ₹500 extra.",
   "Waiting charges beyond 30 min: ₹150/hour.",
-  "Per km rates include driver allowance for local trips.",
+  "Per km rates (₹14–35/km) include driver allowance for local trips.",
   "Minimum km billing applies for outstation (250–300 km).",
   "All prices are one-way unless specified as round-trip.",
 ];
@@ -195,7 +195,7 @@ export default function PricingContent() {
               </table>
             </div>
             <div className="p-4 bg-secondary/20 text-xs text-muted-foreground">
-              Extra km beyond package: ₹12–45/km depending on vehicle. Extra hour: ₹100–350/hr.
+              Extra km beyond package: ₹14–35/km depending on vehicle. Extra hour: ₹100–350/hr.
             </div>
           </div>
         )}

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Plane, Clock, Bell, Shield, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
-import { buildWhatsAppUrl } from "@/lib/constants";
+import { BookingButton } from "@/components/BookingButton";
 
 export const metadata: Metadata = {
   title: "Airport Taxi Goa | Mopa & Dabolim Airport Transfer | EzyGoa",
@@ -85,15 +84,16 @@ function RouteTable({ routes, airportName }: { routes: typeof MOPA_ROUTES; airpo
                 <td className="px-4 py-3 text-right font-semibold text-blue-700">₹{r.t20.toLocaleString()}</td>
                 <td className="px-4 py-3 text-right font-semibold text-blue-700">₹{r.urb.toLocaleString()}</td>
                 <td className="px-4 py-3">
-                  <a
-                    href={buildWhatsAppUrl({ service: "Airport Transfer", from: airportName.split(" ")[0] + " Airport", to: r.to })}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button size="sm" className="text-xs px-3" style={{ background: "var(--brand-primary)", color: "white" }}>
-                      Book
-                    </Button>
-                  </a>
+                  <BookingButton
+                    label="Book"
+                    modalTitle={`Airport Transfer · ${airportName} → ${r.to}`}
+                    service="Airport Transfer"
+                    from={airportName.split(" ")[0] + " Airport"}
+                    to={r.to}
+                    size="sm"
+                    className="text-xs px-3"
+                    style={{ background: "var(--brand-primary)", color: "white" }}
+                  />
                 </td>
               </tr>
             ))}
@@ -161,15 +161,14 @@ export default function AirportTaxiPage() {
                   </div>
                   <p className="text-sm text-muted-foreground mb-1">{airport.fullName}</p>
                   <p className="text-xs text-muted-foreground mb-3">{airport.location} · {airport.note}</p>
-                  <a
-                    href={buildWhatsAppUrl({ service: `Airport Transfer from ${airport.name}` })}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button size="sm" className="gap-1.5 text-xs font-semibold" style={{ background: "var(--brand-primary)", color: "white" }}>
-                      <Plane className="w-3.5 h-3.5" /> Book Transfer
-                    </Button>
-                  </a>
+                  <BookingButton
+                    label={<><Plane className="w-3.5 h-3.5 inline mr-1" /> Book Transfer</>}
+                    modalTitle={`Airport Transfer · ${airport.name}`}
+                    service={`Airport Transfer from ${airport.name}`}
+                    size="sm"
+                    className="gap-1.5 text-xs font-semibold"
+                    style={{ background: "var(--brand-primary)", color: "white" }}
+                  />
                 </div>
               </div>
             ))}

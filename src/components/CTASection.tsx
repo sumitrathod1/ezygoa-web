@@ -64,10 +64,25 @@ export default function CTASection() {
             <Button
               size="lg"
               variant="outline"
-              className="gap-2 px-8 text-base font-semibold border-2 border-white/50 text-white hover:bg-white/10 hover:border-white"
+              className="
+                gap-2 
+                px-8 
+                text-base 
+                font-semibold 
+                border-2 
+                border-white/70
+                text-white
+                bg-transparent
+                opacity-100
+                hover:bg-white/10 
+                hover:border-white
+                hover:text-white
+              "
             >
-              <Phone className="w-5 h-5" />
-              {BUSINESS.phoneDisplay}
+              <Phone className="w-5 h-5 text-white" />
+              <span className="text-white">
+                {BUSINESS.phoneDisplay}
+              </span>
             </Button>
           </a>
         </div>

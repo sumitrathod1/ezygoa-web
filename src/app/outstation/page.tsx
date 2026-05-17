@@ -5,6 +5,7 @@ import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import { buildWhatsAppUrl } from "@/lib/constants";
+import { BookingButton } from "@/components/BookingButton";
 
 export const metadata: Metadata = {
   title: "Outstation Taxi from Goa | Mumbai, Pune, Bangalore | EzyGoa",
@@ -29,13 +30,13 @@ const ROUTES = [
 ];
 
 const CHARGES = [
-  { label: "Per km — Dzire (4 seats)",        value: "₹12/km" },
-  { label: "Per km — Ertiga (6 seats)",        value: "₹16/km" },
-  { label: "Per km — Innova Crysta (7 seats)", value: "₹20/km" },
-  { label: "Per km — Tempo Traveller 12",      value: "₹25/km" },
-  { label: "Per km — Tempo Traveller 14",      value: "₹28/km" },
-  { label: "Per km — Tempo Traveller 20",      value: "₹35/km" },
-  { label: "Per km — Force Urbania 17",        value: "₹45/km" },
+  { label: "Per km — Dzire (4 seats)",        value: "₹14/km" },
+  { label: "Per km — Ertiga (6 seats)",        value: "₹18/km" },
+  { label: "Per km — Innova Crysta (7 seats)", value: "₹22/km" },
+  { label: "Per km — Tempo Traveller 12",      value: "₹28/km" },
+  { label: "Per km — Tempo Traveller 14",      value: "₹30/km" },
+  { label: "Per km — Tempo Traveller 20",      value: "₹30/km" },
+  { label: "Per km — Force Urbania 17",        value: "₹35/km" },
   { label: "Driver food allowance",            value: "₹500/day" },
   { label: "Night halt allowance",             value: "₹500/night" },
   { label: "Toll charges",                     value: "Extra (paid at toll)" },
@@ -92,9 +93,9 @@ export default function OutstationPage() {
                     <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">🚖 Small &amp; Medium</p>
                     <div className="grid grid-cols-3 gap-2">
                       {[
-                        { label: "Dzire (4)", price: r.dzire, perKm: 12 },
-                        { label: "Ertiga (6)", price: r.ertiga, perKm: 16 },
-                        { label: "Innova (7)", price: r.innova, perKm: 20 },
+                        { label: "Dzire (4)", price: r.dzire, perKm: 14 },
+                        { label: "Ertiga (6)", price: r.ertiga, perKm: 18 },
+                        { label: "Innova (7)", price: r.innova, perKm: 22 },
                       ].map(({ label, price, perKm }) => (
                         <div key={label} className="text-center p-2 bg-secondary/50 rounded-xl">
                           <p className="text-xs text-muted-foreground">{label}</p>
@@ -110,10 +111,10 @@ export default function OutstationPage() {
                     <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">🚐 Group Vehicles</p>
                     <div className="grid grid-cols-4 gap-1.5">
                       {[
-                        { label: "Tempo 12", price: r.t12, perKm: 25 },
-                        { label: "Tempo 14", price: r.t14, perKm: 28 },
-                        { label: "Tempo 20", price: r.t20, perKm: 35 },
-                        { label: "Urbania 17", price: r.urb, perKm: 45 },
+                        { label: "Tempo 12", price: r.t12, perKm: 28 },
+                        { label: "Tempo 14", price: r.t14, perKm: 30 },
+                        { label: "Tempo 20", price: r.t20, perKm: 30 },
+                        { label: "Urbania 17", price: r.urb, perKm: 35 },
                       ].map(({ label, price, perKm }) => (
                         <div key={label} className="text-center p-2 bg-blue-50 rounded-xl border border-blue-100">
                           <p className="text-[10px] text-muted-foreground leading-tight">{label}</p>
@@ -124,15 +125,15 @@ export default function OutstationPage() {
                     </div>
                   </div>
 
-                  <a
-                    href={buildWhatsAppUrl({ service: "Outstation Trip", from: r.from, to: r.to })}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button className="w-full text-sm gap-1.5" style={{ background: "var(--brand-primary)", color: "white" }}>
-                      Book This Route
-                    </Button>
-                  </a>
+                  <BookingButton
+                    label="Book This Route"
+                    modalTitle={`Outstation: ${r.from} → ${r.to}`}
+                    service="Outstation Trip"
+                    from={r.from}
+                    to={r.to}
+                    className="w-full text-sm gap-1.5"
+                    style={{ background: "var(--brand-primary)", color: "white" }}
+                  />
                 </div>
               </div>
             ))}

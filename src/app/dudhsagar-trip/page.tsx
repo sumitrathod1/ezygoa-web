@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { CheckCircle, AlertCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
-import { buildWhatsAppUrl } from "@/lib/constants";
+import { BookingButton } from "@/components/BookingButton";
 
 export const metadata: Metadata = {
   title: "Dudhsagar Waterfall Trip from Goa | Full Day Tour | EzyGoa",
@@ -29,12 +28,12 @@ const TRIP_FLOW = [
 
 const PRICES = [
   { vehicle: "Maruti Dzire", seats: "1–4 people", price: 3500 },
-  { vehicle: "Maruti Ertiga", seats: "1–6 people", price: 4500 },
-  { vehicle: "Toyota Innova Crysta", seats: "1–7 people", price: 5500 },
+  { vehicle: "Maruti Ertiga", seats: "1–6 people", price: 4200 },
+  { vehicle: "Toyota Innova Crysta", seats: "1–7 people", price: 5000 },
   { vehicle: "Tempo Traveller 12", seats: "1–12 people", price: 7000 },
-  { vehicle: "Tempo Traveller 14", seats: "1–14 people", price: 8000 },
-  { vehicle: "Tempo Traveller 20", seats: "1–20 people", price: 10000 },
-  { vehicle: "Force Urbania 17", seats: "1–17 people", price: 12000 },
+  { vehicle: "Tempo Traveller 14", seats: "1–14 people", price: 9500 },
+  { vehicle: "Tempo Traveller 20", seats: "1–20 people", price: 9500 },
+  { vehicle: "Force Urbania 17", seats: "1–17 people", price: 13000 },
 ];
 
 const WHAT_TO_BRING = [
@@ -145,8 +144,15 @@ export default function DudhsagarTripPage() {
                       </div>
                       <div className="text-right">
                         <p className="font-bold text-base" style={{ color: "var(--brand-primary)" }}>₹{p.price.toLocaleString()}</p>
-                        <a href={buildWhatsAppUrl({ service: "Dudhsagar Trip", vehicle: p.vehicle })} target="_blank" rel="noopener noreferrer"
-                          className="text-xs font-semibold hover:underline" style={{ color: "var(--brand-accent)" }}>Book →</a>
+                        <BookingButton
+                          asText
+                          label="Book →"
+                          modalTitle={`Dudhsagar Trip · ${p.vehicle}`}
+                          service="Dudhsagar Waterfall Trip"
+                          vehicle={p.vehicle}
+                          className="text-xs font-semibold hover:underline"
+                          style={{ color: "var(--brand-accent)" }}
+                        />
                       </div>
                     </div>
                   ))}
@@ -171,11 +177,13 @@ export default function DudhsagarTripPage() {
                 </ul>
               </div>
 
-              <a href={buildWhatsAppUrl({ service: "Dudhsagar Waterfall Trip" })} target="_blank" rel="noopener noreferrer">
-                <Button className="w-full h-12 text-base font-bold" style={{ background: "var(--brand-primary)", color: "white" }}>
-                  Book Dudhsagar Trip
-                </Button>
-              </a>
+              <BookingButton
+                label="Book Dudhsagar Trip"
+                modalTitle="Dudhsagar Waterfall Trip"
+                service="Dudhsagar Waterfall Trip"
+                className="w-full h-12 text-base font-bold"
+                style={{ background: "var(--brand-primary)", color: "white" }}
+              />
             </div>
           </div>
         </div>
