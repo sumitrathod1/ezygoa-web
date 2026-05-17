@@ -9,11 +9,11 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
-const PriceCalculator = dynamic(() => import("@/components/PriceCalculator"));
-const PopularRoutes   = dynamic(() => import("@/components/PopularRoutes"));
-const GoaExperiences  = dynamic(() => import("@/components/GoaExperiences"));
-const Reviews         = dynamic(() => import("@/components/Reviews"));
-const FAQ             = dynamic(() => import("@/components/FAQ"));
+const PriceCalculator = dynamic(() => import("@/components/PriceCalculator"), { loading: () => <div className="py-20" /> });
+const PopularRoutes   = dynamic(() => import("@/components/PopularRoutes"),   { loading: () => <div className="py-16" /> });
+const GoaExperiences  = dynamic(() => import("@/components/GoaExperiences"),  { loading: () => <div className="py-16" /> });
+const Reviews         = dynamic(() => import("@/components/Reviews"),         { loading: () => <div className="py-16" /> });
+const FAQ             = dynamic(() => import("@/components/FAQ"),             { loading: () => <div className="py-16" /> });
 
 export const metadata: Metadata = {
   title:

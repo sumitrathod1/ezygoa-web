@@ -21,7 +21,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["600", "700", "800", "900"],
   display: "swap",
-  preload: true,
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -66,10 +66,10 @@ export default function RootLayout({
       className={`${inter.variable} ${poppins.variable} h-full antialiased`}
     >
       <head>
-        <link rel="preload" href="/images/hero/goa-hero.jpg" as="image" fetchPriority="high" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://wa.me" />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <Suspense fallback={null}>
