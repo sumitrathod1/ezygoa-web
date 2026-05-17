@@ -442,22 +442,109 @@ export const vehicles: Vehicle[] = [
 ];
 
 export const routes: Route[] = [
-  { from: "Mopa Airport", to: "Calangute", distance: 42, duration: "1h 10m", prices: { dzire: 1200, ertiga: 1500, innova: 2000, t12: 2800, t14: 3200, t20: 4200, urb: 5500 } },
-  { from: "Mopa Airport", to: "Panjim", distance: 32, duration: "50m", prices: { dzire: 900, ertiga: 1200, innova: 1600, t12: 2200, t14: 2600, t20: 3400, urb: 4500 } },
-  { from: "Mopa Airport", to: "Anjuna", distance: 48, duration: "1h 20m", prices: { dzire: 1400, ertiga: 1700, innova: 2300, t12: 3200, t14: 3700, t20: 4800, urb: 6200 } },
-  { from: "Dabolim Airport", to: "Calangute", distance: 45, duration: "1h 30m", prices: { dzire: 1500, ertiga: 1800, innova: 2200, t12: 3200, t14: 3700, t20: 4800, urb: 6200 } },
-  { from: "Dabolim Airport", to: "Panjim", distance: 29, duration: "45m", prices: { dzire: 900, ertiga: 1200, innova: 1600, t12: 2200, t14: 2600, t20: 3400, urb: 4500 } },
-  { from: "Calangute", to: "Dudhsagar", distance: 70, duration: "2h", prices: { dzire: 3500, ertiga: 4500, innova: 5500, t12: 7000, t14: 8000, t20: 10000, urb: 12000 } },
-  { from: "Panjim", to: "Old Goa", distance: 10, duration: "20m", prices: { dzire: 500, ertiga: 700, innova: 1000, t12: 1400, t14: 1600, t20: 2200, urb: 2800 } },
-  { from: "Calangute", to: "South Goa", distance: 55, duration: "1h 30m", prices: { dzire: 2500, ertiga: 3000, innova: 3500, t12: 5000, t14: 5800, t20: 7500, urb: 9800 } },
-  { from: "Panjim", to: "Anjuna", distance: 18, duration: "35m", prices: { dzire: 600, ertiga: 800, innova: 1100, t12: 1600, t14: 1900, t20: 2500, urb: 3200 } },
-  { from: "Panjim", to: "Arambol", distance: 48, duration: "1h 20m", prices: { dzire: 1400, ertiga: 1800, innova: 2400, t12: 3400, t14: 3900, t20: 5100, urb: 6600 } },
+  // --- Mopa Airport ---
+  { from: "Mopa Airport", to: "Calangute",       distance: 42,  duration: "1h 10m",  prices: { dzire: 1200, ertiga: 1500, innova: 2000, t12: 2800, t14: 3200, t20: 4200, urb: 5500 } },
+  { from: "Mopa Airport", to: "Panjim",          distance: 32,  duration: "50m",     prices: { dzire:  900, ertiga: 1200, innova: 1600, t12: 2200, t14: 2600, t20: 3400, urb: 4500 } },
+  { from: "Mopa Airport", to: "Anjuna",          distance: 48,  duration: "1h 20m",  prices: { dzire: 1400, ertiga: 1700, innova: 2300, t12: 3200, t14: 3700, t20: 4800, urb: 6200 } },
+  { from: "Mopa Airport", to: "Mapusa",          distance: 28,  duration: "40m",     prices: { dzire:  800, ertiga: 1000, innova: 1400, t12: 2000, t14: 2300, t20: 3000, urb: 4000 } },
+  { from: "Mopa Airport", to: "Baga",            distance: 44,  duration: "1h 15m",  prices: { dzire: 1250, ertiga: 1600, innova: 2100, t12: 2900, t14: 3400, t20: 4400, urb: 5800 } },
+  { from: "Mopa Airport", to: "Vagator",         distance: 45,  duration: "1h 15m",  prices: { dzire: 1300, ertiga: 1650, innova: 2150, t12: 3000, t14: 3500, t20: 4500, urb: 5900 } },
+  { from: "Mopa Airport", to: "Arambol",         distance: 25,  duration: "35m",     prices: { dzire:  750, ertiga:  950, innova: 1300, t12: 1800, t14: 2100, t20: 2700, urb: 3600 } },
+  { from: "Mopa Airport", to: "Margao",          distance: 80,  duration: "2h",      prices: { dzire: 2000, ertiga: 2500, innova: 3200, t12: 4500, t14: 5200, t20: 6800, urb: 8800 } },
+  { from: "Mopa Airport", to: "Vasco",           distance: 72,  duration: "1h 50m",  prices: { dzire: 1900, ertiga: 2400, innova: 3000, t12: 4200, t14: 4800, t20: 6300, urb: 8200 } },
+  { from: "Mopa Airport", to: "Palolem",         distance: 100, duration: "2h 30m",  prices: { dzire: 2800, ertiga: 3500, innova: 4500, t12: 6200, t14: 7200, t20: 9300, urb: 12000 } },
+
+  // --- Dabolim Airport ---
+  { from: "Dabolim Airport", to: "Calangute",    distance: 45,  duration: "1h 30m",  prices: { dzire: 1500, ertiga: 1800, innova: 2200, t12: 3200, t14: 3700, t20: 4800, urb: 6200 } },
+  { from: "Dabolim Airport", to: "Panjim",       distance: 29,  duration: "45m",     prices: { dzire:  900, ertiga: 1200, innova: 1600, t12: 2200, t14: 2600, t20: 3400, urb: 4500 } },
+  { from: "Dabolim Airport", to: "Margao",       distance: 12,  duration: "25m",     prices: { dzire:  500, ertiga:  700, innova: 1000, t12: 1500, t14: 1800, t20: 2400, urb: 3200 } },
+  { from: "Dabolim Airport", to: "Colva",        distance: 14,  duration: "25m",     prices: { dzire:  600, ertiga:  800, innova: 1100, t12: 1600, t14: 1900, t20: 2500, urb: 3200 } },
+  { from: "Dabolim Airport", to: "Palolem",      distance: 60,  duration: "1h 30m",  prices: { dzire: 2500, ertiga: 3000, innova: 3800, t12: 5200, t14: 6000, t20: 7800, urb: 10000 } },
+  { from: "Dabolim Airport", to: "Anjuna",       distance: 55,  duration: "1h 40m",  prices: { dzire: 1800, ertiga: 2200, innova: 2800, t12: 4000, t14: 4600, t20: 6000, urb: 7800 } },
+  { from: "Dabolim Airport", to: "Baga",         distance: 47,  duration: "1h 30m",  prices: { dzire: 1500, ertiga: 1900, innova: 2400, t12: 3400, t14: 3900, t20: 5100, urb: 6600 } },
+  { from: "Dabolim Airport", to: "Vagator",      distance: 52,  duration: "1h 35m",  prices: { dzire: 1700, ertiga: 2100, innova: 2700, t12: 3800, t14: 4400, t20: 5700, urb: 7400 } },
+  { from: "Dabolim Airport", to: "Mapusa",       distance: 33,  duration: "55m",     prices: { dzire: 1000, ertiga: 1300, innova: 1700, t12: 2400, t14: 2800, t20: 3600, urb: 4700 } },
+  { from: "Dabolim Airport", to: "Vasco",        distance: 4,   duration: "10m",     prices: { dzire:  300, ertiga:  400, innova:  600, t12:  900, t14: 1100, t20: 1500, urb: 2000 } },
+
+  // --- Calangute ---
+  { from: "Calangute", to: "Mopa Airport",       distance: 42,  duration: "1h 10m",  prices: { dzire: 1200, ertiga: 1500, innova: 2000, t12: 2800, t14: 3200, t20: 4200, urb: 5500 } },
+  { from: "Calangute", to: "Dabolim Airport",    distance: 45,  duration: "1h 30m",  prices: { dzire: 1500, ertiga: 1800, innova: 2200, t12: 3200, t14: 3700, t20: 4800, urb: 6200 } },
+  { from: "Calangute", to: "Panjim",             distance: 15,  duration: "30m",     prices: { dzire:  600, ertiga:  800, innova: 1100, t12: 1600, t14: 1900, t20: 2500, urb: 3200 } },
+  { from: "Calangute", to: "Anjuna",             distance: 8,   duration: "20m",     prices: { dzire:  400, ertiga:  500, innova:  700, t12: 1000, t14: 1200, t20: 1600, urb: 2100 } },
+  { from: "Calangute", to: "Mapusa",             distance: 10,  duration: "20m",     prices: { dzire:  450, ertiga:  600, innova:  800, t12: 1100, t14: 1300, t20: 1700, urb: 2200 } },
+  { from: "Calangute", to: "Old Goa",            distance: 25,  duration: "45m",     prices: { dzire:  900, ertiga: 1200, innova: 1600, t12: 2200, t14: 2600, t20: 3400, urb: 4400 } },
+  { from: "Calangute", to: "Vagator",            distance: 12,  duration: "25m",     prices: { dzire:  500, ertiga:  650, innova:  900, t12: 1300, t14: 1500, t20: 2000, urb: 2600 } },
+  { from: "Calangute", to: "Margao",             distance: 50,  duration: "1h 20m",  prices: { dzire: 1600, ertiga: 2000, innova: 2600, t12: 3600, t14: 4200, t20: 5400, urb: 7000 } },
+  { from: "Calangute", to: "Dudhsagar",          distance: 70,  duration: "2h",      prices: { dzire: 3500, ertiga: 4500, innova: 5500, t12: 7000, t14: 8000, t20: 10000, urb: 12000 } },
+  { from: "Calangute", to: "South Goa",          distance: 55,  duration: "1h 30m",  prices: { dzire: 2500, ertiga: 3000, innova: 3500, t12: 5000, t14: 5800, t20: 7500, urb: 9800 } },
+
+  // --- Panjim ---
+  { from: "Panjim", to: "Mopa Airport",          distance: 32,  duration: "50m",     prices: { dzire:  900, ertiga: 1200, innova: 1600, t12: 2200, t14: 2600, t20: 3400, urb: 4500 } },
+  { from: "Panjim", to: "Dabolim Airport",       distance: 29,  duration: "45m",     prices: { dzire:  900, ertiga: 1200, innova: 1600, t12: 2200, t14: 2600, t20: 3400, urb: 4500 } },
+  { from: "Panjim", to: "Calangute",             distance: 15,  duration: "30m",     prices: { dzire:  600, ertiga:  800, innova: 1100, t12: 1600, t14: 1900, t20: 2500, urb: 3200 } },
+  { from: "Panjim", to: "Baga",                  distance: 17,  duration: "35m",     prices: { dzire:  650, ertiga:  850, innova: 1200, t12: 1700, t14: 2000, t20: 2600, urb: 3400 } },
+  { from: "Panjim", to: "Anjuna",                distance: 18,  duration: "35m",     prices: { dzire:  600, ertiga:  800, innova: 1100, t12: 1600, t14: 1900, t20: 2500, urb: 3200 } },
+  { from: "Panjim", to: "Vagator",               distance: 22,  duration: "45m",     prices: { dzire:  800, ertiga: 1000, innova: 1400, t12: 2000, t14: 2300, t20: 3000, urb: 3900 } },
+  { from: "Panjim", to: "Mapusa",                distance: 13,  duration: "25m",     prices: { dzire:  550, ertiga:  700, innova: 1000, t12: 1400, t14: 1700, t20: 2200, urb: 2900 } },
+  { from: "Panjim", to: "Arambol",               distance: 48,  duration: "1h 20m",  prices: { dzire: 1400, ertiga: 1800, innova: 2400, t12: 3400, t14: 3900, t20: 5100, urb: 6600 } },
+  { from: "Panjim", to: "Old Goa",               distance: 10,  duration: "20m",     prices: { dzire:  500, ertiga:  700, innova: 1000, t12: 1400, t14: 1600, t20: 2200, urb: 2800 } },
+  { from: "Panjim", to: "Margao",                distance: 33,  duration: "50m",     prices: { dzire: 1000, ertiga: 1300, innova: 1800, t12: 2500, t14: 2900, t20: 3800, urb: 4900 } },
+  { from: "Panjim", to: "Palolem",               distance: 75,  duration: "2h",      prices: { dzire: 2000, ertiga: 2500, innova: 3200, t12: 4500, t14: 5200, t20: 6800, urb: 8800 } },
+  { from: "Panjim", to: "Dudhsagar",             distance: 65,  duration: "1h 50m",  prices: { dzire: 3200, ertiga: 4000, innova: 5000, t12: 6500, t14: 7500, t20: 9500, urb: 11500 } },
+
+  // --- Mapusa ---
+  { from: "Mapusa", to: "Mopa Airport",          distance: 28,  duration: "40m",     prices: { dzire:  800, ertiga: 1000, innova: 1400, t12: 2000, t14: 2300, t20: 3000, urb: 4000 } },
+  { from: "Mapusa", to: "Calangute",             distance: 10,  duration: "20m",     prices: { dzire:  450, ertiga:  600, innova:  800, t12: 1100, t14: 1300, t20: 1700, urb: 2200 } },
+  { from: "Mapusa", to: "Panjim",                distance: 13,  duration: "25m",     prices: { dzire:  550, ertiga:  700, innova: 1000, t12: 1400, t14: 1700, t20: 2200, urb: 2900 } },
+  { from: "Mapusa", to: "Anjuna",                distance: 12,  duration: "25m",     prices: { dzire:  500, ertiga:  650, innova:  900, t12: 1300, t14: 1500, t20: 2000, urb: 2600 } },
+  { from: "Mapusa", to: "Vagator",               distance: 10,  duration: "20m",     prices: { dzire:  450, ertiga:  600, innova:  800, t12: 1100, t14: 1300, t20: 1700, urb: 2200 } },
+  { from: "Mapusa", to: "Arambol",               distance: 36,  duration: "55m",     prices: { dzire: 1100, ertiga: 1400, innova: 1900, t12: 2700, t14: 3100, t20: 4000, urb: 5200 } },
+
+  // --- Anjuna ---
+  { from: "Anjuna", to: "Mopa Airport",          distance: 48,  duration: "1h 20m",  prices: { dzire: 1400, ertiga: 1700, innova: 2300, t12: 3200, t14: 3700, t20: 4800, urb: 6200 } },
+  { from: "Anjuna", to: "Dabolim Airport",       distance: 55,  duration: "1h 40m",  prices: { dzire: 1800, ertiga: 2200, innova: 2800, t12: 4000, t14: 4600, t20: 6000, urb: 7800 } },
+  { from: "Anjuna", to: "Panjim",                distance: 18,  duration: "35m",     prices: { dzire:  600, ertiga:  800, innova: 1100, t12: 1600, t14: 1900, t20: 2500, urb: 3200 } },
+  { from: "Anjuna", to: "Calangute",             distance: 8,   duration: "20m",     prices: { dzire:  400, ertiga:  500, innova:  700, t12: 1000, t14: 1200, t20: 1600, urb: 2100 } },
+  { from: "Anjuna", to: "Vagator",               distance: 4,   duration: "10m",     prices: { dzire:  300, ertiga:  400, innova:  600, t12:  900, t14: 1100, t20: 1500, urb: 2000 } },
+  { from: "Anjuna", to: "Dudhsagar",             distance: 72,  duration: "2h 10m",  prices: { dzire: 3600, ertiga: 4600, innova: 5600, t12: 7200, t14: 8200, t20: 10200, urb: 12500 } },
+
+  // --- Baga ---
+  { from: "Baga", to: "Mopa Airport",            distance: 44,  duration: "1h 15m",  prices: { dzire: 1250, ertiga: 1600, innova: 2100, t12: 2900, t14: 3400, t20: 4400, urb: 5800 } },
+  { from: "Baga", to: "Dabolim Airport",         distance: 47,  duration: "1h 30m",  prices: { dzire: 1500, ertiga: 1900, innova: 2400, t12: 3400, t14: 3900, t20: 5100, urb: 6600 } },
+  { from: "Baga", to: "Panjim",                  distance: 17,  duration: "35m",     prices: { dzire:  650, ertiga:  850, innova: 1200, t12: 1700, t14: 2000, t20: 2600, urb: 3400 } },
+  { from: "Baga", to: "Anjuna",                  distance: 6,   duration: "15m",     prices: { dzire:  350, ertiga:  450, innova:  650, t12:  950, t14: 1100, t20: 1500, urb: 1950 } },
+  { from: "Baga", to: "Vagator",                 distance: 10,  duration: "20m",     prices: { dzire:  450, ertiga:  600, innova:  800, t12: 1100, t14: 1300, t20: 1700, urb: 2200 } },
+
+  // --- Vagator ---
+  { from: "Vagator", to: "Mopa Airport",         distance: 45,  duration: "1h 15m",  prices: { dzire: 1300, ertiga: 1650, innova: 2150, t12: 3000, t14: 3500, t20: 4500, urb: 5900 } },
+  { from: "Vagator", to: "Dabolim Airport",      distance: 52,  duration: "1h 35m",  prices: { dzire: 1700, ertiga: 2100, innova: 2700, t12: 3800, t14: 4400, t20: 5700, urb: 7400 } },
+  { from: "Vagator", to: "Panjim",               distance: 22,  duration: "45m",     prices: { dzire:  800, ertiga: 1000, innova: 1400, t12: 2000, t14: 2300, t20: 3000, urb: 3900 } },
+  { from: "Vagator", to: "Anjuna",               distance: 4,   duration: "10m",     prices: { dzire:  300, ertiga:  400, innova:  600, t12:  900, t14: 1100, t20: 1500, urb: 2000 } },
+
+  // --- Margao ---
+  { from: "Margao", to: "Dabolim Airport",       distance: 12,  duration: "25m",     prices: { dzire:  500, ertiga:  700, innova: 1000, t12: 1500, t14: 1800, t20: 2400, urb: 3200 } },
+  { from: "Margao", to: "Panjim",                distance: 33,  duration: "50m",     prices: { dzire: 1000, ertiga: 1300, innova: 1800, t12: 2500, t14: 2900, t20: 3800, urb: 4900 } },
+  { from: "Margao", to: "Colva",                 distance: 6,   duration: "15m",     prices: { dzire:  300, ertiga:  400, innova:  600, t12:  900, t14: 1100, t20: 1500, urb: 2000 } },
+  { from: "Margao", to: "Palolem",               distance: 38,  duration: "1h",      prices: { dzire: 1200, ertiga: 1500, innova: 2000, t12: 2800, t14: 3200, t20: 4200, urb: 5500 } },
+  { from: "Margao", to: "Calangute",             distance: 50,  duration: "1h 20m",  prices: { dzire: 1600, ertiga: 2000, innova: 2600, t12: 3600, t14: 4200, t20: 5400, urb: 7000 } },
+  { from: "Margao", to: "Mopa Airport",          distance: 80,  duration: "2h",      prices: { dzire: 2000, ertiga: 2500, innova: 3200, t12: 4500, t14: 5200, t20: 6800, urb: 8800 } },
+
+  // --- Vasco ---
+  { from: "Vasco", to: "Dabolim Airport",        distance: 4,   duration: "10m",     prices: { dzire:  300, ertiga:  400, innova:  600, t12:  900, t14: 1100, t20: 1500, urb: 2000 } },
+  { from: "Vasco", to: "Panjim",                 distance: 30,  duration: "45m",     prices: { dzire:  900, ertiga: 1200, innova: 1600, t12: 2200, t14: 2600, t20: 3400, urb: 4400 } },
+  { from: "Vasco", to: "Margao",                 distance: 14,  duration: "25m",     prices: { dzire:  600, ertiga:  800, innova: 1100, t12: 1600, t14: 1900, t20: 2500, urb: 3200 } },
+  { from: "Vasco", to: "Calangute",              distance: 48,  duration: "1h 25m",  prices: { dzire: 1500, ertiga: 1900, innova: 2400, t12: 3400, t14: 3900, t20: 5100, urb: 6600 } },
+
+  // --- Palolem ---
+  { from: "Palolem", to: "Dabolim Airport",      distance: 60,  duration: "1h 30m",  prices: { dzire: 2500, ertiga: 3000, innova: 3800, t12: 5200, t14: 6000, t20: 7800, urb: 10000 } },
+  { from: "Palolem", to: "Margao",               distance: 38,  duration: "1h",      prices: { dzire: 1200, ertiga: 1500, innova: 2000, t12: 2800, t14: 3200, t20: 4200, urb: 5500 } },
+  { from: "Palolem", to: "Mopa Airport",         distance: 100, duration: "2h 30m",  prices: { dzire: 2800, ertiga: 3500, innova: 4500, t12: 6200, t14: 7200, t20: 9300, urb: 12000 } },
 ];
 
 export const services: Service[] = [
   { id: "airport-pickup",  image: "/images/services/airport.jpg", title: "Airport Pickup/Drop", description: "Reliable transfers from Mopa (GOX) and Dabolim (GOI) airports. Flight tracking included.", icon: "Plane", emoji: "✈️", startingPrice: 900, slug: "airport-taxi" },
   { id: "local-sightseeing", image: "/images/services/sightseeing.jpg", title: "Local Sightseeing", description: "Explore Goa's best beaches, churches, forts, and markets with our expert local drivers.", icon: "MapPin", emoji: "🏖️", startingPrice: 1800, slug: "goa-sightseeing" },
-  { id: "dudhsagar",        image: "/images/services/dudgsagar.jpg", title: "Dudhsagar Trip", description: "Full-day trip to the breathtaking Dudhsagar Waterfall — one of India's tallest cascades.", icon: "Waves", emoji: "🌊", startingPrice: 3500, slug: "dudhsagar-trip" },
+  { id: "dudhsagar",        image: "/images/services/dudhsagar.jpg", title: "Dudhsagar Trip", description: "Full-day trip to the breathtaking Dudhsagar Waterfall — one of India's tallest cascades.", icon: "Waves", emoji: "🌊", startingPrice: 3500, slug: "dudhsagar-trip" },
   { id: "self-drive",        image: "/images/services/self-drive.jpg", title: "Self-Drive Cars", description: "Freedom to explore Goa on your terms. Choose from Baleno, Hycross, or Thar 4x4.", icon: "Car", emoji: "🚗", startingPrice: 1500, slug: "self-drive" },
   { id: "north-goa-tour",   image: "/images/services/north-goa.jpg", title: "North Goa Tour", description: "Calangute, Baga, Anjuna, Chapora Fort, Vagator — the best of North Goa in one day.", icon: "Sun", emoji: "🌴", startingPrice: 2000, slug: "north-goa-tour" },
   { id: "south-goa-tour", title: "South Goa Tour", description: "Colva, Palolem, Old Goa churches, Margao — serene beaches and heritage in one tour.", icon: "Church", emoji: "🏛️", startingPrice: 2500, slug: "south-goa-tour" },

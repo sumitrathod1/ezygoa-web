@@ -39,7 +39,7 @@ export default function CookieConsent() {
               We use cookies to improve your browsing experience and analyse site traffic. By clicking
               &quot;Accept&quot;, you consent to our use of cookies.{" "}
               <Link href="/privacy-policy" className="underline">
-                Learn more
+                Learn more about our Privacy Policy
               </Link>
             </p>
           </div>

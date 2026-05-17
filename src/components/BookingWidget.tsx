@@ -74,10 +74,11 @@ export default function BookingWidget() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-4">
             {/* Service */}
             <div className="relative">
-              <label className="block text-xs font-medium text-muted-foreground mb-1">
+              <label htmlFor="bw-service" className="block text-xs font-medium text-muted-foreground mb-1">
                 Service
               </label>
               <select
+                id="bw-service"
                 value={service}
                 onChange={(e) => setService(e.target.value)}
                 className="w-full h-10 px-3 rounded-xl border border-border bg-white text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 appearance-none cursor-pointer"
@@ -93,12 +94,13 @@ export default function BookingWidget() {
 
             {/* From */}
             <div>
-              <label className="block text-xs font-medium text-muted-foreground mb-1">
+              <label htmlFor="bw-from" className="block text-xs font-medium text-muted-foreground mb-1">
                 Pickup From
               </label>
               <div className="relative">
                 <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted-foreground" />
                 <select
+                  id="bw-from"
                   value={from}
                   onChange={(e) => setFrom(e.target.value)}
                   className="w-full h-10 pl-8 pr-3 rounded-xl border border-border bg-white text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 appearance-none cursor-pointer"
@@ -115,12 +117,13 @@ export default function BookingWidget() {
 
             {/* To */}
             <div>
-              <label className="block text-xs font-medium text-muted-foreground mb-1">
+              <label htmlFor="bw-to" className="block text-xs font-medium text-muted-foreground mb-1">
                 Drop To
               </label>
               <div className="relative">
                 <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted-foreground" />
                 <select
+                  id="bw-to"
                   value={to}
                   onChange={(e) => setTo(e.target.value)}
                   className="w-full h-10 pl-8 pr-3 rounded-xl border border-border bg-white text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 appearance-none cursor-pointer"
@@ -137,12 +140,13 @@ export default function BookingWidget() {
 
             {/* Date */}
             <div>
-              <label className="block text-xs font-medium text-muted-foreground mb-1">
+              <label htmlFor="bw-date" className="block text-xs font-medium text-muted-foreground mb-1">
                 Date
               </label>
               <div className="relative">
                 <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted-foreground" />
                 <input
+                  id="bw-date"
                   type="date"
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
@@ -153,10 +157,11 @@ export default function BookingWidget() {
 
             {/* Time */}
             <div>
-              <label className="block text-xs font-medium text-muted-foreground mb-1">
+              <label htmlFor="bw-time" className="block text-xs font-medium text-muted-foreground mb-1">
                 Time
               </label>
               <input
+                id="bw-time"
                 type="time"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
@@ -166,12 +171,13 @@ export default function BookingWidget() {
 
             {/* Passengers */}
             <div>
-              <label className="block text-xs font-medium text-muted-foreground mb-1">
+              <label htmlFor="bw-pax" className="block text-xs font-medium text-muted-foreground mb-1">
                 Passengers
               </label>
               <div className="relative">
                 <Users className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-muted-foreground" />
                 <select
+                  id="bw-pax"
                   value={pax}
                   onChange={(e) => setPax(e.target.value)}
                   className="w-full h-10 pl-8 pr-3 rounded-xl border border-border bg-white text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 appearance-none cursor-pointer"

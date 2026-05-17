@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import BookingWidget from "@/components/BookingWidget";
 import ServicesSection from "@/components/ServicesSection";
 import FleetSection from "@/components/FleetSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import PriceCalculator from "@/components/PriceCalculator";
-import PopularRoutes from "@/components/PopularRoutes";
-import GoaExperiences from "@/components/GoaExperiences";
-import Reviews from "@/components/Reviews";
-import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+
+const PriceCalculator = dynamic(() => import("@/components/PriceCalculator"));
+const PopularRoutes   = dynamic(() => import("@/components/PopularRoutes"));
+const GoaExperiences  = dynamic(() => import("@/components/GoaExperiences"));
+const Reviews         = dynamic(() => import("@/components/Reviews"));
+const FAQ             = dynamic(() => import("@/components/FAQ"));
 
 export const metadata: Metadata = {
   title:

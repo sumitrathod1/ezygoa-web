@@ -17,8 +17,10 @@ export default function Hero() {
           alt="Goa Taxi Service"
           fill
           priority
+          quality={75}
           sizes="100vw"
           className="object-cover"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 gradient-hero opacity-85" />
       </div>

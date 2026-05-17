@@ -2,14 +2,17 @@
 
 import { useState, useMemo } from "react";
 import { ArrowRight, Calculator } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { routes } from "@/lib/data";
-import { buildWhatsAppUrl } from "@/lib/constants";
+import { BookingModal } from "@/components/BookingModal";
 
 const VEHICLE_OPTIONS = [
-  { id: "dzire", label: "Maruti Dzire (Sedan, 4 seats)", priceKey: "dzire" as const },
-  { id: "ertiga", label: "Maruti Ertiga (SUV, 6 seats)", priceKey: "ertiga" as const },
-  { id: "innova", label: "Toyota Innova Crysta (7 seats)", priceKey: "innova" as const },
+  { id: "dzire",   label: "Maruti Dzire (Sedan, 4 seats)",      priceKey: "dzire"   as const },
+  { id: "ertiga",  label: "Maruti Ertiga (SUV, 6 seats)",       priceKey: "ertiga"  as const },
+  { id: "innova",  label: "Toyota Innova Crysta (7 seats)",     priceKey: "innova"  as const },
+  { id: "t12",     label: "Tempo Traveller 12-seater",          priceKey: "t12"     as const },
+  { id: "t14",     label: "Tempo Traveller 14-seater",          priceKey: "t14"     as const },
+  { id: "t20",     label: "Tempo Traveller 20-seater",          priceKey: "t20"     as const },
+  { id: "urb",     label: "Force Urbania 17-seater (Luxury)",   priceKey: "urb"     as const },
 ];
 
 const PICKUP_OPTIONS = [...new Set(routes.map((r) => r.from))];
@@ -19,6 +22,7 @@ export default function PriceCalculator() {
   const [pickup, setPickup] = useState("");
   const [drop, setDrop] = useState("");
   const [vehicle, setVehicle] = useState("dzire");
+  const [modalOpen, setModalOpen] = useState(false);
 
   const result = useMemo(() => {
     if (!pickup || !drop) return null;
@@ -33,16 +37,6 @@ export default function PriceCalculator() {
     if (!price) return null;
     return { route, price };
   }, [pickup, drop, vehicle]);
-
-  const handleBook = () => {
-    const vehLabel = VEHICLE_OPTIONS.find((v) => v.id === vehicle)?.label ?? vehicle;
-    const url = buildWhatsAppUrl({
-      vehicle: vehLabel,
-      from: pickup,
-      to: drop,
-    });
-    window.open(url, "_blank");
-  };
 
   return (
     <section
@@ -72,10 +66,11 @@ export default function PriceCalculator() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
               {/* Pickup */}
               <div>
-                <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+                <label htmlFor="pc-pickup" className="block text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
                   Pickup From
                 </label>
                 <select
+                  id="pc-pickup"
                   value={pickup}
                   onChange={(e) => setPickup(e.target.value)}
                   className="w-full h-11 px-3 rounded-xl border-2 border-border bg-background text-sm text-foreground focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer"
@@ -91,10 +86,11 @@ export default function PriceCalculator() {
 
               {/* Drop */}
               <div>
-                <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+                <label htmlFor="pc-drop" className="block text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
                   Drop At
                 </label>
                 <select
+                  id="pc-drop"
                   value={drop}
                   onChange={(e) => setDrop(e.target.value)}
                   className="w-full h-11 px-3 rounded-xl border-2 border-border bg-background text-sm text-foreground focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer"
@@ -110,10 +106,11 @@ export default function PriceCalculator() {
 
               {/* Vehicle */}
               <div>
-                <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+                <label htmlFor="pc-vehicle" className="block text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
                   Vehicle
                 </label>
                 <select
+                  id="pc-vehicle"
                   value={vehicle}
                   onChange={(e) => setVehicle(e.target.value)}
                   className="w-full h-11 px-3 rounded-xl border-2 border-border bg-background text-sm text-foreground focus:outline-none focus:border-primary transition-colors appearance-none cursor-pointer"
@@ -156,14 +153,23 @@ export default function PriceCalculator() {
                     </p>
                   </div>
                 </div>
-                <Button
-                  onClick={handleBook}
-                  className="w-full gap-2 font-semibold"
+                <button
+                  onClick={() => setModalOpen(true)}
+                  className="w-full h-11 rounded-xl gap-2 font-semibold flex items-center justify-center text-sm"
                   style={{ background: "var(--brand-primary)", color: "white" }}
                 >
                   Book at This Price
                   <ArrowRight className="w-4 h-4" />
-                </Button>
+                </button>
+                <BookingModal
+                  isOpen={modalOpen}
+                  onClose={() => setModalOpen(false)}
+                  title={`${pickup} → ${drop}`}
+                  service="Taxi Booking"
+                  vehicle={VEHICLE_OPTIONS.find((v) => v.id === vehicle)?.label}
+                  from={pickup}
+                  to={drop}
+                />
               </div>
             ) : (
               <div className="rounded-2xl p-8 text-center" style={{ backgroundColor: "oklch(0.265 0.078 254 / 0.04)" }}>
