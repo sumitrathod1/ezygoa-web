@@ -5,6 +5,8 @@ import "./globals.css";
 import Analytics from "@/components/Analytics";
 import CookieConsent from "@/components/CookieConsent";
 import PageViewTracker from "@/components/PageViewTracker";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import CallButton from "@/components/CallButton";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -64,6 +66,8 @@ export default function RootLayout({
           <PageViewTracker />
         </Suspense>
         {children}
+        <WhatsAppButton />
+        <CallButton />
         <Analytics />
         <CookieConsent />
       </body>

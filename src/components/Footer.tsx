@@ -1,56 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react";
 import { BUSINESS, buildWhatsAppUrl } from "@/lib/constants";
-
-function NewsletterBar() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (!email) return;
-    setSubmitted(true);
-    setEmail("");
-  }
-
-  return (
-    <div className="border-t border-white/10 py-8 mb-8">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-        <div>
-          <h3 className="font-bold text-base mb-1">Get Goa Travel Tips & Deals</h3>
-          <p className="text-white/60 text-sm">Subscribe for exclusive offers, hidden gems, and taxi rate updates.</p>
-        </div>
-        {submitted ? (
-          <div className="flex items-center gap-2 text-sm font-semibold" style={{ color: "var(--brand-accent)" }}>
-            ✅ Thanks! You&apos;re subscribed.
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="flex gap-2 w-full md:w-auto">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Your email address"
-              className="flex-1 md:w-64 px-4 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 text-sm focus:outline-none focus:border-white/50 transition-colors"
-              required
-            />
-            <button
-              type="submit"
-              className="px-5 py-2.5 rounded-xl text-sm font-bold transition-opacity hover:opacity-90 flex-shrink-0"
-              style={{ background: "var(--brand-accent)", color: "var(--brand-primary)" }}
-            >
-              Subscribe
-            </button>
-          </form>
-        )}
-      </div>
-    </div>
-  );
-}
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -192,9 +143,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-        {/* Newsletter */}
-        <NewsletterBar />
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">

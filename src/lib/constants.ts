@@ -84,6 +84,6 @@ export const SOCIAL_LINKS = {
 export const TRUST_BADGES = [
   { icon: "⭐", label: "4.9/5 Rating" },
   { icon: "🚕", label: "10,000+ Trips" },
-  { icon: "👥", label: "500+ Happy Customers" },
+  { icon: "👥", label: "5,000+ Happy Customers" },
   { icon: "🛡️", label: "Verified Drivers" },
 ] as const;

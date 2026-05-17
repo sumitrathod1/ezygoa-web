@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const STATS = [
   { value: "10,000+", label: "Trips Completed", icon: "🚕" },
-  { value: "500+", label: "Happy Customers", icon: "😊" },
+  { value: "5,000+", label: "Happy Customers", icon: "😊" },
   { value: "4.9★", label: "Average Rating", icon: "⭐" },
   { value: "10+", label: "Fleet Vehicles", icon: "🚌" },
 ];

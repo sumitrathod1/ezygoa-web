@@ -12,8 +12,6 @@ import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import CallButton from "@/components/CallButton";
 
 export const metadata: Metadata = {
   title:
@@ -142,9 +140,6 @@ export default function HomePage() {
       {/* Footer */}
       <Footer />
 
-      {/* Floating Buttons — always visible */}
-      <WhatsAppButton />
-      <CallButton />
     </>
   );
 }

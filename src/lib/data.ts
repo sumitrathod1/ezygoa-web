@@ -472,6 +472,13 @@ export const reviews: Review[] = [
   { id: "4", name: "Ananya Krishnan", rating: 5, text: "Dudhsagar trip was amazing! Driver was professional, knew the best spots, and even waited patiently. The price was very reasonable. 10/10 would recommend!", date: "December 2024", tripType: "Dudhsagar Trip", location: "Chennai" },
   { id: "5", name: "Vikram Singh", rating: 5, text: "Booked tempo traveller for family of 12. Very comfortable, clean, and the driver was excellent. Made our Goa trip stress-free. EzyGoa is the best in Goa!", date: "November 2024", tripType: "Family Group Tour", location: "Hyderabad" },
   { id: "6", name: "Sarah Johnson", rating: 5, text: "Used EzyGoa for 5 days straight. Every driver was professional, English-speaking, and punctual. Transparent pricing with no surprises. Best taxi service in Goa!", date: "October 2024", tripType: "Multi-day Tour", location: "Australia" },
+  { id: "7", name: "Anita Desai", rating: 5, text: "Booked last minute for early morning flight. Driver arrived 15 min early, helped with luggage. Smooth ride. Will use again!", date: "April 2025", tripType: "Mopa Airport Transfer", location: "Mumbai" },
+  { id: "8", name: "Vikram Singh", rating: 5, text: "Family trip with 6 people. Ertiga was perfect. Driver knew amazing local spots not in any guidebook. Kids loved it!", date: "March 2025", tripType: "South Goa Tour", location: "Pune" },
+  { id: "9", name: "Sarah Williams", rating: 5, text: "Rented Thar convertible for 5 days. Brand new, immaculate. No hidden charges. Amazing experience driving in Goa!", date: "February 2025", tripType: "Self-Drive Thar", location: "Australia" },
+  { id: "10", name: "Ravi Krishnan", rating: 5, text: "Dudhsagar trip was highlight of Goa visit. Driver knew route perfectly, shared interesting facts. Great service!", date: "January 2025", tripType: "Dudhsagar Trip", location: "Bangalore" },
+  { id: "11", name: "Pooja Mehta", rating: 5, text: "Booked Innova Crysta for honeymoon. Driver respectful, professional, knew all romantic spots. Made our trip memorable!", date: "December 2024", tripType: "Honeymoon Package", location: "Ahmedabad" },
+  { id: "12", name: "Mohammed Ali", rating: 5, text: "Group of 16 friends. Tempo Traveller was comfortable. AC excellent. Great pricing for group trips!", date: "December 2024", tripType: "Group Trip – Tempo 17", location: "Hyderabad" },
+  { id: "13", name: "Lisa Anderson", rating: 5, text: "First time in India. EzyGoa made our Goa trip easy and safe. Driver spoke English well. Highly recommended!", date: "November 2024", tripType: "Goa Sightseeing", location: "Germany" },
 ];
 
 export const faqs: FAQ[] = [

@@ -92,7 +92,7 @@ export default function WhyChooseUs() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {[
               { value: "10,000+", label: "Trips Completed" },
-              { value: "500+", label: "Happy Customers" },
+              { value: "5,000+", label: "Happy Customers" },
               { value: "4.9★", label: "Average Rating" },
               { value: "10+", label: "Years in Goa" },
             ].map((stat) => (
