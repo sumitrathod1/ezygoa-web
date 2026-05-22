@@ -118,17 +118,21 @@ export default function Reviews() {
           ))}
         </div>
 
-        {/* Dots */}
-        <div className="flex justify-center gap-2 mt-8">
+        {/* Dots — 44×44px touch targets wrapping the small visual dots */}
+        <div className="flex justify-center gap-1 mt-8">
           {Array.from({ length: maxIndex + 1 }).map((_, i) => (
             <button
               key={i}
               onClick={() => setIndex(i)}
-              className={`h-2 rounded-full transition-all duration-200 ${
-                i === index ? "w-8 bg-primary" : "w-2 bg-border hover:bg-muted-foreground"
-              }`}
+              className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary/5 transition-colors"
               aria-label={`Go to page ${i + 1}`}
-            />
+            >
+              <span
+                className={`rounded-full transition-all duration-200 block ${
+                  i === index ? "w-8 h-2 bg-primary" : "w-2 h-2 bg-border hover:bg-muted-foreground"
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>

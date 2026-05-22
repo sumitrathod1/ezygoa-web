@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   compress: true,
   poweredByHeader: false,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production" ? { exclude: ["error"] } : false,
+  },
   images: {
     remotePatterns: [],
     formats: ["image/avif", "image/webp"],
@@ -13,7 +16,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 31536000,
   },
   experimental: {
-    optimizePackageImports: ["lucide-react"],
+    optimizePackageImports: ["lucide-react", "framer-motion"],
   },
   async headers() {
     return [

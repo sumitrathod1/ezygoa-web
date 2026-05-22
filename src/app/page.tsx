@@ -4,11 +4,11 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import BookingWidget from "@/components/BookingWidget";
 import ServicesSection from "@/components/ServicesSection";
-import FleetSection from "@/components/FleetSection";
-import WhyChooseUs from "@/components/WhyChooseUs";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
+const FleetSection    = dynamic(() => import("@/components/FleetSection"),    { loading: () => <div className="py-20 bg-secondary/30" /> });
+const WhyChooseUs     = dynamic(() => import("@/components/WhyChooseUs"),     { loading: () => <div className="py-20" /> });
 const PriceCalculator = dynamic(() => import("@/components/PriceCalculator"), { loading: () => <div className="py-20" /> });
 const PopularRoutes   = dynamic(() => import("@/components/PopularRoutes"),   { loading: () => <div className="py-16" /> });
 const GoaExperiences  = dynamic(() => import("@/components/GoaExperiences"),  { loading: () => <div className="py-16" /> });

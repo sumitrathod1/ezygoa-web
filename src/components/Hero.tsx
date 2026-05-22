@@ -17,7 +17,7 @@ export default function Hero() {
           alt="Goa Taxi Service"
           fill
           priority
-          quality={75}
+          quality={70}
           sizes="100vw"
           className="object-cover"
           fetchPriority="high"
