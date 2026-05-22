@@ -1,6 +1,6 @@
-# EzyGoa Taxi & Rental Website
+# ZipGoa Taxi & Rental Website
 
-Modern, SEO-optimized website for EzyGoa Taxi Services in Goa, India.
+Modern, SEO-optimized website for ZipGoa Taxi Services in Goa, India.
 
 ## Tech Stack
 - Next.js 16 (App Router)

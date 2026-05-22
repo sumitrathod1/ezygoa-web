@@ -46,7 +46,7 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-  /* EzyGoa brand colors */
+  /* ZipGoa brand colors */
   --color-brand-primary: var(--brand-primary);
   --color-brand-accent: var(--brand-accent);
   --color-brand-success: var(--brand-success);
@@ -54,7 +54,7 @@
 }
 
 :root {
-  /* Shadcn tokens — overridden to EzyGoa palette */
+  /* Shadcn tokens — overridden to ZipGoa palette */
   --background: oklch(0.993 0.003 57);
   --foreground: oklch(0.295 0.033 254);
   --card: oklch(1 0 0);
@@ -88,7 +88,7 @@
   --sidebar-border: oklch(0.91 0.005 57);
   --sidebar-ring: oklch(0.265 0.078 254);
 
-  /* EzyGoa brand vars */
+  /* ZipGoa brand vars */
   --brand-primary: #1a365d;
   --brand-accent: #f6ad55;
   --brand-success: #48bb78;

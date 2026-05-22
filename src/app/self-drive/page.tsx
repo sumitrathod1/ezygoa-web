@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
@@ -6,7 +6,7 @@ import SelfDriveGrid from "@/components/SelfDriveGrid";
 import { selfDriveVehicles } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Self Drive Car Rental Goa 2026 | Swift, Creta, Thar, Innova | EzyGoa",
+  title: "Self Drive Car Rental Goa 2026 | Swift, Creta, Thar, Innova | ZipGoa",
   description:
     "Rent self-drive cars in Goa starting ₹1,200/day. Swift, Baleno, i20, Creta, Ertiga, Innova Crysta, Hycross Hybrid, Thar 4x4. All new models, insured, 24/7 support.",
   keywords: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     "Ertiga rental Goa",
   ],
   openGraph: {
-    title: "Self Drive Car Rental Goa | EzyGoa — From ₹1,200/day",
+    title: "Self Drive Car Rental Goa | ZipGoa — From ₹1,200/day",
     description: "18 cars available. Economy to premium. Swift, Creta, Thar, Hycross. Instant booking.",
   },
 };
@@ -99,7 +99,7 @@ export default function SelfDrivePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold" style={{ fontFamily: "var(--font-poppins)", color: "var(--brand-primary)" }}>
-              Why Rent from EzyGoa?
+              Why Rent from ZipGoa?
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

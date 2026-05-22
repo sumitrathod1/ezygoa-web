@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -33,14 +33,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center hover:opacity-90 transition-opacity">
+          <Link href="/" className="flex items-center hover:opacity-90 transition-opacity" aria-label="ZipGoa Taxi Services - Home">
             <Image
               src={scrolled ? "/logo/logo.png" : "/logo/logo-white.png"}
-              alt="EzyGoa Taxi Services"
+              alt="ZipGoa Taxi Services - Quick. Reliable. Trusted."
               width={180}
               height={60}
               priority
-              className="h-14 md:h-16 w-auto"
+              quality={90}
+              className="h-10 md:h-12 lg:h-14 w-auto"
             />
           </Link>
 

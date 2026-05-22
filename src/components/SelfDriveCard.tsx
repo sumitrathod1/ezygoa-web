@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Image from "next/image";
@@ -34,7 +34,7 @@ export default function SelfDriveCard({ vehicle: v, inCompare, onToggleCompare, 
   const emoji = SEGMENT_EMOJI[v.segment] ?? "🚗";
 
   const isManual = v.transmission === "Manual";
-  const waMsg = `Hi EzyGoa! 🙏\n\nI want to rent *${v.name}*.\n\nPlease share price and availability for my dates.`;
+  const waMsg = `Hi ZipGoa! 🙏\n\nI want to rent *${v.name}*.\n\nPlease share price and availability for my dates.`;
   const waUrl = `https://wa.me/917026889254?text=${encodeURIComponent(waMsg)}`;
 
   const specs = [

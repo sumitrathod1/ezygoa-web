@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -21,7 +21,7 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return { title: "Post Not Found" };
   return {
-    title: `${post.title} | EzyGoa Blog`,
+    title: `${post.title} | ZipGoa Blog`,
     description: post.excerpt,
     keywords: post.tags,
     openGraph: {
@@ -61,8 +61,8 @@ export default async function BlogPostPage({
   const categoryClass = categoryColors[post.category] ?? "bg-gray-100 text-gray-700";
 
   const whatsappMessage = post.ctaText
-    ? `Hi EzyGoa! I read your blog post "${post.title}" and would like to book: ${post.ctaService ?? "taxi"}`
-    : `Hi EzyGoa! I read your blog and would like to book a taxi.`;
+    ? `Hi ZipGoa! I read your blog post "${post.title}" and would like to book: ${post.ctaService ?? "taxi"}`
+    : `Hi ZipGoa! I read your blog and would like to book a taxi.`;
   const whatsappUrl = `https://wa.me/917026889254?text=${encodeURIComponent(whatsappMessage)}`;
 
   const postSchema = {
@@ -74,8 +74,8 @@ export default async function BlogPostPage({
     datePublished: post.publishedDate,
     publisher: {
       "@type": "Organization",
-      name: "EzyGoa Taxi Services",
-      url: "https://www.ezygoa.in",
+      name: "ZipGoa Taxi Services",
+      url: "https://zipgoa.com",
     },
     keywords: post.tags.join(", "),
   };
@@ -122,7 +122,7 @@ export default async function BlogPostPage({
               <div className="flex items-center gap-3 mb-8">
                 <span className="text-sm text-gray-500 font-medium">Share:</span>
                 <a
-                  href={`https://wa.me/?text=${encodeURIComponent(post.title + " https://www.ezygoa.in/blog/" + post.slug)}`}
+                  href={`https://wa.me/?text=${encodeURIComponent(post.title + " https://zipgoa.com/blog/" + post.slug)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-green-500 text-white hover:bg-green-600 transition-colors"
@@ -130,7 +130,7 @@ export default async function BlogPostPage({
                   📱 WhatsApp
                 </a>
                 <a
-                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.ezygoa.in/blog/" + post.slug)}`}
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://zipgoa.com/blog/" + post.slug)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors"
@@ -138,7 +138,7 @@ export default async function BlogPostPage({
                   📘 Facebook
                 </a>
                 <a
-                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent("https://www.ezygoa.in/blog/" + post.slug)}`}
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent("https://zipgoa.com/blog/" + post.slug)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-500 text-white hover:bg-sky-600 transition-colors"
@@ -212,7 +212,7 @@ export default async function BlogPostPage({
                   {post.ctaText ?? "Ready to Explore Goa?"}
                 </h3>
                 <p className="text-white/80 mb-5 text-sm">
-                  Book with EzyGoa for reliable, affordable taxi services across Goa. Available 24/7.
+                  Book with ZipGoa for reliable, affordable taxi services across Goa. Available 24/7.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <a

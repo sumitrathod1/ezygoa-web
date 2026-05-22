@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP ?? "917026889254";
 
@@ -17,9 +17,9 @@ export async function POST(req: NextRequest) {
     }
 
     const lines = [
-      `Hello EzyGoa! 👋`,
+      `Hello ZipGoa! 👋`,
       ``,
-      `📩 *CONTACT FORM MESSAGE — EzyGoa Website*`,
+      `📩 *CONTACT FORM MESSAGE — ZipGoa Website*`,
       `─────────────────────────────────`,
       `👤 Name: ${data.name}`,
       `📞 Phone: ${data.phone}`,

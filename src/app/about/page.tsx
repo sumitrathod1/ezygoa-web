@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Award, Users, ThumbsUp, MapPin, Heart, Star } from "lucide-react";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
@@ -6,12 +6,12 @@ import CTASection from "@/components/CTASection";
 import { BUSINESS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "About Us | EzyGoa Taxi Services — Trusted Since 2015",
+  title: "About Us | ZipGoa Taxi Services — Trusted Since 2015",
   description:
-    "Learn about EzyGoa Taxi Services — Goa's trusted taxi and car rental company since 2015. Our story, our values, and our commitment to your comfort.",
-  keywords: ["EzyGoa about", "Goa taxi company", "best taxi company Goa", "EzyGoa story"],
+    "Learn about ZipGoa Taxi Services — Goa's trusted taxi and car rental company since 2015. Our story, our values, and our commitment to your comfort.",
+  keywords: ["ZipGoa about", "Goa taxi company", "best taxi company Goa", "ZipGoa story"],
   openGraph: {
-    title: "About EzyGoa Taxi Services",
+    title: "About ZipGoa Taxi Services",
     description: "Goa's trusted taxi and car rental company since 2015.",
   },
 };
@@ -51,7 +51,7 @@ export default function AboutPage() {
       <PageHero
         badge={"Est. " + BUSINESS.established}
         title="About"
-        titleAccent="EzyGoa"
+        titleAccent="ZipGoa"
         subtitle="We started with one car and a simple belief: every traveller in Goa deserves a comfortable, honest, and reliable taxi experience."
         breadcrumbs={[{ label: "About" }]}
       />
@@ -69,7 +69,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  EzyGoa Taxi Services was founded in {BUSINESS.established} in Parra, North Goa, with a single Maruti Dzire and a dream: to give tourists and locals the kind of taxi experience they actually deserve.
+                  ZipGoa Taxi Services was founded in {BUSINESS.established} in Parra, North Goa, with a single Maruti Dzire and a dream: to give tourists and locals the kind of taxi experience they actually deserve.
                 </p>
                 <p>
                   What started as solo rides to Mopa Airport quickly grew through word-of-mouth into a full fleet operation covering all of Goa — from Arambol in the north to Palolem in the south, and outstation trips across the Konkan coast.

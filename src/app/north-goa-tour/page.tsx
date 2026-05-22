@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { CheckCircle, XCircle } from "lucide-react";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
@@ -6,12 +6,12 @@ import CTASection from "@/components/CTASection";
 import { BookingButton } from "@/components/BookingButton";
 
 export const metadata: Metadata = {
-  title: "North Goa Sightseeing Tour | Full Day Tour | EzyGoa Taxi",
+  title: "North Goa Sightseeing Tour | Full Day Tour | ZipGoa Taxi",
   description:
     "Full-day North Goa sightseeing tour covering Fort Aguada, Calangute, Baga, Anjuna, Chapora Fort, and Vagator Beach. Fixed fares, expert local drivers.",
   keywords: ["North Goa tour", "North Goa sightseeing", "Calangute Baga tour", "Anjuna Chapora tour", "Goa full day tour"],
   openGraph: {
-    title: "North Goa Full Day Sightseeing Tour | EzyGoa",
+    title: "North Goa Full Day Sightseeing Tour | ZipGoa",
     description: "Explore Fort Aguada, Calangute, Baga, Anjuna & Chapora Fort in one day. From ₹2,500.",
   },
 };

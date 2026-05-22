@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -121,7 +121,7 @@ function TaxiCard({ v }: { v: Vehicle }) {
 function SelfDriveCard({ v }: { v: SelfDriveVehicle }) {
   const theme = SEGMENT_THEME[v.segment] ?? SEGMENT_THEME.economy;
   const isManual = v.transmission === "Manual";
-  const waMsg = `Hi EzyGoa! 🙏\n\nI want to rent *${v.name}*.\n\nPlease share price and availability for my dates.`;
+  const waMsg = `Hi ZipGoa! 🙏\n\nI want to rent *${v.name}*.\n\nPlease share price and availability for my dates.`;
   const waUrl = `https://wa.me/917026889254?text=${encodeURIComponent(waMsg)}`;
 
   return (

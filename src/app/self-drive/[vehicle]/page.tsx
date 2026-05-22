@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MessageCircle, Phone, CheckCircle, XCircle } from "lucide-react";
@@ -24,7 +24,7 @@ export async function generateMetadata({
 
   const baseName = v.name.replace(/\s*\(.*?\)\s*/g, "").trim();
   return {
-    title: `Rent ${baseName} in Goa | ${v.transmission} ${v.type} | ₹${v.pricePerDay}/day | EzyGoa`,
+    title: `Rent ${baseName} in Goa | ${v.transmission} ${v.type} | ₹${v.pricePerDay}/day | ZipGoa`,
     description: `Rent ${v.name} in Goa starting ₹${v.pricePerDay}/day. ${v.isNewModel ? "New 2024/25 model." : ""} ${v.transmission} transmission, ${v.fuelType}, ${v.seats} seats. Insured, sanitised, 24/7 support. Book now!`,
     keywords: [
       `${baseName} rental Goa`,
@@ -33,10 +33,10 @@ export async function generateMetadata({
       `${v.type} rental Goa`,
       `${v.transmission} car rental Goa`,
       "self drive car Goa",
-      "EzyGoa self drive",
+      "ZipGoa self drive",
     ],
     openGraph: {
-      title: `Rent ${baseName} in Goa | ${v.transmission} | EzyGoa`,
+      title: `Rent ${baseName} in Goa | ${v.transmission} | ZipGoa`,
       description: `${v.name} — ₹${v.pricePerDay}/day. Insured, new model, instant booking via WhatsApp.`,
     },
   };
@@ -82,7 +82,7 @@ function buildDescription(v: SelfDriveVehicle): string[] {
     ? ` Key highlights include: ${v.features.join(", ")}.`
     : "";
 
-  const p2 = `Goa's diverse landscape — from the beach roads of North Goa to the winding ghats of the hinterland — calls for a reliable, well-maintained vehicle.${featureStr} EzyGoa prepares every rental with a full service, sanitisation, and a complete fuel tank so you're ready to explore the moment you turn the key.`;
+  const p2 = `Goa's diverse landscape — from the beach roads of North Goa to the winding ghats of the hinterland — calls for a reliable, well-maintained vehicle.${featureStr} ZipGoa prepares every rental with a full service, sanitisation, and a complete fuel tank so you're ready to explore the moment you turn the key.`;
 
   const p3 = `Whether you're planning a sunrise drive to Arambol, an afternoon at Dudhsagar Falls, or a leisurely tour of Old Goa's heritage churches, the ${v.name} gives you the freedom to explore at your own pace, on your own schedule, without the constraints of a pre-booked itinerary.`;
 
@@ -138,7 +138,7 @@ export default async function SelfDriveVehiclePage({
   const weeklyRate = v.weeklyRate ?? Math.round(v.pricePerDay * 0.9);
   const monthlyRate = v.monthlyRate ?? Math.round(v.pricePerDay * 0.75);
 
-  const waMsg = `Hi EzyGoa! 🙏\n\nI want to rent *${v.name}*.\n\nPlease share price and availability for my dates.`;
+  const waMsg = `Hi ZipGoa! 🙏\n\nI want to rent *${v.name}*.\n\nPlease share price and availability for my dates.`;
   const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(waMsg)}`;
 
   const related = selfDriveVehicles
@@ -160,7 +160,7 @@ export default async function SelfDriveVehiclePage({
       price: v.pricePerDay,
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "EzyGoa Taxi Services" },
+      seller: { "@type": "Organization", name: "ZipGoa Taxi Services" },
     },
   };
 

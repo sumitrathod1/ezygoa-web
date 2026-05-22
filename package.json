@@ -1,6 +1,8 @@
 {
-  "name": "ezygoa-web",
-  "version": "0.1.0",
+  "name": "zipgoa-web",
+  "version": "1.0.0",
+  "description": "ZipGoa Taxi Services - Premium Goa taxi booking website",
+  "author": "Sumit Rathod",
   "private": true,
   "scripts": {
     "dev": "next dev",

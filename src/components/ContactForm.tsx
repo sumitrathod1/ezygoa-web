@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { Send, CheckCircle } from "lucide-react";
@@ -22,7 +22,7 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `Hello EzyGoa! 👋\n\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\n\nMessage:\n${form.message}`;
+    const msg = `Hello ZipGoa! 👋\n\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\n\nMessage:\n${form.message}`;
     const url = `https://wa.me/917026889254?text=${encodeURIComponent(msg)}`;
     window.open(url, "_blank");
     setSubmitted(true);

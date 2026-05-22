@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
@@ -17,7 +17,7 @@ const FAQ             = dynamic(() => import("@/components/FAQ"),             { 
 
 export const metadata: Metadata = {
   title:
-    "EzyGoa Taxi Service | Best Taxi in Goa | Airport Taxi & Car Rental",
+    "ZipGoa Taxi Service | Best Taxi in Goa | Airport Taxi & Car Rental",
   description:
     "Goa's most trusted taxi service. Airport transfers from Mopa & Dabolim, sightseeing, self-drive cars. 24/7 service. Best rates. Book now!",
   keywords: [
@@ -28,28 +28,34 @@ export const metadata: Metadata = {
     "Goa car rental",
     "self drive Goa",
     "Goa sightseeing tours",
-    "EzyGoa",
+    "ZipGoa",
     "taxi Calangute",
     "taxi Panjim",
   ],
   openGraph: {
-    title: "EzyGoa Taxi Service | Best Taxi in Goa",
+    title: "ZipGoa Taxi Service | Best Taxi in Goa",
     description:
       "Goa's most trusted taxi service. Airport transfers, sightseeing, self-drive cars. 24/7 service.",
     type: "website",
     locale: "en_IN",
-    siteName: "EzyGoa Taxi Services",
+    siteName: "ZipGoa Taxi Services",
   },
 };
 
 const businessSchema = {
   "@context": "https://schema.org",
   "@type": "TaxiService",
-  "name": "EzyGoa Taxi Services",
-  "url": "https://www.ezygoa.in",
-  "telephone": "+917026889254",
+  "name": "ZipGoa Taxi Services",
+  "alternateName": "ZipGoa",
+  "description": "Goa's premium taxi and car rental service. Quick bookings, verified drivers, transparent pricing.",
+  "slogan": "Quick. Reliable. Trusted.",
+  "url": "https://zipgoa.com",
+  "logo": "https://zipgoa.com/logo/logo.png",
+  "image": "https://zipgoa.com/logo/og-image.png",
+  "telephone": "+91-7026889254",
   "email": "ezygoataxiservices@gmail.com",
-  "image": "https://www.ezygoa.in/logo.png",
+  "foundingDate": "2015",
+  "founder": { "@type": "Person", "name": "Sumit Rathod" },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Parra",
@@ -60,27 +66,30 @@ const businessSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 15.58,
-    "longitude": 73.74,
+    "latitude": "15.5970",
+    "longitude": "73.7574",
   },
+  "openingHours": "Mo-Su 00:00-23:59",
   "priceRange": "₹₹",
-  "currenciesAccepted": "INR",
-  "paymentAccepted": "Cash, UPI, Bank Transfer",
-  "areaServed": {
-    "@type": "Place",
-    "name": "Goa, India",
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "00:00",
-    "closes": "23:59",
-  },
+  "areaServed": [
+    { "@type": "State", "name": "Goa" },
+    { "@type": "City", "name": "Panaji" },
+    { "@type": "City", "name": "Margao" },
+    { "@type": "City", "name": "Vasco da Gama" },
+    { "@type": "City", "name": "Calangute" },
+    { "@type": "City", "name": "Mapusa" },
+  ],
+  "sameAs": [
+    "https://wa.me/917026889254",
+    "https://www.facebook.com/zipgoa",
+    "https://www.instagram.com/zipgoa",
+  ],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
     "reviewCount": "500",
     "bestRating": "5",
+    "worstRating": "1",
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -117,7 +126,7 @@ export default function HomePage() {
         {/* Fleet Showcase — horizontal scroll */}
         <FleetSection />
 
-        {/* Why Choose EzyGoa */}
+        {/* Why Choose ZipGoa */}
         <WhyChooseUs />
 
         {/* Price Calculator */}

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { CheckCircle, AlertCircle } from "lucide-react";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
@@ -6,12 +6,12 @@ import CTASection from "@/components/CTASection";
 import { BookingButton } from "@/components/BookingButton";
 
 export const metadata: Metadata = {
-  title: "Dudhsagar Waterfall Trip from Goa | Full Day Tour | EzyGoa",
+  title: "Dudhsagar Waterfall Trip from Goa | Full Day Tour | ZipGoa",
   description:
-    "Full-day Dudhsagar Waterfall trip from Goa. Jeep safari, spice plantation, jungle trail. India's 4th tallest waterfall. Taxi from ₹3,500. Book with EzyGoa.",
+    "Full-day Dudhsagar Waterfall trip from Goa. Jeep safari, spice plantation, jungle trail. India's 4th tallest waterfall. Taxi from ₹3,500. Book with ZipGoa.",
   keywords: ["Dudhsagar trip", "Dudhsagar waterfall Goa", "Dudhsagar jeep safari", "Goa waterfall tour", "Dudhsagar full day trip"],
   openGraph: {
-    title: "Dudhsagar Waterfall Trip | EzyGoa Taxi",
+    title: "Dudhsagar Waterfall Trip | ZipGoa Taxi",
     description: "India's 4th tallest waterfall. Full-day trip with jeep safari from Goa. From ₹3,500.",
   },
 };

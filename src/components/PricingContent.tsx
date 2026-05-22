@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { ArrowRight, Info } from "lucide-react";
@@ -313,7 +313,7 @@ export default function PricingContent() {
                     </thead>
                     <tbody>
                       {vehicles.map((v) => {
-                        const waMsg = `Hi EzyGoa! 🙏\n\nI want to rent *${v.name}*.\n\nPlease share price and availability for my dates.`;
+                        const waMsg = `Hi ZipGoa! 🙏\n\nI want to rent *${v.name}*.\n\nPlease share price and availability for my dates.`;
                         const waUrl = `https://wa.me/917026889254?text=${encodeURIComponent(waMsg)}`;
                         return (
                           <tr key={v.id} className="border-t border-border hover:bg-secondary/20 transition-colors">

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react";
 import { BUSINESS, buildWhatsAppUrl } from "@/lib/constants";
@@ -15,7 +15,7 @@ export default function Footer() {
             <div className="mb-4">
               <Image
                 src="/logo/logo-white.png"
-                alt="EzyGoa Taxi Services"
+                alt="ZipGoa Taxi Services"
                 width={200}
                 height={70}
                 className="h-14 w-auto"

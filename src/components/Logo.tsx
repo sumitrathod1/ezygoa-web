@@ -1,4 +1,4 @@
-interface LogoProps {
+﻿interface LogoProps {
   variant?: "full" | "icon";
   size?: "sm" | "md" | "lg" | "xl";
   color?: "dark" | "light";
@@ -26,18 +26,18 @@ function IconParts({ id }: { id: string }) {
   return (
     <>
       <defs>
-        <linearGradient id={`ezyBg-${id}`} x1="0%" y1="0%" x2="100%" y2="100%">
+        <linearGradient id={`zipBg-${id}`} x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#1a365d" />
           <stop offset="100%" stopColor="#2c5282" />
         </linearGradient>
-        <clipPath id={`ezyClip-${id}`}>
+        <clipPath id={`zipClip-${id}`}>
           <circle cx="36" cy="36" r="33" />
         </clipPath>
       </defs>
 
-      <g clipPath={`url(#ezyClip-${id})`}>
+      <g clipPath={`url(#zipClip-${id})`}>
         {/* Ocean blue circle background */}
-        <circle cx="36" cy="36" r="36" fill={`url(#ezyBg-${id})`} />
+        <circle cx="36" cy="36" r="36" fill={`url(#zipBg-${id})`} />
 
         {/* Subtle wave fill at bottom */}
         <path
@@ -102,7 +102,7 @@ export function Logo({
   const viewBox = isIcon ? "0 0 72 72" : "0 0 260 72";
   const isLight = color === "light";
 
-  const ezyColor = isLight ? "white" : "#1a365d";
+  const brandColor = isLight ? "white" : "#1a365d";
   const subColor = isLight ? "rgba(255,255,255,0.55)" : "#718096";
 
   return (
@@ -112,7 +112,7 @@ export function Logo({
       viewBox={viewBox}
       xmlns="http://www.w3.org/2000/svg"
       className={className}
-      aria-label={isIcon ? "EzyGoa" : "EzyGoa Taxi Services"}
+      aria-label={isIcon ? "ZipGoa" : "ZipGoa Taxi Services"}
       role="img"
     >
       <IconParts id={isIcon ? "ico" : "full"} />
@@ -126,10 +126,10 @@ export function Logo({
             fontSize="28"
             fontWeight="800"
             fontFamily="'Poppins', 'Inter', sans-serif"
-            fill={ezyColor}
+            fill={brandColor}
             letterSpacing="-0.5"
           >
-            Ezy
+            Zip
             <tspan fill="#f6ad55">Goa</tspan>
           </text>
 

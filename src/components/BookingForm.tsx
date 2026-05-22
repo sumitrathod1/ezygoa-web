@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useMemo } from "react";
 import { MessageCircle, ArrowRight, User, Phone, Mail, FileText } from "lucide-react";
@@ -104,7 +104,7 @@ export default function BookingForm() {
 
   const buildMessage = () => {
     const lines = [
-      `Hello EzyGoa! 👋`,
+      `Hello ZipGoa! 👋`,
       ``,
       `📋 BOOKING REQUEST`,
       `─────────────────`,

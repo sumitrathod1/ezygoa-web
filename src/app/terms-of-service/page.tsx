@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | EzyGoa Taxi Services",
+  title: "Terms of Service | ZipGoa Taxi Services",
   description:
-    "Terms and conditions for using EzyGoa Taxi Services in Goa — taxi booking, car rental, airport transfers, and sightseeing tours.",
+    "Terms and conditions for using ZipGoa Taxi Services in Goa — taxi booking, car rental, airport transfers, and sightseeing tours.",
   robots: { index: true, follow: true },
 };
 
@@ -50,7 +50,7 @@ export default function TermsOfServicePage() {
 
           {/* Meta info */}
           <div className="bg-secondary/50 rounded-2xl p-5 mb-10 flex flex-wrap gap-6 text-sm text-muted-foreground">
-            <div><span className="font-semibold text-foreground">Business:</span> EzyGoa Taxi Services</div>
+            <div><span className="font-semibold text-foreground">Business:</span> ZipGoa Taxi Services</div>
             <div><span className="font-semibold text-foreground">Last Updated:</span> {LAST_UPDATED}</div>
             <div><span className="font-semibold text-foreground">Jurisdiction:</span> Goa, India</div>
           </div>
@@ -59,7 +59,7 @@ export default function TermsOfServicePage() {
 
             <Section id="acceptance" title="1. Acceptance of Terms">
               <p>
-                By accessing <strong>ezygoataxiservices.in</strong> or using any of our taxi, car rental, or
+                By accessing <strong>zipgoataxiservices.in</strong> or using any of our taxi, car rental, or
                 sightseeing services, you agree to be bound by these Terms of Service and our{" "}
                 <Link href="/privacy-policy" className="underline" style={{ color: "var(--brand-primary)" }}>
                   Privacy Policy
@@ -69,7 +69,7 @@ export default function TermsOfServicePage() {
             </Section>
 
             <Section id="services" title="2. Services Offered">
-              <p>EzyGoa Taxi Services provides:</p>
+              <p>ZipGoa Taxi Services provides:</p>
               <Ul items={[
                 "Local taxi booking across Goa",
                 "Airport transfers — Dabolim (GOI) & Mopa (GOX)",
@@ -236,7 +236,7 @@ export default function TermsOfServicePage() {
             <Section id="ip" title="12. Intellectual Property">
               <p>
                 All content on this website — including logos, text, images, and design — is the exclusive property
-                of EzyGoa Taxi Services. Unauthorised reproduction or use is strictly prohibited.
+                of ZipGoa Taxi Services. Unauthorised reproduction or use is strictly prohibited.
               </p>
             </Section>
 
@@ -270,7 +270,7 @@ export default function TermsOfServicePage() {
                 className="rounded-2xl p-6 space-y-1.5 text-sm"
                 style={{ background: "oklch(0.265 0.078 254 / 0.06)" }}
               >
-                <p className="font-bold text-foreground text-base">EzyGoa Taxi Services</p>
+                <p className="font-bold text-foreground text-base">ZipGoa Taxi Services</p>
                 <p>Owner: Sumit Rathod</p>
                 <p>Parra, North Goa, 403510, India</p>
                 <p>

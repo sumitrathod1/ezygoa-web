@@ -1,4 +1,4 @@
-const features = [
+﻿const features = [
   {
     emoji: "✅",
     title: "Transparent Pricing",
@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
         {/* Header */}
         <div className="text-center mb-12">
           <p className="text-sm font-semibold tracking-widest uppercase mb-2" style={{ color: "var(--brand-accent)" }}>
-            Why EzyGoa
+            Why ZipGoa
           </p>
           <h2
             className="text-3xl sm:text-4xl font-bold mb-3"
@@ -53,7 +53,7 @@ export default function WhyChooseUs() {
             Why Choose Us?
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Over 10,000 happy customers trust EzyGoa for their travels across Goa.
+            Over 10,000 happy customers trust ZipGoa for their travels across Goa.
             Here&apos;s what makes us different.
           </p>
         </div>

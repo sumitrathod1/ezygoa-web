@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,9 +7,9 @@ import CallButton from "@/components/CallButton";
 import { blogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
-  title: "Goa Travel Blog & Guides 2026 | EzyGoa",
+  title: "Goa Travel Blog & Guides 2026 | ZipGoa",
   description:
-    "Expert Goa travel guides, taxi tips, beach guides, and trip planning advice from EzyGoa — your trusted Goa taxi service.",
+    "Expert Goa travel guides, taxi tips, beach guides, and trip planning advice from ZipGoa — your trusted Goa taxi service.",
   keywords: [
     "Goa travel blog",
     "Goa travel guide",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Goa trip planning",
   ],
   openGraph: {
-    title: "Goa Travel Blog & Guides | EzyGoa",
+    title: "Goa Travel Blog & Guides | ZipGoa",
     description: "Expert travel guides for Goa — beaches, heritage, waterfalls, taxi rates and more.",
     type: "website",
   },
@@ -205,7 +205,7 @@ export default function BlogIndexPage() {
             <div className="text-4xl mb-3">🚕</div>
             <h3 className="text-2xl font-bold mb-2">Ready to Explore Goa?</h3>
             <p className="text-white/80 mb-6">
-              Book a taxi with EzyGoa and discover every corner of Goa comfortably and affordably.
+              Book a taxi with ZipGoa and discover every corner of Goa comfortably and affordably.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

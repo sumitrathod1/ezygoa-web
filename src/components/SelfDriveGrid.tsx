@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useMemo } from "react";
 import type { SelfDriveVehicle } from "@/types";
@@ -299,7 +299,7 @@ export default function SelfDriveGrid({ vehicles }: Props) {
                     {compareList.map((v) => (
                       <td key={v.id} className="px-6 py-4 text-center">
                         <a
-                          href={`https://wa.me/917026889254?text=${encodeURIComponent(`Hi EzyGoa! I want to rent *${v.name}*. Please share availability.`)}`}
+                          href={`https://wa.me/917026889254?text=${encodeURIComponent(`Hi ZipGoa! I want to rent *${v.name}*. Please share availability.`)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-block px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90"

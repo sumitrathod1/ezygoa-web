@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MapPin, Clock, CheckCircle, Car } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,7 +20,7 @@ export async function generateMetadata({
   const loc = locations.find((l) => l.id === id);
   if (!loc) return { title: "Not Found" };
   return {
-    title: `Taxi in ${loc.name} | Best ${loc.name} Cab Service | EzyGoa`,
+    title: `Taxi in ${loc.name} | Best ${loc.name} Cab Service | ZipGoa`,
     description: `Book reliable taxi in ${loc.name}, Goa. Airport transfers, sightseeing tours, local trips. Best rates — Dzire from ₹${loc.routes[0]?.prices.dzire ?? 300}. Instant WhatsApp booking.`,
     keywords: [
       `taxi ${loc.name} Goa`,
@@ -28,10 +28,10 @@ export async function generateMetadata({
       `${loc.name} to airport taxi`,
       `taxi from ${loc.name}`,
       `${loc.name} sightseeing taxi`,
-      "EzyGoa taxi",
+      "ZipGoa taxi",
     ],
     openGraph: {
-      title: `Taxi Service in ${loc.name} | EzyGoa Goa`,
+      title: `Taxi Service in ${loc.name} | ZipGoa Goa`,
       description: `Reliable taxi in ${loc.name}. ${loc.shortDesc} Instant booking, fixed rates.`,
     },
   };
@@ -243,7 +243,7 @@ export default async function LocationPage({
 
               <div className="rounded-2xl p-6" style={{ background: "var(--brand-primary)" }}>
                 <h3 className="font-bold text-white mb-2" style={{ fontFamily: "var(--font-poppins)" }}>
-                  Why Book Taxi in {loc.name} with EzyGoa?
+                  Why Book Taxi in {loc.name} with ZipGoa?
                 </h3>
                 <ul className="space-y-2 mt-3">
                   {[

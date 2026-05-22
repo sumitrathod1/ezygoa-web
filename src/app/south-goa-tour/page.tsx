@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { CheckCircle, XCircle } from "lucide-react";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
@@ -6,12 +6,12 @@ import CTASection from "@/components/CTASection";
 import { BookingButton } from "@/components/BookingButton";
 
 export const metadata: Metadata = {
-  title: "South Goa Sightseeing Tour | Full Day | EzyGoa Taxi",
+  title: "South Goa Sightseeing Tour | Full Day | ZipGoa Taxi",
   description:
-    "Explore South Goa's serene beaches, Old Goa churches, Mangueshi Temple, and spice plantations in a full-day tour. Book with EzyGoa — from ₹3,000.",
+    "Explore South Goa's serene beaches, Old Goa churches, Mangueshi Temple, and spice plantations in a full-day tour. Book with ZipGoa — from ₹3,000.",
   keywords: ["South Goa tour", "Old Goa churches", "Colva beach tour", "South Goa sightseeing", "Margao taxi"],
   openGraph: {
-    title: "South Goa Full Day Sightseeing Tour | EzyGoa",
+    title: "South Goa Full Day Sightseeing Tour | ZipGoa",
     description: "Old Goa, Colva, Mangueshi Temple, Palolem. Full-day South Goa tour. From ₹3,000.",
   },
 };

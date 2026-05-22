@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Users, Briefcase, Zap, Fuel } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { vehicles, selfDriveVehicles } from "@/lib/data";
@@ -64,7 +64,7 @@ function TaxiCard({ v }: { v: Vehicle }) {
 }
 
 function SelfDriveCard({ v }: { v: SelfDriveVehicle }) {
-  const waMsg = `Hi EzyGoa! 🙏\n\nI want to rent *${v.name}*.\n\nPlease share price and availability for my dates.`;
+  const waMsg = `Hi ZipGoa! 🙏\n\nI want to rent *${v.name}*.\n\nPlease share price and availability for my dates.`;
   const waUrl = `https://wa.me/917026889254?text=${encodeURIComponent(waMsg)}`;
 
   return (

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { MapPin, Car, Clock, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageWrapper from "@/components/PageWrapper";
@@ -8,12 +8,12 @@ import { buildWhatsAppUrl } from "@/lib/constants";
 import { BookingButton } from "@/components/BookingButton";
 
 export const metadata: Metadata = {
-  title: "Outstation Taxi from Goa | Mumbai, Pune, Bangalore | EzyGoa",
+  title: "Outstation Taxi from Goa | Mumbai, Pune, Bangalore | ZipGoa",
   description:
     "Outstation cab service from Goa. Travel to Mumbai, Pune, Bangalore, Hampi, Gokarna, Mangalore. Comfortable AC vehicles, experienced drivers, fixed rates.",
   keywords: ["outstation taxi Goa", "Goa to Mumbai taxi", "Goa to Pune taxi", "Goa to Bangalore", "outstation cab Goa"],
   openGraph: {
-    title: "Outstation Taxi from Goa | EzyGoa",
+    title: "Outstation Taxi from Goa | ZipGoa",
     description: "Goa to Mumbai, Pune, Bangalore, Hampi, Gokarna — comfortable outstation cab service.",
   },
 };
@@ -179,7 +179,7 @@ export default function OutstationPage() {
 
               <div className="bg-white rounded-2xl border border-border shadow-sm p-5">
                 <h3 className="font-bold text-sm mb-3" style={{ fontFamily: "var(--font-poppins)", color: "var(--brand-primary)" }}>
-                  Why Book Outstation with EzyGoa?
+                  Why Book Outstation with ZipGoa?
                 </h3>
                 <ul className="space-y-2">
                   {[

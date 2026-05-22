@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Phone, Mail, MapPin, MessageCircle, Clock } from "lucide-react";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
@@ -6,12 +6,12 @@ import ContactForm from "@/components/ContactForm";
 import { BUSINESS, buildWhatsAppUrl } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Contact Us | EzyGoa Taxi Services Goa",
+  title: "Contact Us | ZipGoa Taxi Services Goa",
   description:
-    "Get in touch with EzyGoa Taxi Services. Call, WhatsApp, or email us anytime. 24/7 support. Parra, North Goa.",
-  keywords: ["EzyGoa contact", "taxi Goa phone", "book taxi Goa", "Goa taxi WhatsApp"],
+    "Get in touch with ZipGoa Taxi Services. Call, WhatsApp, or email us anytime. 24/7 support. Parra, North Goa.",
+  keywords: ["ZipGoa contact", "taxi Goa phone", "book taxi Goa", "Goa taxi WhatsApp"],
   openGraph: {
-    title: "Contact EzyGoa Taxi Services",
+    title: "Contact ZipGoa Taxi Services",
     description: "Call or WhatsApp us 24/7 to book your Goa taxi or rental car.",
   },
 };

@@ -1,5 +1,5 @@
-export const BUSINESS = {
-  name: "EzyGoa Taxi Services",
+﻿export const BUSINESS = {
+  name: "ZipGoa Taxi Services",
   phone: "+917026889254",
   phoneDisplay: "+91 7026889254",
   whatsapp: "917026889254",
@@ -24,10 +24,10 @@ export function buildWhatsAppUrl(params?: {
   passengers?: string;
 }) {
   if (!params) {
-    const msg = `Hi! I want to book a taxi from EzyGoa 🚕`;
+    const msg = `Hi! I want to book a taxi from ZipGoa 🚕`;
     return `${WHATSAPP_BASE}?text=${encodeURIComponent(msg)}`;
   }
-  const msg = `Hello EzyGoa! 👋
+  const msg = `Hello ZipGoa! 👋
 
 I want to book a taxi:
 Service: ${params.service || "—"}
@@ -76,9 +76,9 @@ export const NAV_LINKS = [
 ] as const;
 
 export const SOCIAL_LINKS = {
-  instagram: "https://instagram.com/ezygoa",
-  facebook: "https://facebook.com/ezygoa",
-  twitter: "https://twitter.com/ezygoa",
+  instagram: "https://instagram.com/zipgoa",
+  facebook: "https://facebook.com/zipgoa",
+  twitter: "https://twitter.com/zipgoa",
 } as const;
 
 export const TRUST_BADGES = [

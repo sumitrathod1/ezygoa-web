@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { trackWhatsAppClick } from "@/lib/analytics";
@@ -6,10 +6,10 @@ import { trackWhatsAppClick } from "@/lib/analytics";
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP ?? "917026889254";
 
 const quickActions = [
-  { label: "Book Airport Taxi", emoji: "✈️", message: "Hi EzyGoa! I need an airport taxi booking." },
-  { label: "Goa Sightseeing", emoji: "🏖️", message: "Hi EzyGoa! I'm interested in a Goa sightseeing tour." },
-  { label: "Self Drive Car", emoji: "🚗", message: "Hi EzyGoa! I'd like to rent a self-drive car." },
-  { label: "Get a Quote", emoji: "💰", message: "Hi EzyGoa! Can I get a price quote for my trip?" },
+  { label: "Book Airport Taxi", emoji: "✈️", message: "Hi ZipGoa! I need an airport taxi booking." },
+  { label: "Goa Sightseeing", emoji: "🏖️", message: "Hi ZipGoa! I'm interested in a Goa sightseeing tour." },
+  { label: "Self Drive Car", emoji: "🚗", message: "Hi ZipGoa! I'd like to rent a self-drive car." },
+  { label: "Get a Quote", emoji: "💰", message: "Hi ZipGoa! Can I get a price quote for my trip?" },
 ];
 
 export default function WhatsAppWidget() {
@@ -34,7 +34,7 @@ export default function WhatsAppWidget() {
                 🚕
               </div>
               <div>
-                <div className="font-bold text-sm">EzyGoa Taxi</div>
+                <div className="font-bold text-sm">ZipGoa Taxi</div>
                 <div className="text-xs text-white/80 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 bg-white rounded-full inline-block" />
                   Typically replies instantly
@@ -61,7 +61,7 @@ export default function WhatsAppWidget() {
             </div>
             <button
               onClick={() =>
-                openChat("Hi EzyGoa! I'd like to get in touch.", "open_chat")
+                openChat("Hi ZipGoa! I'd like to get in touch.", "open_chat")
               }
               className="w-full mt-3 py-2.5 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90"
               style={{ background: "#25d366" }}

@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | EzyGoa Taxi Services",
+  title: "Privacy Policy | ZipGoa Taxi Services",
   description:
-    "Privacy Policy for EzyGoa Taxi Services. Learn how we collect, use, and protect your personal information when you book a taxi or car rental in Goa.",
+    "Privacy Policy for ZipGoa Taxi Services. Learn how we collect, use, and protect your personal information when you book a taxi or car rental in Goa.",
   robots: { index: true, follow: true },
 };
 
@@ -50,21 +50,21 @@ export default function PrivacyPolicyPage() {
 
           {/* Meta info */}
           <div className="bg-secondary/50 rounded-2xl p-5 mb-10 flex flex-wrap gap-6 text-sm text-muted-foreground">
-            <div><span className="font-semibold text-foreground">Business:</span> EzyGoa Taxi Services</div>
+            <div><span className="font-semibold text-foreground">Business:</span> ZipGoa Taxi Services</div>
             <div><span className="font-semibold text-foreground">Last Updated:</span> {LAST_UPDATED}</div>
-            <div><span className="font-semibold text-foreground">Applies to:</span> ezygoataxiservices.in</div>
+            <div><span className="font-semibold text-foreground">Applies to:</span> zipgoataxiservices.in</div>
           </div>
 
           <div className="space-y-10">
 
             <Section id="introduction" title="1. Introduction">
               <p>
-                Welcome to EzyGoa Taxi Services ("we," "our," or "us"), operated by Sumit Rathod from Parra, North Goa,
+                Welcome to ZipGoa Taxi Services ("we," "our," or "us"), operated by Sumit Rathod from Parra, North Goa,
                 India. We are committed to protecting your personal information and your right to privacy.
               </p>
               <p>
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you
-                visit our website <strong>ezygoataxiservices.in</strong> or use our taxi booking, car rental, and
+                visit our website <strong>zipgoataxiservices.in</strong> or use our taxi booking, car rental, and
                 sightseeing services. Please read it carefully.
               </p>
             </Section>
@@ -249,7 +249,7 @@ export default function PrivacyPolicyPage() {
                 className="rounded-2xl p-6 mt-3 space-y-1.5 text-sm"
                 style={{ background: "oklch(0.265 0.078 254 / 0.06)" }}
               >
-                <p className="font-bold text-foreground text-base">EzyGoa Taxi Services</p>
+                <p className="font-bold text-foreground text-base">ZipGoa Taxi Services</p>
                 <p>Owner: Sumit Rathod</p>
                 <p>Parra, North Goa, 403510, India</p>
                 <p>

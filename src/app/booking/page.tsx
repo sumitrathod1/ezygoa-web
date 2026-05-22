@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 import BookingForm from "@/components/BookingForm";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Book a Taxi in Goa | Instant WhatsApp Booking | EzyGoa",
+  title: "Book a Taxi in Goa | Instant WhatsApp Booking | ZipGoa",
   description:
     "Book a taxi in Goa instantly via WhatsApp. Airport pickup, full-day tours, outstation trips, self-drive rentals. Select your service, vehicle, and get confirmed in 5 minutes.",
-  keywords: ["book taxi Goa", "Goa taxi booking", "EzyGoa booking", "airport taxi Goa book", "WhatsApp taxi Goa"],
+  keywords: ["book taxi Goa", "Goa taxi booking", "ZipGoa booking", "airport taxi Goa book", "WhatsApp taxi Goa"],
   openGraph: {
-    title: "Book Your Goa Taxi | EzyGoa",
+    title: "Book Your Goa Taxi | ZipGoa",
     description: "Instant taxi booking via WhatsApp. Airport transfers, tours, outstation, self-drive. Confirmed in 5 minutes.",
   },
 };

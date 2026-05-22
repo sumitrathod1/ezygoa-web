@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MessageCircle, Phone, CheckCircle, Car } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -22,7 +22,7 @@ export async function generateMetadata({
   const v = vehicles.find((v) => v.id === id && v.category === "taxi");
   if (!v) return { title: "Not Found" };
   return {
-    title: `${v.name} Taxi Goa | Book Online | EzyGoa`,
+    title: `${v.name} Taxi Goa | Book Online | ZipGoa`,
     description: `Book ${v.name} taxi in Goa. ${v.tagline}. ₹${v.pricePerKm}/km, 8hr/80km ₹${v.packages?.["8hr80km"]?.toLocaleString()}, airport transfers from ₹${v.airportRates?.mopa?.toLocaleString()}. Instant WhatsApp booking.`,
     keywords: [
       `${v.name} taxi Goa`,
@@ -30,10 +30,10 @@ export async function generateMetadata({
       `book ${v.name} Goa`,
       `${v.name} airport transfer Goa`,
       `${v.type} taxi Goa`,
-      "EzyGoa",
+      "ZipGoa",
     ],
     openGraph: {
-      title: `${v.name} Taxi in Goa | EzyGoa`,
+      title: `${v.name} Taxi in Goa | ZipGoa`,
       description: `${v.tagline}. ₹${v.pricePerKm}/km. Instant booking via WhatsApp.`,
     },
   };
@@ -379,10 +379,10 @@ export default async function TaxiVehiclePage({
                 </div>
               )}
 
-              {/* Why EzyGoa */}
+              {/* Why ZipGoa */}
               <div className="bg-white rounded-2xl border border-border shadow-sm p-5">
                 <h3 className="font-bold text-sm mb-3" style={{ fontFamily: "var(--font-poppins)", color: "var(--brand-primary)" }}>
-                  Why Book with EzyGoa?
+                  Why Book with ZipGoa?
                 </h3>
                 <ul className="space-y-2">
                   {[

@@ -1,7 +1,7 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 import { vehicles, locations } from "@/lib/data";
 
-const BASE_URL = "https://www.ezygoa.in";
+const BASE_URL = "https://zipgoa.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

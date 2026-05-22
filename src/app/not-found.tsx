@@ -1,9 +1,9 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Page Not Found | EzyGoa Taxi",
-  description: "The page you're looking for doesn't exist. Browse EzyGoa's taxi services.",
+  title: "Page Not Found | ZipGoa Taxi",
+  description: "The page you're looking for doesn't exist. Browse ZipGoa's taxi services.",
 };
 
 const quickLinks = [
@@ -36,7 +36,7 @@ export default function NotFound() {
           Lost on the road?
         </h1>
         <p className="text-gray-500 mb-8">
-          This page doesn&apos;t exist. But don&apos;t worry — let EzyGoa get you where you need to go!
+          This page doesn&apos;t exist. But don&apos;t worry — let ZipGoa get you where you need to go!
         </p>
 
         {/* Quick links */}

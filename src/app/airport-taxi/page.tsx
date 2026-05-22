@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Plane, Clock, Bell, Shield, Users } from "lucide-react";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
@@ -6,12 +6,12 @@ import CTASection from "@/components/CTASection";
 import { BookingButton } from "@/components/BookingButton";
 
 export const metadata: Metadata = {
-  title: "Airport Taxi Goa | Mopa & Dabolim Airport Transfer | EzyGoa",
+  title: "Airport Taxi Goa | Mopa & Dabolim Airport Transfer | ZipGoa",
   description:
     "Reliable airport taxi in Goa. Pickup and drop service from Mopa (GOX) and Dabolim (GOI) airports. Flight tracking, no waiting charges. Book now!",
   keywords: ["Mopa airport taxi", "Dabolim airport taxi", "Goa airport transfer", "GOX taxi", "GOI taxi Goa"],
   openGraph: {
-    title: "Airport Taxi Goa | EzyGoa",
+    title: "Airport Taxi Goa | ZipGoa",
     description: "Reliable airport transfers from Mopa & Dabolim. Flight tracking included. Book now!",
   },
 };

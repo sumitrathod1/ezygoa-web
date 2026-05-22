@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { MapPin } from "lucide-react";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
@@ -6,13 +6,13 @@ import CTASection from "@/components/CTASection";
 import SightseeingPackages from "@/components/SightseeingPackages";
 
 export const metadata: Metadata = {
-  title: "Goa Sightseeing Tours | North & South Goa | EzyGoa Taxi",
+  title: "Goa Sightseeing Tours | North & South Goa | ZipGoa Taxi",
   description:
-    "Explore Goa's top attractions with EzyGoa sightseeing tours. Beaches, churches, forts, markets, waterfalls. Custom and fixed itinerary tours available.",
+    "Explore Goa's top attractions with ZipGoa sightseeing tours. Beaches, churches, forts, markets, waterfalls. Custom and fixed itinerary tours available.",
   keywords: ["Goa sightseeing", "Goa tour taxi", "North Goa tour", "South Goa tour", "Goa tourist places"],
   openGraph: {
-    title: "Goa Sightseeing Tours | EzyGoa",
-    description: "Explore Goa's best beaches, churches, forts, and waterfalls with EzyGoa tours.",
+    title: "Goa Sightseeing Tours | ZipGoa",
+    description: "Explore Goa's best beaches, churches, forts, and waterfalls with ZipGoa tours.",
   },
 };
 
