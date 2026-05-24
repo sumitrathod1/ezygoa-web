@@ -187,8 +187,8 @@ export default function PrivacyPolicyPage() {
               ]} />
               <p>
                 To exercise any of these rights, email us at{" "}
-                <a href="mailto:ezygoataxiservices@gmail.com" className="underline" style={{ color: "var(--brand-primary)" }}>
-                  ezygoataxiservices@gmail.com
+                <a href="mailto:contact@zipgoa.com" className="underline" style={{ color: "var(--brand-primary)" }}>
+                  contact@zipgoa.com
                 </a>
                 .
               </p>
@@ -266,8 +266,8 @@ export default function PrivacyPolicyPage() {
                 </p>
                 <p>
                   Email:{" "}
-                  <a href="mailto:ezygoataxiservices@gmail.com" className="underline" style={{ color: "var(--brand-primary)" }}>
-                    ezygoataxiservices@gmail.com
+                  <a href="mailto:contact@zipgoa.com" className="underline" style={{ color: "var(--brand-primary)" }}>
+                    contact@zipgoa.com
                   </a>
                 </p>
               </div>

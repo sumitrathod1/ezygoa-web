@@ -53,7 +53,7 @@ const businessSchema = {
   "logo": "https://zipgoa.com/logo/logo.png",
   "image": "https://zipgoa.com/logo/og-image.png",
   "telephone": "+91-7026889254",
-  "email": "ezygoataxiservices@gmail.com",
+  "email": "contact@zipgoa.com",
   "foundingDate": "2015",
   "founder": { "@type": "Person", "name": "Sumit Rathod" },
   "address": {

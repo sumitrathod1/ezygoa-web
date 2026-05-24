@@ -3,7 +3,7 @@
   phone: "+917026889254",
   phoneDisplay: "+91 7026889254",
   whatsapp: "917026889254",
-  email: "ezygoataxiservices@gmail.com",
+  email: "contact@zipgoa.com",
   address: "Parra, North Goa, India",
   hours: "24/7 Service",
   established: "2015",

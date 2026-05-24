@@ -281,8 +281,8 @@ export default function TermsOfServicePage() {
                 </p>
                 <p>
                   Email:{" "}
-                  <a href="mailto:ezygoataxiservices@gmail.com" className="underline" style={{ color: "var(--brand-primary)" }}>
-                    ezygoataxiservices@gmail.com
+                  <a href="mailto:contact@zipgoa.com" className="underline" style={{ color: "var(--brand-primary)" }}>
+                    contact@zipgoa.com
                   </a>
                 </p>
                 <p>Support hours: 24/7</p>
