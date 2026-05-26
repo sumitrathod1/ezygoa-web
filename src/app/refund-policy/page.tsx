@@ -4,13 +4,13 @@ import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Refund & Cancellation Policy | ZipGoa Taxi Services",
+  title: "Refund & Cancellation Policy | ZipGoa",
   description:
-    "Refund and cancellation policy for ZipGoa Taxi Services. Clear terms for taxi bookings, car rentals, and tour packages in Goa.",
+    "Refund and cancellation policy for ZipGoa. Clear terms for taxi bookings, car rentals, and tour packages in Goa.",
   robots: { index: true, follow: true },
 };
 
-const LAST_UPDATED = "17 May 2025";
+const LAST_UPDATED = "25 May 2026";
 
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (

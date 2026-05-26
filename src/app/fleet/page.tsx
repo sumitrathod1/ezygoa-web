@@ -5,13 +5,13 @@ import FleetGrid from "@/components/FleetGrid";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Our Fleet | ZipGoa Taxi Services — Premium Vehicles Goa",
+  title: "Our Fleet | ZipGoa — Premium Vehicles Goa",
   description:
-    "Browse ZipGoa's complete fleet — Dzire, Ertiga, Innova Crysta, Tempo Travellers, Urbania luxury bus, and self-drive cars in Goa. Best rates guaranteed.",
+    "Browse ZipGoa's complete fleet — Dzire, Ertiga, Innova Crysta, Tempo Travellers, Urbania luxury bus, and self-drive cars in Goa. Transparent, fixed pricing.",
   keywords: ["Goa taxi fleet", "Innova Crysta Goa", "Tempo Traveller Goa", "self drive Goa", "Urbania bus Goa"],
   openGraph: {
-    title: "Our Fleet | ZipGoa Taxi Services",
-    description: "Premium taxis and self-drive cars for every need in Goa.",
+    title: "Our Fleet | ZipGoa",
+    description: "Premium taxis and self-drive cars for every need in Goa. Transparent pricing.",
   },
 };
 

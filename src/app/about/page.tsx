@@ -6,21 +6,21 @@ import CTASection from "@/components/CTASection";
 import { BUSINESS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "About Us | ZipGoa Taxi Services — Trusted Since 2015",
+  title: "About Us | ZipGoa — Your Goa Travel Partner",
   description:
-    "Learn about ZipGoa Taxi Services — Goa's trusted taxi and car rental company since 2015. Our story, our values, and our commitment to your comfort.",
-  keywords: ["ZipGoa about", "Goa taxi company", "best taxi company Goa", "ZipGoa story"],
+    "Learn about ZipGoa — your trusted Goa travel partner for taxis, self-drive cars, sightseeing tours, and airport transfers. Our story and our values.",
+  keywords: ["ZipGoa about", "Goa taxi company", "ZipGoa story", "Goa travel partner"],
   openGraph: {
-    title: "About ZipGoa Taxi Services",
-    description: "Goa's trusted taxi and car rental company since 2015.",
+    title: "About ZipGoa",
+    description: "Your trusted Goa travel partner. Taxis, rentals, tours & more.",
   },
 };
 
 const STATS = [
-  { value: "10,000+", label: "Trips Completed", icon: "🚕" },
-  { value: "5,000+", label: "Happy Customers", icon: "😊" },
-  { value: "4.9★", label: "Average Rating", icon: "⭐" },
-  { value: "10+", label: "Fleet Vehicles", icon: "🚌" },
+  { value: "✅", label: "Verified Drivers", icon: "🛡️" },
+  { value: "✅", label: "Trusted Service", icon: "👍" },
+  { value: "✅", label: "Quality Vehicles", icon: "🚗" },
+  { value: "✅", label: "Local Expertise", icon: "📍" },
 ];
 
 const VALUES = [
@@ -49,10 +49,10 @@ export default function AboutPage() {
   return (
     <PageWrapper>
       <PageHero
-        badge={"Est. " + BUSINESS.established}
+        badge="Your Goa Travel Partner"
         title="About"
         titleAccent="ZipGoa"
-        subtitle="We started with one car and a simple belief: every traveller in Goa deserves a comfortable, honest, and reliable taxi experience."
+        subtitle="Taxis, self-drive cars, sightseeing tours & airport transfers — all in one place. We make every Goa journey easy."
         breadcrumbs={[{ label: "About" }]}
       />
 
@@ -65,17 +65,17 @@ export default function AboutPage() {
                 Our Story
               </p>
               <h2 className="text-3xl font-bold mb-5" style={{ fontFamily: "var(--font-poppins)", color: "var(--brand-primary)" }}>
-                From One Car to Goa&apos;s Most Trusted Taxi Service
+                Your Goa Travel Partner
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  ZipGoa Taxi Services was founded in {BUSINESS.established} in Parra, North Goa, with a single Maruti Dzire and a dream: to give tourists and locals the kind of taxi experience they actually deserve.
+                  ZipGoa is rooted in Parra, North Goa, with a simple belief: every traveller in Goa deserves comfortable, reliable, and transparent transport — whether it&apos;s an airport transfer, a day of sightseeing, or a self-drive adventure.
                 </p>
                 <p>
-                  What started as solo rides to Mopa Airport quickly grew through word-of-mouth into a full fleet operation covering all of Goa — from Arambol in the north to Palolem in the south, and outstation trips across the Konkan coast.
+                  We cover all of Goa — from Arambol in the north to Palolem in the south — and offer outstation trips across the Konkan coast. Our fleet spans compact sedans, spacious SUVs, Tempo Travellers, and self-drive cars.
                 </p>
                 <p>
-                  Today, we operate 10+ vehicles, from compact sedans to luxury buses, and have served over 10,000 happy travellers. Every trip we take is a reflection of our commitment to punctuality, transparency, and genuine Goa hospitality.
+                  Every trip reflects our commitment to punctuality, transparent pricing, and genuine Goa hospitality. No hidden charges. No surprises.
                 </p>
                 <p>
                   <strong style={{ color: "var(--brand-primary)" }}>Our mission:</strong> Make every journey in Goa easy, comfortable, and memorable — so you can focus on the incredible destination, not the logistics.

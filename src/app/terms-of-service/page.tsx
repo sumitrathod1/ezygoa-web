@@ -4,13 +4,13 @@ import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | ZipGoa Taxi Services",
+  title: "Terms of Service | ZipGoa",
   description:
-    "Terms and conditions for using ZipGoa Taxi Services in Goa — taxi booking, car rental, airport transfers, and sightseeing tours.",
+    "Terms and conditions for using ZipGoa in Goa — taxi booking, car rental, airport transfers, sightseeing tours, and adventure trips.",
   robots: { index: true, follow: true },
 };
 
-const LAST_UPDATED = "17 May 2025";
+const LAST_UPDATED = "25 May 2026";
 
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
@@ -59,7 +59,7 @@ export default function TermsOfServicePage() {
 
             <Section id="acceptance" title="1. Acceptance of Terms">
               <p>
-                By accessing <strong>zipgoataxiservices.in</strong> or using any of our taxi, car rental, or
+                By accessing <strong>zipgoa.com</strong> or using any of our taxi, car rental, or
                 sightseeing services, you agree to be bound by these Terms of Service and our{" "}
                 <Link href="/privacy-policy" className="underline" style={{ color: "var(--brand-primary)" }}>
                   Privacy Policy

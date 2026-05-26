@@ -20,8 +20,8 @@ export async function generateMetadata({
   const loc = locations.find((l) => l.id === id);
   if (!loc) return { title: "Not Found" };
   return {
-    title: `Taxi in ${loc.name} | Best ${loc.name} Cab Service | ZipGoa`,
-    description: `Book reliable taxi in ${loc.name}, Goa. Airport transfers, sightseeing tours, local trips. Best rates — Dzire from ₹${loc.routes[0]?.prices.dzire ?? 300}. Instant WhatsApp booking.`,
+    title: `Taxi in ${loc.name}, Goa | ZipGoa`,
+    description: `Book a reliable taxi in ${loc.name}, Goa. Airport transfers, sightseeing tours, local trips. Dzire from ₹${loc.routes[0]?.prices.dzire ?? 300}. Book via WhatsApp.`,
     keywords: [
       `taxi ${loc.name} Goa`,
       `cab service ${loc.name}`,

@@ -51,17 +51,17 @@ export default function Hero() {
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5"
             style={{ fontFamily: "var(--font-poppins)" }}
           >
-            Goa&apos;s Most{" "}
-            <span style={{ color: "var(--brand-accent)" }}>Trusted</span>
+            Your Complete{" "}
+            <span style={{ color: "var(--brand-accent)" }}>Goa</span>
             <br />
-            Taxi Service
+            Travel Partner
           </h1>
 
           {/* Subheading */}
           <p className="text-white/80 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl">
-            Premium fleet, transparent pricing, 24/7 service. Book your ride
-            in&nbsp;30 seconds — airport transfers, sightseeing, self-drive cars
-            &amp; more.
+            From airport transfers to self-drive cars, sightseeing tours to
+            adventure trips — we make every Goa experience seamless.
+            Book via WhatsApp in 30 seconds.
           </p>
 
           {/* CTA Buttons */}

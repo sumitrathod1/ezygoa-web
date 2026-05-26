@@ -1,5 +1,5 @@
 ﻿export const BUSINESS = {
-  name: "ZipGoa Taxi Services",
+  name: "ZipGoa",
   phone: "+917026889254",
   phoneDisplay: "+91 7026889254",
   whatsapp: "917026889254",
@@ -24,12 +24,12 @@ export function buildWhatsAppUrl(params?: {
   passengers?: string;
 }) {
   if (!params) {
-    const msg = `Hi! I want to book a taxi from ZipGoa 🚕`;
+    const msg = `Hi ZipGoa! 👋 I'd like to book a trip in Goa.`;
     return `${WHATSAPP_BASE}?text=${encodeURIComponent(msg)}`;
   }
   const msg = `Hello ZipGoa! 👋
 
-I want to book a taxi:
+I'd like to book a trip:
 Service: ${params.service || "—"}
 Vehicle: ${params.vehicle || "—"}
 From: ${params.from || "—"}
@@ -38,7 +38,7 @@ Date: ${params.date || "—"}
 Time: ${params.time || "—"}
 Passengers: ${params.passengers || "—"}
 
-Please confirm and share rates.`;
+Please confirm availability and share the rate.`;
   return `${WHATSAPP_BASE}?text=${encodeURIComponent(msg)}`;
 }
 
@@ -82,8 +82,8 @@ export const SOCIAL_LINKS = {
 } as const;
 
 export const TRUST_BADGES = [
-  { icon: "⭐", label: "4.9/5 Rating" },
-  { icon: "🚕", label: "10,000+ Trips" },
-  { icon: "👥", label: "5,000+ Happy Customers" },
+  { icon: "✅", label: "Trusted Service" },
+  { icon: "🚗", label: "Premium Fleet" },
   { icon: "🛡️", label: "Verified Drivers" },
+  { icon: "📱", label: "Easy Booking" },
 ] as const;

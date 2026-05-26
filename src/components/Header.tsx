@@ -33,10 +33,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center hover:opacity-90 transition-opacity" aria-label="ZipGoa Taxi Services - Home">
+          <Link href="/" className="flex items-center hover:opacity-90 transition-opacity" aria-label="ZipGoa - Home">
             <Image
               src={scrolled ? "/logo/logo.png" : "/logo/logo-white.png"}
-              alt="ZipGoa Taxi Services - Quick. Reliable. Trusted."
+              alt="ZipGoa - Your Goa, Made Easy"
               width={180}
               height={60}
               priority

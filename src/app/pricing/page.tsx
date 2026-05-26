@@ -5,7 +5,7 @@ import PricingContent from "@/components/PricingContent";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Taxi Pricing Goa | Transparent Rates | ZipGoa Taxi Services",
+  title: "Taxi & Rental Pricing Goa | Transparent Rates | ZipGoa",
   description:
     "Clear, upfront taxi pricing in Goa. Per km rates, hourly packages, airport fares, and self-drive rates. No hidden charges. ZipGoa promises transparent pricing.",
   keywords: ["Goa taxi rates", "taxi price Goa", "Innova fare Goa", "taxi package Goa", "per km taxi Goa"],

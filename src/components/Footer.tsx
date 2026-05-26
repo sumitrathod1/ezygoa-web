@@ -15,15 +15,15 @@ export default function Footer() {
             <div className="mb-4">
               <Image
                 src="/logo/logo-white.png"
-                alt="ZipGoa Taxi Services"
+                alt="ZipGoa"
                 width={200}
                 height={70}
                 className="h-14 w-auto"
               />
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-5">
-              Goa&apos;s most trusted taxi and car rental service since {BUSINESS.established}.
-              Premium fleet, transparent pricing, 24/7 availability.
+              Your trusted Goa travel partner. Taxis, rentals, tours &amp; adventures.
+              Transparent pricing, 24/7 availability.
             </p>
             {/* Social */}
             {/* <div className="flex gap-3">

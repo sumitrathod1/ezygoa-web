@@ -74,7 +74,7 @@ export default async function BlogPostPage({
     datePublished: post.publishedDate,
     publisher: {
       "@type": "Organization",
-      name: "ZipGoa Taxi Services",
+      name: "ZipGoa",
       url: "https://zipgoa.com",
     },
     keywords: post.tags.join(", "),

@@ -160,7 +160,7 @@ export default async function SelfDriveVehiclePage({
       price: v.pricePerDay,
       priceCurrency: "INR",
       availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "ZipGoa Taxi Services" },
+      seller: { "@type": "Organization", name: "ZipGoa" },
     },
   };
 

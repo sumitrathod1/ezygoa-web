@@ -4,13 +4,13 @@ import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | ZipGoa Taxi Services",
+  title: "Privacy Policy | ZipGoa",
   description:
-    "Privacy Policy for ZipGoa Taxi Services. Learn how we collect, use, and protect your personal information when you book a taxi or car rental in Goa.",
+    "Privacy Policy for ZipGoa. Learn how we collect, use, and protect your personal information when you use our Goa taxi, car rental, and tour services.",
   robots: { index: true, follow: true },
 };
 
-const LAST_UPDATED = "17 May 2025";
+const LAST_UPDATED = "25 May 2026";
 
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
@@ -52,7 +52,7 @@ export default function PrivacyPolicyPage() {
           <div className="bg-secondary/50 rounded-2xl p-5 mb-10 flex flex-wrap gap-6 text-sm text-muted-foreground">
             <div><span className="font-semibold text-foreground">Business:</span> ZipGoa Taxi Services</div>
             <div><span className="font-semibold text-foreground">Last Updated:</span> {LAST_UPDATED}</div>
-            <div><span className="font-semibold text-foreground">Applies to:</span> zipgoataxiservices.in</div>
+            <div><span className="font-semibold text-foreground">Applies to:</span> zipgoa.com</div>
           </div>
 
           <div className="space-y-10">
@@ -64,7 +64,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <p>
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you
-                visit our website <strong>zipgoataxiservices.in</strong> or use our taxi booking, car rental, and
+                visit our website <strong>zipgoa.com</strong> or use our taxi booking, car rental, and
                 sightseeing services. Please read it carefully.
               </p>
             </Section>

@@ -12,14 +12,13 @@ const WhyChooseUs     = dynamic(() => import("@/components/WhyChooseUs"),     { 
 const PriceCalculator = dynamic(() => import("@/components/PriceCalculator"), { loading: () => <div className="py-20" /> });
 const PopularRoutes   = dynamic(() => import("@/components/PopularRoutes"),   { loading: () => <div className="py-16" /> });
 const GoaExperiences  = dynamic(() => import("@/components/GoaExperiences"),  { loading: () => <div className="py-16" /> });
-const Reviews         = dynamic(() => import("@/components/Reviews"),         { loading: () => <div className="py-16" /> });
 const FAQ             = dynamic(() => import("@/components/FAQ"),             { loading: () => <div className="py-16" /> });
 
 export const metadata: Metadata = {
   title:
-    "ZipGoa Taxi Service | Best Taxi in Goa | Airport Taxi & Car Rental",
+    "ZipGoa | Goa Taxi, Self-Drive & Tours | Your Goa, Made Easy",
   description:
-    "Goa's most trusted taxi service. Airport transfers from Mopa & Dabolim, sightseeing, self-drive cars. 24/7 service. Best rates. Book now!",
+    "ZipGoa - Your trusted Goa travel partner. Book taxis, self-drive cars, sightseeing tours & airport transfers. Transparent pricing, 24/7 service.",
   keywords: [
     "Goa taxi service",
     "airport taxi Goa",
@@ -33,20 +32,20 @@ export const metadata: Metadata = {
     "taxi Panjim",
   ],
   openGraph: {
-    title: "ZipGoa Taxi Service | Best Taxi in Goa",
+    title: "ZipGoa | Goa Taxi, Self-Drive & Tours",
     description:
-      "Goa's most trusted taxi service. Airport transfers, sightseeing, self-drive cars. 24/7 service.",
+      "Your trusted Goa travel partner. Taxis, self-drive cars, sightseeing tours & airport transfers. Transparent pricing, 24/7 service.",
     type: "website",
     locale: "en_IN",
-    siteName: "ZipGoa Taxi Services",
+    siteName: "ZipGoa",
   },
 };
 
 const businessSchema = {
   "@context": "https://schema.org",
   "@type": "TaxiService",
-  "name": "ZipGoa Taxi Services",
-  "alternateName": "ZipGoa",
+  "name": "ZipGoa",
+  "alternateName": "ZipGoa Taxi Services",
   "description": "Goa's premium taxi and car rental service. Quick bookings, verified drivers, transparent pricing.",
   "slogan": "Quick. Reliable. Trusted.",
   "url": "https://zipgoa.com",
@@ -137,9 +136,6 @@ export default function HomePage() {
 
         {/* Goa Experiences Gallery */}
         <GoaExperiences />
-
-        {/* Customer Reviews Carousel */}
-        <Reviews />
 
         {/* FAQ Accordion */}
         <FAQ />
