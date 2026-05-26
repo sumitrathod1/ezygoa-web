@@ -70,6 +70,7 @@ export const NAV_LINKS = [
       { label: "Adventure — Thar 4x4", href: "/self-drive#adventure" },
     ],
   },
+  { label: "Tempo & Urbania", href: "/tempo-traveller-goa" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
