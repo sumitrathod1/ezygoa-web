@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { X, Calendar, Clock } from "lucide-react";
+import { X, Calendar, Clock, Bus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { buildWhatsAppUrl } from "@/lib/constants";
 
+/* ─── Time slots ─── */
 const TIME_SLOTS = [
   "4:00 AM", "5:00 AM", "6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM",
   "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM",
@@ -13,22 +14,46 @@ const TIME_SLOTS = [
   "10:00 PM", "11:00 PM",
 ];
 
+/* ─── Vehicle options ─── */
+const VEHICLES = [
+  { id: "dzire",    label: "Dzire",         sub: "4 seats",  emoji: "🚖" },
+  { id: "ertiga",   label: "Ertiga",         sub: "6 seats",  emoji: "🚕" },
+  { id: "innova",   label: "Innova Crysta",  sub: "7 seats",  emoji: "🚙" },
+  { id: "tempo-12", label: "Tempo 12",       sub: "12 seats", emoji: "🚐" },
+  { id: "tempo-14", label: "Tempo 14",       sub: "14 seats", emoji: "🚐" },
+  { id: "tempo-20", label: "Tempo 20",       sub: "20 seats", emoji: "🚌" },
+  { id: "urbania",  label: "Urbania 17",     sub: "17 seats · Luxury", emoji: "🚌" },
+];
+
+/* ─── Props ─── */
 interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
   title: string;
   service?: string;
-  vehicle?: string;
+  vehicle?: string;   // if passed, pre-selects and hides the picker
   from?: string;
   to?: string;
 }
 
-export function BookingModal({ isOpen, onClose, title, service, vehicle, from, to }: BookingModalProps) {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [mounted, setMounted] = useState(false);
+export function BookingModal({
+  isOpen,
+  onClose,
+  title,
+  service,
+  vehicle: vehicleProp,
+  from,
+  to,
+}: BookingModalProps) {
+  const [date, setDate]           = useState("");
+  const [time, setTime]           = useState("");
+  const [vehicle, setVehicle]     = useState(vehicleProp ?? "");
+  const [mounted, setMounted]     = useState(false);
 
   useEffect(() => { setMounted(true); }, []);
+
+  // sync if prop changes between opens
+  useEffect(() => { setVehicle(vehicleProp ?? ""); }, [vehicleProp]);
 
   const today = new Date().toISOString().split("T")[0];
 
@@ -38,14 +63,25 @@ export function BookingModal({ isOpen, onClose, title, service, vehicle, from, t
     const formattedDate = d.toLocaleDateString("en-IN", {
       weekday: "long", day: "numeric", month: "long", year: "numeric",
     });
-    const url = buildWhatsAppUrl({ service, vehicle, from, to, date: formattedDate, time: time || "Flexible" });
+    const url = buildWhatsAppUrl({
+      service,
+      vehicle: vehicle || undefined,
+      from,
+      to,
+      date: formattedDate,
+      time: time || "Flexible",
+    });
     window.open(url, "_blank");
     onClose();
     setDate("");
     setTime("");
+    if (!vehicleProp) setVehicle("");
   }
 
   if (!isOpen || !mounted) return null;
+
+  /* ─── whether to show the picker or just a "pre-selected" badge ─── */
+  const showPicker = !vehicleProp;
 
   return createPortal(
     <div
@@ -54,7 +90,7 @@ export function BookingModal({ isOpen, onClose, title, service, vehicle, from, t
     >
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
       <div
-        className="relative bg-white rounded-t-3xl sm:rounded-2xl shadow-2xl w-full sm:max-w-sm p-6 z-10"
+        className="relative bg-white rounded-t-3xl sm:rounded-2xl shadow-2xl w-full sm:max-w-sm p-6 z-10 max-h-[92dvh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Mobile drag handle */}
@@ -72,11 +108,63 @@ export function BookingModal({ isOpen, onClose, title, service, vehicle, from, t
           className="font-bold text-lg mb-0.5"
           style={{ fontFamily: "var(--font-poppins)", color: "var(--brand-primary)" }}
         >
-          Select Date & Time
+          Confirm Your Booking
         </h3>
         <p className="text-xs text-muted-foreground mb-5 line-clamp-1">{title}</p>
 
-        {/* Date picker */}
+        {/* ── Vehicle Section ── */}
+        {showPicker ? (
+          <div className="mb-5">
+            <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2.5">
+              <Bus className="w-3.5 h-3.5" /> Select Vehicle
+              <span className="normal-case font-normal">(optional)</span>
+            </p>
+            <div className="grid grid-cols-2 gap-1.5">
+              {VEHICLES.map((v) => {
+                const selected = vehicle === v.label;
+                return (
+                  <button
+                    key={v.id}
+                    type="button"
+                    onClick={() => setVehicle(selected ? "" : v.label)}
+                    className="flex items-center gap-2 px-3 py-2.5 rounded-xl border text-left transition-all"
+                    style={
+                      selected
+                        ? { background: "var(--brand-primary)", borderColor: "var(--brand-primary)", color: "white" }
+                        : { borderColor: "var(--border)", color: "var(--foreground)" }
+                    }
+                  >
+                    <span className="text-lg leading-none">{v.emoji}</span>
+                    <span>
+                      <span className="block text-xs font-semibold leading-tight">{v.label}</span>
+                      <span
+                        className="block text-[10px] leading-tight mt-0.5"
+                        style={{ opacity: selected ? 0.75 : undefined, color: selected ? "inherit" : "var(--muted-foreground)" }}
+                      >
+                        {v.sub}
+                      </span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          /* Pre-selected vehicle badge */
+          <div className="mb-5">
+            <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+              <Bus className="w-3.5 h-3.5" /> Vehicle
+            </p>
+            <div
+              className="inline-flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-semibold"
+              style={{ background: "oklch(0.265 0.078 254 / 0.08)", color: "var(--brand-primary)" }}
+            >
+              🚐 {vehicleProp}
+            </div>
+          </div>
+        )}
+
+        {/* ── Date picker ── */}
         <div className="mb-4">
           <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
             <Calendar className="w-3.5 h-3.5" /> Pickup Date
@@ -91,7 +179,7 @@ export function BookingModal({ isOpen, onClose, title, service, vehicle, from, t
           />
         </div>
 
-        {/* Time slots */}
+        {/* ── Time slots ── */}
         <div className="mb-6">
           <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
             <Clock className="w-3.5 h-3.5" /> Pickup Time
