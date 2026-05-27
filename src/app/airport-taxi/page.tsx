@@ -17,16 +17,16 @@ export const metadata: Metadata = {
 };
 
 const MOPA_ROUTES = [
-  { to: "Calangute / Baga", distance: "42 km", duration: "1h 10m", dzire: 1200, ertiga: 1500, innova: 2000, t12: 2800, t14: 3200, t20: 4200, urb: 5500 },
-  { to: "Panjim (Panaji)", distance: "32 km", duration: "50m", dzire: 900, ertiga: 1200, innova: 1600, t12: 2200, t14: 2600, t20: 3400, urb: 4500 },
+  { to: "Calangute / Baga", distance: "40 km", duration: "1h 10m", dzire: 1250, ertiga: 1500, innova: 2000, t12: 2800, t14: 3200, t20: 4200, urb: 5500 },
+  { to: "Panjim (Panaji)", distance: "40 km", duration: "50m", dzire: 1200, ertiga: 1200, innova: 1600, t12: 2200, t14: 2600, t20: 3400, urb: 4500 },
   { to: "Anjuna / Vagator", distance: "48 km", duration: "1h 20m", dzire: 1400, ertiga: 1700, innova: 2300, t12: 3200, t14: 3700, t20: 4800, urb: 6200 },
-  { to: "Mapusa", distance: "28 km", duration: "40m", dzire: 800, ertiga: 1100, innova: 1500, t12: 2000, t14: 2400, t20: 3200, urb: 4200 },
-  { to: "Margao (South Goa)", distance: "80 km", duration: "2h", dzire: 2000, ertiga: 2500, innova: 3200, t12: 4500, t14: 5200, t20: 6800, urb: 8800 },
+  { to: "Mapusa", distance: "28 km", duration: "40m", dzire: 800, ertiga: 1200, innova: 1500, t12: 2000, t14: 2400, t20: 3200, urb: 4200 },
+  { to: "Margao (South Goa)", distance: "80 km", duration: "2h", dzire: 2000, ertiga: 2500, innova: 3200, t12: 4500, t14: 5200, t20: 6800, urb: 9000 },
 ];
 
 const DABOLIM_ROUTES = [
-  { to: "Calangute / Baga", distance: "45 km", duration: "1h 30m", dzire: 1500, ertiga: 1800, innova: 2200, t12: 3200, t14: 3700, t20: 4800, urb: 6200 },
-  { to: "Panjim (Panaji)", distance: "29 km", duration: "45m", dzire: 900, ertiga: 1200, innova: 1600, t12: 2200, t14: 2600, t20: 3400, urb: 4500 },
+  { to: "Calangute / Baga", distance: "45 km", duration: "1h 30m", dzire: 1400, ertiga: 1800, innova: 2200, t12: 3200, t14: 3700, t20: 4800, urb: 6200 },
+  { to: "Panjim (Panaji)", distance: "30 km", duration: "45m", dzire: 1100, ertiga: 1200, innova: 1600, t12: 2200, t14: 2600, t20: 3400, urb: 4500 },
   { to: "Margao / Colva", distance: "12 km", duration: "25m", dzire: 500, ertiga: 700, innova: 1000, t12: 1500, t14: 1800, t20: 2400, urb: 3200 },
   { to: "Palolem Beach", distance: "60 km", duration: "1h 30m", dzire: 2500, ertiga: 3000, innova: 3800, t12: 5200, t14: 6000, t20: 7800, urb: 10000 },
   { to: "Anjuna / Vagator", distance: "55 km", duration: "1h 40m", dzire: 1800, ertiga: 2200, innova: 2800, t12: 4000, t14: 4600, t20: 6000, urb: 7800 },
