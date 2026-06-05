@@ -61,7 +61,9 @@ const VEHICLES = [
     name: "Tempo Traveller 12 Seater",
     image: "/images/taxi/tempo-traveller-12.jpg",
     capacity: "12 passengers + driver",
-    pricePerKm: 25,
+    pricePerDay: 4000,
+    extraKm: 35,
+    extraHr: 300,
     baggage: "8 bags",
     features: ["AC", "Push-back seats", "Music system"],
     bestFor: "Small groups, families",
@@ -74,7 +76,9 @@ const VEHICLES = [
     name: "Tempo Traveller 14 Seater",
     image: "/images/taxi/tempo-traveller-17.jpg",
     capacity: "14 passengers + driver",
-    pricePerKm: 28,
+    pricePerDay: 4500,
+    extraKm: 40,
+    extraHr: 300,
     baggage: "10 bags",
     features: ["AC", "Push-back seats", "Music system"],
     bestFor: "Medium groups, corporate",
@@ -87,7 +91,9 @@ const VEHICLES = [
     name: "Tempo Traveller 20 Seater",
     image: "/images/taxi/tempo-traveller-20.jpg",
     capacity: "20 passengers + driver",
-    pricePerKm: 35,
+    pricePerDay: 6000,
+    extraKm: 45,
+    extraHr: 400,
     baggage: "15 bags",
     features: ["AC", "Reclining seats", "Sound system"],
     bestFor: "Large groups, weddings, school trips",
@@ -100,7 +106,9 @@ const VEHICLES = [
     name: "Force Urbania 17 Seater",
     image: "/images/taxi/urbania-17.jpg",
     capacity: "17 passengers + driver",
-    pricePerKm: 45,
+    pricePerDay: 7000,
+    extraKm: 50,
+    extraHr: 400,
     baggage: "12 bags",
     features: ["Luxury AC", "Premium leather seats", "USB charging"],
     bestFor: "Luxury group travel, VIP transport, weddings",
@@ -111,13 +119,13 @@ const VEHICLES = [
 ];
 
 const ROUTES = [
-  { to: "Calangute", distance: "42km", t12: 2800, t14: 3200, t20: 4200, urb: 5500 },
-  { to: "Panjim",    distance: "32km", t12: 2200, t14: 2600, t20: 3400, urb: 4500 },
-  { to: "Baga",      distance: "44km", t12: 2900, t14: 3400, t20: 4400, urb: 5800 },
-  { to: "Anjuna",    distance: "48km", t12: 3200, t14: 3700, t20: 4800, urb: 6200 },
-  { to: "Vagator",   distance: "45km", t12: 3000, t14: 3500, t20: 4500, urb: 5900 },
-  { to: "Mapusa",    distance: "28km", t12: 2000, t14: 2300, t20: 3000, urb: 4000 },
-  { to: "Margao",    distance: "80km", t12: 4500, t14: 5200, t20: 6800, urb: 8800 },
+  { to: "Calangute", distance: "40km", t12: 3500, t14: 4000, t20: 4200, urb: 6000 },
+  { to: "Panjim",    distance: "40km", t12: 3500, t14: 4000, t20: 4200, urb: 6000 },
+  { to: "Baga",      distance: "38km", t12: 3500, t14: 4000, t20: 4200, urb: 6000 },
+  { to: "Anjuna",    distance: "40km", t12: 3500, t14: 4000, t20: 4200, urb: 6000 },
+  { to: "Vagator",   distance: "40km", t12: 3500, t14: 4000, t20: 4200, urb: 6000 },
+  { to: "Candolim",  distance: "42km", t12: 3500, t14: 4000, t20: 4200, urb: 6000 },
+  { to: "Margao",    distance: "80km", t12: 6000, t14: 6500, t20: 7000, urb: 8500 },
 ];
 
 const USE_CASES = [
@@ -140,6 +148,73 @@ const WHY_US = [
   { icon: "🕐", title: "24/7 Availability",       desc: "Early morning or late night — we're available" },
   { icon: "🛡️", title: "Verified Drivers",        desc: "Background-checked, licensed drivers" },
   { icon: "📍", title: "Local Goa Experts",       desc: "We know every road in Goa" },
+];
+
+const PACKAGES = [
+  {
+    id: "full-day",
+    image: "/images/services/sightseeing.jpg",
+    badge: "Full Day Package",
+    badgeCls: "bg-green-50 text-green-700",
+    title: "Full Day Goa Tour",
+    subtitle: "Beaches · Forts · Churches · Markets",
+    spec1Label: "Duration",  spec1Value: "8 Hours",
+    spec2Label: "Distance",  spec2Value: "80 km included",
+    vehicles: [
+      { emoji: "🚐", label: "12 Seater", price: 4000, wa: "Tempo Traveller 12-seater" },
+      { emoji: "🚐", label: "14 Seater", price: 4500, wa: "Tempo Traveller 14-seater" },
+      { emoji: "🚌", label: "20 Seater", price: 6000, wa: "Tempo Traveller 20-seater" },
+      { emoji: "⭐", label: "Urbania 17", price: 7000, wa: "Force Urbania 17-seater" },
+    ],
+  },
+  {
+    id: "north-goa",
+    image: "/images/services/north-goa.jpg",
+    badge: "Sightseeing Tour",
+    badgeCls: "bg-blue-50 text-blue-700",
+    title: "North Goa Sightseeing",
+    subtitle: "Calangute · Anjuna · Chapora Fort · Vagator",
+    spec1Label: "Duration",  spec1Value: "6–7 Hours",
+    spec2Label: "Stops",     spec2Value: "8–10 places",
+    vehicles: [
+      { emoji: "🚐", label: "12 Seater", price: 3500, wa: "Tempo Traveller 12-seater" },
+      { emoji: "🚐", label: "14 Seater", price: 4000, wa: "Tempo Traveller 14-seater" },
+      { emoji: "🚌", label: "20 Seater", price: 4500, wa: "Tempo Traveller 20-seater" },
+      { emoji: "⭐", label: "Urbania 17", price: 7000, wa: "Force Urbania 17-seater" },
+    ],
+  },
+  {
+    id: "south-goa",
+    image: "/images/services/sightseeing.jpg",
+    badge: "Sightseeing Tour",
+    badgeCls: "bg-orange-50 text-orange-700",
+    title: "South Goa Sightseeing",
+    subtitle: "Colva · Palolem · Old Goa · Margao",
+    spec1Label: "Duration",  spec1Value: "7–8 Hours",
+    spec2Label: "Stops",     spec2Value: "6–8 places",
+    vehicles: [
+      { emoji: "🚐", label: "12 Seater", price: 4000, wa: "Tempo Traveller 12-seater" },
+      { emoji: "🚐", label: "14 Seater", price: 4500, wa: "Tempo Traveller 14-seater" },
+      { emoji: "🚌", label: "20 Seater", price: 5000, wa: "Tempo Traveller 20-seater" },
+      { emoji: "⭐", label: "Urbania 17", price: 7500, wa: "Force Urbania 17-seater" },
+    ],
+  },
+  {
+    id: "dudhsagar",
+    image: "/images/services/dudhsagar.jpg",
+    badge: "Day Trip",
+    badgeCls: "bg-cyan-50 text-cyan-700",
+    title: "Dudhsagar Waterfall",
+    subtitle: "India's tallest waterfall · Spice farm option",
+    spec1Label: "Duration",  spec1Value: "Full Day",
+    spec2Label: "Distance",  spec2Value: "~95 km from Calangute",
+    vehicles: [
+      { emoji: "🚐", label: "12 Seater", price: 7000,  wa: "Tempo Traveller 12-seater" },
+      { emoji: "🚐", label: "14 Seater", price: 7500,  wa: "Tempo Traveller 14-seater" },
+      { emoji: "🚌", label: "20 Seater", price: 9000,  wa: "Tempo Traveller 20-seater" },
+      { emoji: "⭐", label: "Urbania 17", price: 10000, wa: "Force Urbania 17-seater" },
+    ],
+  },
 ];
 
 const FAQS = [
@@ -282,7 +357,7 @@ export default function TempoTravellerPage() {
       <TempoBookingWidget />
 
       {/* ── Vehicle Cards ── */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 mt-8">
+      <section id="choose-vehicle" className="py-16 px-4 sm:px-6 lg:px-8 mt-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold tracking-widest uppercase mb-2" style={{ color: "var(--brand-accent)" }}>
@@ -358,14 +433,39 @@ export default function TempoTravellerPage() {
                     <span className="font-semibold text-foreground">Best for:</span> {v.bestFor}
                   </p>
 
-                  {/* Price + CTA */}
+                  {/* Price + extras + CTA */}
                   <div className="mt-auto">
-                    <div className="flex items-baseline gap-1 mb-3">
+                    {/* Main price */}
+                    <div className="flex items-baseline gap-1.5 mb-3">
                       <span className="text-2xl font-extrabold" style={{ color: "var(--brand-primary)" }}>
-                        ₹{v.pricePerKm}
+                        ₹{v.pricePerDay.toLocaleString()}
                       </span>
-                      <span className="text-xs text-muted-foreground">/km starting</span>
+                      <span className="text-xs text-muted-foreground font-medium">/day</span>
                     </div>
+
+                    {/* Package details */}
+                    <div
+                      className="rounded-xl p-3 mb-3 space-y-1.5"
+                      style={{ background: "oklch(0.265 0.078 254 / 0.05)" }}
+                    >
+                      <div className="flex items-center gap-2 text-xs text-gray-600">
+                        <span className="text-base leading-none">⏱</span>
+                        <span>For <strong>8 Hrs</strong> or <strong>80 Kms</strong></span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-gray-600">
+                        <span className="text-base leading-none">🛣️</span>
+                        <span>Extra per km <strong>@ ₹{v.extraKm}</strong></span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-gray-600">
+                        <span className="text-base leading-none">🌙</span>
+                        <span>Night charges from <strong>7:00 PM</strong> onwards</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs text-gray-600">
+                        <span className="text-base leading-none">🕐</span>
+                        <span>Extra per hour <strong>@ ₹{v.extraHr}</strong></span>
+                      </div>
+                    </div>
+
                     <a
                       href={waUrl(v.whatsapp)}
                       target="_blank"
@@ -507,7 +607,7 @@ export default function TempoTravellerPage() {
         </div>
       </section>
 
-      {/* ── Special Packages ── */}
+      {/* ── Packages (card-grid style) ── */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
@@ -515,96 +615,91 @@ export default function TempoTravellerPage() {
               Group Packages
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold" style={{ fontFamily: "var(--font-poppins)", color: "var(--brand-primary)" }}>
-              Special Packages
+              Book a Package
             </h2>
+            <p className="text-muted-foreground mt-2 text-sm">
+              Pick a tour — choose your vehicle below — we handle the rest.
+            </p>
           </div>
 
-          {/* Full Day Package */}
-          <div className="bg-white rounded-2xl border border-border shadow-sm p-6 mb-5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
-              <div>
-                <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 text-xs font-bold px-3 py-1 rounded-full mb-2">
-                  🌴 Full Day Goa Tour
-                </div>
-                <h3 className="font-bold text-lg" style={{ fontFamily: "var(--font-poppins)", color: "var(--brand-primary)" }}>
-                  Full Day Goa Tour Package
-                </h3>
-                <p className="text-sm text-muted-foreground mt-1">8 hours · 80 km included · Driver included · AC vehicle</p>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {[
-                { label: "Tempo 12 Seater", price: 4500, vehicleName: "Tempo Traveller 12-seater" },
-                { label: "Tempo 14 Seater", price: 5000, vehicleName: "Tempo Traveller 14-seater" },
-                { label: "Tempo 20 Seater", price: 6500, vehicleName: "Tempo Traveller 20-seater" },
-                { label: "Force Urbania",   price: 8500, vehicleName: "Force Urbania 17-seater" },
-              ].map(({ label, price, vehicleName }) => (
-                <div key={label} className="bg-secondary/40 rounded-xl p-4 text-center">
-                  <p className="text-xs text-muted-foreground mb-1 font-medium">{label}</p>
-                  <p className="text-xl font-extrabold mb-3" style={{ color: "var(--brand-primary)" }}>
-                    ₹{price.toLocaleString()}
-                  </p>
-                  <a
-                    href={waUrl(`Hi ZipGoa! 👋 I want to book the Full Day Goa Tour Package in ${vehicleName}.\nDate: ___\nPassengers: ___\nPickup: ___\nPlease confirm availability.`)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 w-full py-2 rounded-lg text-xs font-bold text-white transition-opacity hover:opacity-90"
-                    style={{ background: "var(--brand-primary)" }}
-                  >
-                    <MessageCircle className="w-3.5 h-3.5" />
-                    Book Now
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-            {[
-              {
-                emoji: "📅",
-                title: "Multi-Day Goa Trip",
-                desc: "2, 3, 4 or more day packages with accommodation stop options.",
-                cta: "Get Custom Quote",
-                waMsg: "Hi ZipGoa! 👋 I'm interested in a multi-day Goa trip package for a group.\nDays: ___\nPassengers: ___\nPlease share available options and rates.",
-              },
-              {
-                emoji: "🛣️",
-                title: "Outstation Trips",
-                desc: "Mumbai, Pune, Kolhapur and other outstation destinations from Goa.",
-                cta: "Get Quote",
-                waMsg: "Hi ZipGoa! 👋 I need a group vehicle for an outstation trip.\nFrom: ___\nTo: ___\nDate: ___\nPassengers: ___\nPlease share rates.",
-              },
-              {
-                emoji: "💒",
-                title: "Wedding & Events",
-                desc: "Custom pricing for wedding baraat, guest transfers and multi-vehicle event logistics.",
-                cta: "Enquire Now",
-                waMsg: "Hi ZipGoa! 👋 I need group vehicles for a wedding / event.\nDate: ___\nNumber of vehicles needed: ___\nPassengers: ___\nPlease share rates and availability.",
-              },
-            ].map(({ emoji, title, desc, cta, waMsg }) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {PACKAGES.map((pkg) => (
               <div
-                key={title}
-                className="bg-white rounded-2xl border border-border shadow-sm p-6 flex flex-col"
+                key={pkg.id}
+                className="bg-white rounded-2xl border border-border shadow-sm overflow-hidden flex flex-col hover:shadow-lg transition-shadow"
               >
-                <span className="text-3xl mb-3 block">{emoji}</span>
-                <h3 className="font-bold text-base mb-2" style={{ fontFamily: "var(--font-poppins)", color: "var(--brand-primary)" }}>
-                  {title}
-                </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed mb-4 flex-1">{desc}</p>
-                <a
-                  href={waUrl(waMsg)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90"
-                  style={{ background: "var(--brand-primary)" }}
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  {cta}
-                </a>
+                {/* Image */}
+                <div className="relative h-44 overflow-hidden bg-secondary/40">
+                  <SafeImage
+                    src={pkg.image}
+                    alt={pkg.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover"
+                    fallbackClassName="h-44"
+                  />
+                </div>
+
+                {/* Body */}
+                <div className="p-5 flex flex-col flex-1">
+                  {/* Badge */}
+                  <span className={`self-start text-[10px] font-bold px-2.5 py-1 rounded-full mb-3 ${pkg.badgeCls}`}>
+                    {pkg.badge}
+                  </span>
+
+                  {/* Title + subtitle */}
+                  <h3
+                    className="font-bold text-base leading-snug mb-1"
+                    style={{ fontFamily: "var(--font-poppins)", color: "var(--brand-primary)" }}
+                  >
+                    {pkg.title}
+                  </h3>
+                  <p className="text-[11px] text-muted-foreground mb-4 leading-snug">{pkg.subtitle}</p>
+
+                  {/* Specs */}
+                  <div className="space-y-2 mb-5 mt-auto">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-muted-foreground">{pkg.spec1Label}</span>
+                      <span className="font-semibold text-foreground">{pkg.spec1Value}</span>
+                    </div>
+                    <div className="h-px bg-border" />
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-muted-foreground">{pkg.spec2Label}</span>
+                      <span className="font-semibold text-foreground">{pkg.spec2Value}</span>
+                    </div>
+                  </div>
+
+                  {/* Vehicle price rows */}
+                  <div className="space-y-1.5 mt-auto">
+                    {pkg.vehicles.map((v) => (
+                      <a
+                        key={v.label}
+                        href={waUrl(`Hi ZipGoa! 👋 I want to book ${pkg.title} in ${v.wa}.\nDate: ___\nPassengers: ___\nPickup: ___\nPlease confirm availability and rate.`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between w-full px-3 py-2 rounded-xl border border-border hover:border-brand-primary/40 hover:bg-secondary/40 transition-colors group"
+                      >
+                        <span className="flex items-center gap-1.5 text-xs font-medium text-foreground">
+                          <span>{v.emoji}</span>
+                          {v.label}
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                          <span className="text-sm font-extrabold" style={{ color: "var(--brand-primary)" }}>
+                            ₹{v.price.toLocaleString()}
+                          </span>
+                          <MessageCircle className="w-3.5 h-3.5 text-green-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
+
+          <p className="text-center text-xs text-muted-foreground mt-6">
+            * All prices are per vehicle (not per person). Tap any row to book via WhatsApp.
+          </p>
         </div>
       </section>
 
