@@ -84,6 +84,7 @@ export default function Footer() {
                 { label: "Dudhsagar Trip", href: "/dudhsagar-trip" },
                 { label: "Self-Drive Cars", href: "/self-drive" },
                 { label: "Tempo & Urbania", href: "/tempo-traveller-goa" },
+                { label: "Activities", href: "/activities" },
                 { label: "Outstation", href: "/outstation" },
               ].map((link) => (
                 <li key={link.href}>

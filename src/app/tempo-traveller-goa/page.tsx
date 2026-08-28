@@ -106,7 +106,7 @@ const VEHICLES = [
     name: "Force Urbania 17 Seater",
     image: "/images/taxi/urbania-17.jpg",
     capacity: "17 passengers + driver",
-    pricePerDay: 7000,
+    pricePerDay: 7500,
     extraKm: 50,
     extraHr: 400,
     baggage: "12 bags",
