@@ -8,7 +8,7 @@ import SafeImage from "@/components/SafeImage";
 import { activities, buildActivityWhatsAppUrl } from "@/lib/activities";
 
 export const metadata: Metadata = {
-  title: "Goa Activities & Experiences | ZipGoa Taxi Services",
+  title: "Goa Activities & Experiences",
   description:
     "Book Goa activities through ZipGoa — North Goa AC coach tours, South Goa coach tours, dolphin trips, and evening dinner cruises. Per-person pricing, WhatsApp booking.",
   keywords: [

@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle, XCircle, MapPin, Clock, Star, AlertCircle, Users } from "lucide-react";
+import { CheckCircle, XCircle, MapPin, Clock, AlertCircle, Users } from "lucide-react";
+import { tourPrices, type TaxiKey } from "@/lib/data";
 import PageWrapper from "@/components/PageWrapper";
 import CTASection from "@/components/CTASection";
 import SafeImage from "@/components/SafeImage";
 import { BookingButton } from "@/components/BookingButton";
+import NorthGoaPickupNotice, { PickupZones, NORTH_GOA_PICKUP_LABEL } from "@/components/NorthGoaPickupNotice";
 
 export const metadata: Metadata = {
-  title: "North Goa Sightseeing Tour | Full Day | ZipGoa Taxi",
+  title: "North Goa Sightseeing Tour | Full Day",
   description:
     "Full-day North Goa sightseeing tour: Fort Aguada, Calangute, Baga, Anjuna, Chapora Fort & Vagator. All vehicles — Sedan to Tempo Traveller. Transparent pricing, hotel pickup.",
   keywords: [
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "North Goa Full Day Sightseeing Tour | ZipGoa",
     description:
-      "Fort Aguada · Calangute · Baga · Anjuna · Chapora Fort · Vagator. From ₹2,500. Hotel pickup included.",
+      "Fort Aguada · Calangute · Baga · Anjuna · Chapora Fort · Vagator. From ₹2,500 (North Goa pickup).",
     images: [{ url: "/images/services/north-goa.jpg" }],
   },
 };
@@ -73,15 +75,19 @@ const ITINERARY = [
     desc: "Return drop at your hotel or any preferred location in North Goa / Panjim." },
 ];
 
-const PRICES = [
-  { vehicle: "Maruti Dzire",         seats: "Up to 4",            emoji: "🚖", price: 2500 },
-  { vehicle: "Maruti Ertiga",        seats: "Up to 6",            emoji: "🚕", price: 3000 },
-  { vehicle: "Toyota Innova Crysta", seats: "Up to 7",            emoji: "🚙", price: 3500 },
-  { vehicle: "Tempo Traveller 12",   seats: "Up to 12",           emoji: "🚐", price: 3500 },
-  { vehicle: "Tempo Traveller 14",   seats: "Up to 14",           emoji: "🚐", price: 4000 },
-  { vehicle: "Tempo Traveller 20",   seats: "Up to 20",           emoji: "🚌", price: 4500 },
-  { vehicle: "Force Urbania 17",     seats: "Up to 17 · Luxury",  emoji: "⭐", price: 7000 },
+// Prices come from src/lib/data.ts (single source of truth).
+const PRICE_ROWS: { key: TaxiKey; vehicle: string; seats: string; emoji: string }[] = [
+  { key: "dzire", vehicle: "Maruti Dzire",         seats: "Up to 4",            emoji: "🚖" },
+  { key: "ertiga", vehicle: "Maruti Ertiga",        seats: "Up to 6",            emoji: "🚕" },
+  { key: "innova", vehicle: "Toyota Innova Crysta", seats: "Up to 7",            emoji: "🚙" },
+  { key: "t12", vehicle: "Tempo Traveller 12",   seats: "Up to 12",           emoji: "🚐" },
+  { key: "t14", vehicle: "Tempo Traveller 14",   seats: "Up to 14",           emoji: "🚐" },
+  { key: "t20", vehicle: "Tempo Traveller 20",   seats: "Up to 20",           emoji: "🚌" },
+  { key: "urb", vehicle: "Force Urbania 17",     seats: "Up to 17 · Luxury",  emoji: "⭐" },
 ];
+
+const PRICES = PRICE_ROWS.map((row) => ({ ...row, price: tourPrices.northGoa[row.key] }));
+const FROM_PRICE = `From ₹${tourPrices.northGoa.dzire.toLocaleString("en-IN")}`;
 
 const INCLUDED = [
   "AC vehicle for the full day (9 AM – 5:30 PM)",
@@ -102,8 +108,13 @@ const NOT_INCLUDED = [
 const PICKUP_ZONES = [
   { zone: "North Goa Beaches", places: "Calangute · Baga · Candolim · Sinquerim · Anjuna · Vagator · Siolim · Chapora" },
   { zone: "North Goa Hinterland", places: "Mapusa · Parra · Assagao · Aldona · Moira" },
-  { zone: "Panjim / Panaji", places: "Panjim City · Dona Paula · Miramar · Caranzalem · Porvorim" },
-  { zone: "Airport Areas", places: "Mopa Airport (North Goa) · Dabolim Airport (additional charge may apply)" },
+  { zone: "Panjim / Porvorim", places: "Panjim City · Dona Paula · Miramar · Caranzalem · Porvorim" },
+  { zone: "Mopa Airport", places: "Mopa Airport (GOX), North Goa" },
+  { zone: "Airport & Railway Station", places: "Dabolim Airport (GOI) · Vasco da Gama · Railway stations" },
+];
+
+const PICKUP_ON_REQUEST = [
+  { zone: "South Goa", places: "Margao · Colva · Benaulim · Palolem · Agonda · Varca" },
 ];
 
 const CANCELLATION = [
@@ -141,12 +152,6 @@ export default function NorthGoaTourPage() {
               <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
               Daily Tour
             </span>
-            <span className="inline-flex items-center gap-1 text-sm">
-              {[1,2,3,4,5].map((s) => (
-                <Star key={s} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-              ))}
-              <span className="text-white/70 font-normal ml-1.5 text-xs">4.9 · 500+ reviews</span>
-            </span>
           </div>
 
           <h1
@@ -165,18 +170,25 @@ export default function NorthGoaTourPage() {
           {/* Quick stats chips */}
           <div className="flex flex-wrap gap-2.5">
             {[
-              { icon: <Clock className="w-3.5 h-3.5" />, text: "8–10 Hours" },
+              { icon: <Clock className="w-3.5 h-3.5" />, sub: undefined as string | undefined, text: "8–10 Hours" },
               { icon: <MapPin className="w-3.5 h-3.5" />, text: "8 Stops" },
               { icon: <Users className="w-3.5 h-3.5" />, text: "Any group size" },
               { icon: "📅", text: "Pickup: 9:00 AM" },
-              { icon: "💰", text: "From ₹2,500" },
+              { icon: "💰", text: FROM_PRICE, sub: NORTH_GOA_PICKUP_LABEL },
             ].map((chip, i) => (
               <div
                 key={i}
                 className="flex items-center gap-1.5 bg-white/10 border border-white/20 rounded-full px-3 py-1.5 text-white/90 text-xs font-medium"
               >
                 {chip.icon}
-                {chip.text}
+                {chip.sub ? (
+                  <span className="flex flex-col leading-tight">
+                    <span>{chip.text}</span>
+                    <span className="text-[10px] font-normal text-white/70">{chip.sub}</span>
+                  </span>
+                ) : (
+                  chip.text
+                )}
               </div>
             ))}
           </div>
@@ -323,18 +335,7 @@ export default function NorthGoaTourPage() {
                   We pick up from hotels, resorts, homestays, and beaches across North Goa and Panjim.
                   Just share your exact address when booking.
                 </p>
-                <div className="space-y-3">
-                  {PICKUP_ZONES.map((z) => (
-                    <div key={z.zone}
-                      className="bg-white rounded-2xl border border-border shadow-sm p-4 flex items-start gap-3">
-                      <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "var(--brand-accent)" }} />
-                      <div>
-                        <p className="font-semibold text-sm mb-0.5" style={{ color: "var(--brand-primary)" }}>{z.zone}</p>
-                        <p className="text-xs text-muted-foreground leading-relaxed">{z.places}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <PickupZones standard={PICKUP_ZONES} onRequest={PICKUP_ON_REQUEST} />
               </div>
 
               {/* Good to Know */}
@@ -394,6 +395,8 @@ export default function NorthGoaTourPage() {
             {/* ── Right: Sticky sidebar ── */}
             <div className="space-y-5 lg:sticky lg:top-4 lg:self-start">
 
+              <NorthGoaPickupNotice tourName="North Goa Full Day Tour" stacked />
+
               {/* Pricing card */}
               <div className="bg-white rounded-2xl border border-border shadow-sm overflow-hidden">
                 <div className="p-4 border-b border-border"
@@ -419,12 +422,14 @@ export default function NorthGoaTourPage() {
                         <p className="font-bold text-base" style={{ color: "var(--brand-primary)" }}>
                           ₹{p.price.toLocaleString()}
                         </p>
+                        <p className="text-[11px] text-muted-foreground mb-0.5">{NORTH_GOA_PICKUP_LABEL}</p>
                         <BookingButton
                           asText
                           label="Book →"
                           modalTitle={`North Goa Tour · ${p.vehicle}`}
                           service="North Goa Full Day Sightseeing Tour"
                           vehicle={p.vehicle}
+                          askPickupArea
                           className="text-xs font-semibold hover:underline"
                           style={{ color: "var(--brand-accent)" }}
                         />
@@ -442,12 +447,13 @@ export default function NorthGoaTourPage() {
                 label="Book This Tour"
                 modalTitle="North Goa Full Day Tour"
                 service="North Goa Full Day Sightseeing Tour"
+                askPickupArea
                 className="w-full h-12 text-base font-bold"
                 style={{ background: "var(--brand-primary)", color: "white" }}
               />
 
               <a
-                href="https://wa.me/917026889254?text=Hi%20ZipGoa!%20%F0%9F%91%8B%20I%20want%20to%20book%20the%20North%20Goa%20Full%20Day%20Sightseeing%20Tour.%0ADate%3A%20___%0AVehicle%3A%20___%0APassengers%3A%20___%0APickup%20location%3A%20___%0APlease%20confirm%20availability."
+                href="https://wa.me/917026889254?text=Hi%20ZipGoa!%20%F0%9F%91%8B%20I%20want%20to%20book%20the%20North%20Goa%20Full%20Day%20Sightseeing%20Tour.%0ADate%3A%20___%0AVehicle%3A%20___%0APassengers%3A%20___%0APickup%20area%3A%20___%0APlease%20confirm%20availability."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full h-11 rounded-xl border-2 font-semibold text-sm transition-colors hover:bg-green-50"

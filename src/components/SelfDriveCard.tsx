@@ -47,6 +47,8 @@ export default function SelfDriveCard({ vehicle: v, inCompare, onToggleCompare, 
 
   return (
     <div
+      data-track-location="vehicle_card"
+      data-track-service={v.name}
       className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col transition-all duration-300 hover:-translate-y-1.5"
       style={{ boxShadow: "0 2px 16px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)" }}
       onMouseEnter={(e) => {

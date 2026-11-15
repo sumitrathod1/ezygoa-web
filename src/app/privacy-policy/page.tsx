@@ -4,7 +4,7 @@ import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | ZipGoa",
+  title: "Privacy Policy",
   description:
     "Privacy Policy for ZipGoa. Learn how we collect, use, and protect your personal information when you use our Goa taxi, car rental, and tour services.",
   robots: { index: true, follow: true },
@@ -50,7 +50,7 @@ export default function PrivacyPolicyPage() {
 
           {/* Meta info */}
           <div className="bg-secondary/50 rounded-2xl p-5 mb-10 flex flex-wrap gap-6 text-sm text-muted-foreground">
-            <div><span className="font-semibold text-foreground">Business:</span> ZipGoa Taxi Services</div>
+            <div><span className="font-semibold text-foreground">Business:</span> ZipGoa</div>
             <div><span className="font-semibold text-foreground">Last Updated:</span> {LAST_UPDATED}</div>
             <div><span className="font-semibold text-foreground">Applies to:</span> zipgoa.com</div>
           </div>
@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage() {
 
             <Section id="introduction" title="1. Introduction">
               <p>
-                Welcome to ZipGoa Taxi Services ("we," "our," or "us"), operated by Sumit Rathod from Parra, North Goa,
+                Welcome to ZipGoa ("we," "our," or "us"), operated by Sumit Rathod from Parra, North Goa,
                 India. We are committed to protecting your personal information and your right to privacy.
               </p>
               <p>
@@ -249,9 +249,9 @@ export default function PrivacyPolicyPage() {
                 className="rounded-2xl p-6 mt-3 space-y-1.5 text-sm"
                 style={{ background: "oklch(0.265 0.078 254 / 0.06)" }}
               >
-                <p className="font-bold text-foreground text-base">ZipGoa Taxi Services</p>
+                <p className="font-bold text-foreground text-base">ZipGoa</p>
                 <p>Owner: Sumit Rathod</p>
-                <p>Parra, North Goa, 403510, India</p>
+                <p>532/1 W, Muddo Vado, Parra, North Goa, Goa 403510, India</p>
                 <p>
                   Phone:{" "}
                   <a href="tel:+917026889254" className="underline" style={{ color: "var(--brand-primary)" }}>

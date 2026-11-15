@@ -7,6 +7,7 @@ import CookieConsent from "@/components/CookieConsent";
 import PageViewTracker from "@/components/PageViewTracker";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CallButton from "@/components/CallButton";
+import LeadClickTracker from "@/components/LeadClickTracker";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -110,6 +111,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://wa.me" />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <LeadClickTracker />
         <Suspense fallback={null}>
           <PageViewTracker />
         </Suspense>

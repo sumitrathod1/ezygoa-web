@@ -11,6 +11,7 @@ interface BookingButtonProps {
   vehicle?: string;
   from?: string;
   to?: string;
+  askPickupArea?: boolean;
   className?: string;
   style?: React.CSSProperties;
   variant?: "default" | "outline" | "ghost" | "link" | "destructive" | "secondary";
@@ -25,6 +26,7 @@ export function BookingButton({
   vehicle,
   from,
   to,
+  askPickupArea,
   className,
   style,
   variant,
@@ -52,6 +54,7 @@ export function BookingButton({
         vehicle={vehicle}
         from={from}
         to={to}
+        askPickupArea={askPickupArea}
       />
     </>
   );

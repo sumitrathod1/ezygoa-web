@@ -4,12 +4,9 @@
   phoneDisplay: "+91 7026889254",
   whatsapp: "917026889254",
   email: "contact@zipgoa.com",
-  address: "Parra, North Goa, India",
+  address: "532/1 W, Muddo Vado, Parra, North Goa, Goa 403510, India",
+  udyam: "UDYAM-GA-01-0057807",
   hours: "24/7 Service",
-  established: "2015",
-  totalTrips: "10,000+",
-  rating: "4.9",
-  reviews: "500+",
 } as const;
 
 export const WHATSAPP_BASE = `https://wa.me/${BUSINESS.whatsapp}`;
@@ -22,6 +19,8 @@ export function buildWhatsAppUrl(params?: {
   date?: string;
   time?: string;
   passengers?: string;
+  /** Adds a "Pickup area: ___" line for services priced by pickup zone (sightseeing tours). */
+  askPickupArea?: boolean;
 }) {
   if (!params) {
     const msg = `Hi ZipGoa! 👋 I'd like to book a trip in Goa.`;
@@ -36,7 +35,7 @@ From: ${params.from || "—"}
 To: ${params.to || "—"}
 Date: ${params.date || "—"}
 Time: ${params.time || "—"}
-Passengers: ${params.passengers || "—"}
+Passengers: ${params.passengers || "—"}${params.askPickupArea ? "\nPickup area: ___" : ""}
 
 Please confirm availability and share the rate.`;
   return `${WHATSAPP_BASE}?text=${encodeURIComponent(msg)}`;

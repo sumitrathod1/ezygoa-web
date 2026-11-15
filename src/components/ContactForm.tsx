@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { buildWhatsAppUrl } from "@/lib/constants";
+import { trackLead } from "@/lib/track";
 
 interface FormData {
   name: string;
@@ -25,6 +26,7 @@ export default function ContactForm() {
     const msg = `Hello ZipGoa! 👋\n\nName: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\n\nMessage:\n${form.message}`;
     const url = `https://wa.me/917026889254?text=${encodeURIComponent(msg)}`;
     window.open(url, "_blank");
+    trackLead("booking_form_submit", { form_name: "contact_form", service: "General enquiry" });
     setSubmitted(true);
   };
 

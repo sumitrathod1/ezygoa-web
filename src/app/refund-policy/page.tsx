@@ -4,7 +4,7 @@ import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Refund & Cancellation Policy | ZipGoa",
+  title: "Refund & Cancellation Policy",
   description:
     "Refund and cancellation policy for ZipGoa. Clear terms for taxi bookings, car rentals, and tour packages in Goa.",
   robots: { index: true, follow: true },
@@ -67,7 +67,7 @@ export default function RefundPolicyPage() {
 
           {/* Meta info */}
           <div className="bg-secondary/50 rounded-2xl p-5 mb-10 flex flex-wrap gap-6 text-sm text-muted-foreground">
-            <div><span className="font-semibold text-foreground">Business:</span> ZipGoa Taxi Services</div>
+            <div><span className="font-semibold text-foreground">Business:</span> ZipGoa</div>
             <div><span className="font-semibold text-foreground">Last Updated:</span> {LAST_UPDATED}</div>
             <div><span className="font-semibold text-foreground">Contact:</span> +91 7026889254</div>
           </div>
@@ -76,7 +76,7 @@ export default function RefundPolicyPage() {
 
             <Section id="overview" title="1. Overview">
               <p>
-                At ZipGoa Taxi Services we aim to be transparent and fair. This policy outlines how cancellations
+                At ZipGoa we aim to be transparent and fair. This policy outlines how cancellations
                 and refunds are handled for all our services — local taxi rides, airport transfers, sightseeing tours,
                 outstation trips, and self-drive rentals.
               </p>
@@ -179,7 +179,7 @@ export default function RefundPolicyPage() {
                 className="rounded-2xl p-6 space-y-1.5 text-sm"
                 style={{ background: "oklch(0.265 0.078 254 / 0.06)" }}
               >
-                <p className="font-bold text-foreground text-base">ZipGoa Taxi Services</p>
+                <p className="font-bold text-foreground text-base">ZipGoa</p>
                 <p>
                   WhatsApp / Phone:{" "}
                   <a href="https://wa.me/917026889254" className="underline" style={{ color: "var(--brand-primary)" }}>

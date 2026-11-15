@@ -3,12 +3,13 @@ import { MapPin, Car, Clock, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
+import { outstationRoutes, taxiRates } from "@/lib/data";
 import CTASection from "@/components/CTASection";
 import { buildWhatsAppUrl } from "@/lib/constants";
 import { BookingButton } from "@/components/BookingButton";
 
 export const metadata: Metadata = {
-  title: "Outstation Taxi from Goa | Mumbai, Pune, Bangalore | ZipGoa",
+  title: "Outstation Taxi from Goa | Mumbai, Pune, Bangalore",
   description:
     "Outstation cab service from Goa. Travel to Mumbai, Pune, Bangalore, Hampi, Gokarna, Mangalore. Comfortable AC vehicles, experienced drivers, fixed rates.",
   keywords: ["outstation taxi Goa", "Goa to Mumbai taxi", "Goa to Pune taxi", "Goa to Bangalore", "outstation cab Goa"],
@@ -18,25 +19,16 @@ export const metadata: Metadata = {
   },
 };
 
-const ROUTES = [
-  { from: "Goa", to: "Mumbai",    distance: "~580 km", duration: "10–11 hrs", dzire: 9000,  ertiga: 11000, innova: 14000, t12: 15000, t14: 17000, t20: 22000, urb: 27000, highlight: "Most popular" },
-  { from: "Goa", to: "Pune",      distance: "~450 km", duration: "8–9 hrs",   dzire: 7500,  ertiga: 9000,  innova: 12000, t12: 12000, t14: 14000, t20: 18000, urb: 22000, highlight: "" },
-  { from: "Goa", to: "Bangalore", distance: "~570 km", duration: "9–10 hrs",  dzire: 9000,  ertiga: 11000, innova: 14000, t12: 15000, t14: 17000, t20: 22000, urb: 27000, highlight: "" },
-  { from: "Goa", to: "Hampi",     distance: "~370 km", duration: "6–7 hrs",   dzire: 6000,  ertiga: 7500,  innova: 10000, t12: 10000, t14: 12000, t20: 15000, urb: 19000, highlight: "Heritage trip" },
-  { from: "Goa", to: "Gokarna",   distance: "~150 km", duration: "3 hrs",     dzire: 2800,  ertiga: 3500,  innova: 4500,  t12: 4500,  t14: 5000,  t20: 6500,  urb: 8000,  highlight: "Short trip" },
-  { from: "Goa", to: "Mangalore", distance: "~360 km", duration: "6–7 hrs",   dzire: 6000,  ertiga: 7500,  innova: 10000, t12: 9500,  t14: 11000, t20: 14000, urb: 18000, highlight: "" },
-  { from: "Goa", to: "Kolhapur",  distance: "~230 km", duration: "4–5 hrs",   dzire: 4000,  ertiga: 5000,  innova: 6500,  t12: 6500,  t14: 7500,  t20: 9500,  urb: 12000, highlight: "" },
-  { from: "Goa", to: "Hubli",     distance: "~180 km", duration: "3.5 hrs",   dzire: 3200,  ertiga: 4000,  innova: 5200,  t12: 5000,  t14: 6000,  t20: 7500,  urb: 9500,  highlight: "" },
-];
+const ROUTES = outstationRoutes;
 
 const CHARGES = [
-  { label: "Per km — Dzire (4 seats)",        value: "₹14/km" },
-  { label: "Per km — Ertiga (6 seats)",        value: "₹18/km" },
-  { label: "Per km — Innova Crysta (7 seats)", value: "₹22/km" },
-  { label: "Per km — Tempo Traveller 12",      value: "₹28/km" },
-  { label: "Per km — Tempo Traveller 14",      value: "₹30/km" },
-  { label: "Per km — Tempo Traveller 20",      value: "₹30/km" },
-  { label: "Per km — Force Urbania 17",        value: "₹35/km" },
+  { label: "Per km — Dzire (4 seats)",        value: `₹${taxiRates.dzire.perKm}/km` },
+  { label: "Per km — Ertiga (6 seats)",        value: `₹${taxiRates.ertiga.perKm}/km` },
+  { label: "Per km — Innova Crysta (7 seats)", value: `₹${taxiRates.innova.perKm}/km` },
+  { label: "Per km — Tempo Traveller 12",      value: `₹${taxiRates.t12.perKm}/km` },
+  { label: "Per km — Tempo Traveller 14",      value: `₹${taxiRates.t14.perKm}/km` },
+  { label: "Per km — Tempo Traveller 20",      value: `₹${taxiRates.t20.perKm}/km` },
+  { label: "Per km — Force Urbania 17",        value: `₹${taxiRates.urb.perKm}/km` },
   { label: "Driver food allowance",            value: "₹500/day" },
   { label: "Night halt allowance",             value: "₹500/night" },
   { label: "Toll charges",                     value: "Extra (paid at toll)" },
@@ -93,9 +85,9 @@ export default function OutstationPage() {
                     <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">🚖 Small &amp; Medium</p>
                     <div className="grid grid-cols-3 gap-2">
                       {[
-                        { label: "Dzire (4)", price: r.dzire, perKm: 14 },
-                        { label: "Ertiga (6)", price: r.ertiga, perKm: 18 },
-                        { label: "Innova (7)", price: r.innova, perKm: 22 },
+                        { label: "Dzire (4)", price: r.dzire, perKm: taxiRates.dzire.perKm },
+                        { label: "Ertiga (6)", price: r.ertiga, perKm: taxiRates.ertiga.perKm },
+                        { label: "Innova (7)", price: r.innova, perKm: taxiRates.innova.perKm },
                       ].map(({ label, price, perKm }) => (
                         <div key={label} className="text-center p-2 bg-secondary/50 rounded-xl">
                           <p className="text-xs text-muted-foreground">{label}</p>
@@ -111,10 +103,10 @@ export default function OutstationPage() {
                     <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground mb-1.5">🚐 Group Vehicles</p>
                     <div className="grid grid-cols-4 gap-1.5">
                       {[
-                        { label: "Tempo 12", price: r.t12, perKm: 28 },
-                        { label: "Tempo 14", price: r.t14, perKm: 30 },
-                        { label: "Tempo 20", price: r.t20, perKm: 30 },
-                        { label: "Urbania 17", price: r.urb, perKm: 35 },
+                        { label: "Tempo 12", price: r.t12, perKm: taxiRates.t12.perKm },
+                        { label: "Tempo 14", price: r.t14, perKm: taxiRates.t14.perKm },
+                        { label: "Tempo 20", price: r.t20, perKm: taxiRates.t20.perKm },
+                        { label: "Urbania 17", price: r.urb, perKm: taxiRates.urb.perKm },
                       ].map(({ label, price, perKm }) => (
                         <div key={label} className="text-center p-2 bg-blue-50 rounded-xl border border-blue-100">
                           <p className="text-[10px] text-muted-foreground leading-tight">{label}</p>

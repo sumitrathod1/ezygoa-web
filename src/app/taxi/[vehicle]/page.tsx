@@ -22,8 +22,8 @@ export async function generateMetadata({
   const v = vehicles.find((v) => v.id === id && v.category === "taxi");
   if (!v) return { title: "Not Found" };
   return {
-    title: `${v.name} Taxi Goa | Book Online | ZipGoa`,
-    description: `Book ${v.name} taxi in Goa. ${v.tagline}. ₹${v.pricePerKm}/km, 8hr/80km ₹${v.packages?.["8hr80km"]?.toLocaleString()}, airport transfers from ₹${v.airportRates?.mopa?.toLocaleString()}. Instant WhatsApp booking.`,
+    title: `${v.name} Taxi Goa | Book Online`,
+    description: `Book ${v.name} taxi in Goa. ${v.tagline}. ₹${v.pricePerKm}/km, 8hr/80km ₹${v.packages?.["8hr80km"]?.toLocaleString()}, airport transfers from ₹${v.airportRates?.mopa?.toLocaleString()}. Quick booking via WhatsApp.`,
     keywords: [
       `${v.name} taxi Goa`,
       `${v.name} cab Goa`,
@@ -34,7 +34,7 @@ export async function generateMetadata({
     ],
     openGraph: {
       title: `${v.name} Taxi in Goa | ZipGoa`,
-      description: `${v.tagline}. ₹${v.pricePerKm}/km. Instant booking via WhatsApp.`,
+      description: `${v.tagline}. ₹${v.pricePerKm}/km. Quick booking via WhatsApp.`,
     },
   };
 }
@@ -325,7 +325,7 @@ export default async function TaxiVehiclePage({
                   <h3 className="font-bold text-white" style={{ fontFamily: "var(--font-poppins)" }}>
                     {v.name} Pricing
                   </h3>
-                  <p className="text-white/70 text-xs mt-0.5">Transparent rates, no hidden charges</p>
+                  <p className="text-white/70 text-xs mt-0.5">All extra charges (tolls, parking, night charges) listed upfront</p>
                 </div>
                 <div className="divide-y divide-border">
                   {[
@@ -387,10 +387,10 @@ export default async function TaxiVehiclePage({
                 <ul className="space-y-2">
                   {[
                     "Verified, experienced drivers",
-                    "No surge pricing — fixed rates",
+                    "Rates confirmed before booking",
                     "24/7 customer support",
-                    "Backup vehicle guarantee",
-                    "Instant WhatsApp confirmation",
+                    "Backup vehicle support",
+                    "Quick booking via WhatsApp",
                     "Clean, well-maintained vehicles",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-xs">

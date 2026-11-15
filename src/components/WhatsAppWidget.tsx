@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { useState } from "react";
-import { trackWhatsAppClick } from "@/lib/analytics";
+import { trackLead } from "@/lib/track";
 
 const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP ?? "917026889254";
 
@@ -16,7 +16,7 @@ export default function WhatsAppWidget() {
   const [open, setOpen] = useState(false);
 
   function openChat(message: string, label: string) {
-    trackWhatsAppClick(`floating_${label}`);
+    trackLead("whatsapp_click", { button_location: "floating_widget", service: label });
     const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank", "noopener,noreferrer");
     setOpen(false);
@@ -37,7 +37,7 @@ export default function WhatsAppWidget() {
                 <div className="font-bold text-sm">ZipGoa Taxi</div>
                 <div className="text-xs text-white/80 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 bg-white rounded-full inline-block" />
-                  Typically replies instantly
+                  Typically replies quickly
                 </div>
               </div>
             </div>

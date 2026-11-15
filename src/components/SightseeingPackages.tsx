@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Clock, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingModal } from "./BookingModal";
+import { tourPrices } from "@/lib/data";
+import { NORTH_GOA_PICKUP_LABEL, SOUTH_GOA_RATE_CTA, southGoaRateUrl } from "./NorthGoaPickupNotice";
 
 const VEHICLES = [
   { id: "dzire", label: "Dzire",     seats: "4",  group: false },
@@ -31,17 +33,17 @@ interface Package {
 const PACKAGES: Package[] = [
   {
     name: "North Goa Full Day",
-    duration: "8–10 hours",
+    duration: "7–8 hours",
     places: ["Dolphin Sightseeing", "Fort Aguada", "Candolim Beach", "Calangute", "Baga Beach", "Anjuna Beach", "Chapora Fort", "Vagator Beach"],
-    prices: { dzire: 2500, ertiga: 3000, innova: 3500, t12: 4000, t14: 4500, t20: 5000, urb: 8000 },
+    prices: tourPrices.northGoa,
     slug: "/north-goa-tour",
     popular: true,
   },
   {
     name: "South Goa Full Day",
-    duration: "8–10 hours",
+    duration: "7–8 hours",
     places: ["Old Goa Churches", "Mangueshi Temple", "Spice Plantation", "Panjim Church", "Dona Paula", "Miramar Beach", "Boat Cruise"],
-    prices: { dzire: 2800, ertiga: 3500, innova: 4000, t12: 4500, t14: 5000, t20: 5500, urb: 9000 },
+    prices: tourPrices.southGoa,
     slug: "/south-goa-tour",
   },
   {
@@ -62,9 +64,9 @@ const PACKAGES: Package[] = [
   },
   {
     name: "Dudhsagar Special",
-    duration: "10–12 hours",
+    duration: "8–10 hours",
     places: ["Dudhsagar Falls", "Spice Plantation", "Mollem", "Bhagwan Mahavir Sanctuary"],
-    prices: { dzire: 3500, ertiga: 4200, innova: 5000, t12: 7000, t14: 8000, t20: 9500, urb: 13000 },
+    prices: tourPrices.dudhsagar,
     slug: "/dudhsagar-trip",
     popular: true,
   },
@@ -79,7 +81,7 @@ const PACKAGES: Package[] = [
     name: "North + South + Dudhsagar – 3 Days",
     duration: "3 days",
     places: ["Day 1: North Goa", "Day 2: South Goa", "Day 3: Dudhsagar Waterfall"],
-    prices: { dzire: 8500, ertiga: 10500, innova: 13500, t12: 17000, t14: 19500, t20: 26000, urb: 30000 },
+    prices: { dzire: 8700, ertiga: 10500, innova: 13500, t12: 17000, t14: 19500, t20: 26000, urb: 30000 },
     slug: "/booking",
     badge: "Best Value",
   },
@@ -102,7 +104,7 @@ function PackageCard({ pkg }: { pkg: Package }) {
   const badge = pkg.popular ? "Popular" : pkg.badge ?? null;
 
   return (
-    <div className="relative bg-white rounded-2xl border border-border shadow-sm overflow-hidden flex flex-col">
+    <div data-track-location="tour_card" data-track-service={pkg.name} className="relative bg-white rounded-2xl border border-border shadow-sm overflow-hidden flex flex-col">
       {badge && (
         <div
           className="absolute top-4 right-4 text-xs font-bold px-2.5 py-1 rounded-full z-10"
@@ -164,11 +166,23 @@ function PackageCard({ pkg }: { pkg: Package }) {
             <p className="font-extrabold text-xl" style={{ color: "var(--brand-accent)" }}>
               ₹{price.toLocaleString()}
             </p>
+            <p className="text-[11px] text-muted-foreground">{NORTH_GOA_PICKUP_LABEL}</p>
           </div>
           <div className="text-2xl">
             {vehicle.group ? "🚐" : vehicle.id === "innova" ? "🚙" : "🚕"}
           </div>
         </div>
+
+        {/* South Goa pickup is priced separately */}
+        <a
+          href={southGoaRateUrl(pkg.name)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs font-semibold hover:underline mb-4 -mt-2"
+          style={{ color: "var(--brand-primary)" }}
+        >
+          {SOUTH_GOA_RATE_CTA} →
+        </a>
 
         {/* Action buttons */}
         <div className="flex gap-2 mt-auto">
@@ -196,6 +210,7 @@ function PackageCard({ pkg }: { pkg: Package }) {
         title={`${pkg.name} · ${vehicle.label}`}
         service={pkg.name}
         vehicle={vehicle.label}
+        askPickupArea
       />
     </div>
   );

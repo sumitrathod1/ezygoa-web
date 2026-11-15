@@ -7,7 +7,7 @@ import CallButton from "@/components/CallButton";
 import { blogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
-  title: "Goa Travel Blog & Guides 2026 | ZipGoa",
+  title: "Goa Travel Blog & Guides 2026",
   description:
     "Expert Goa travel guides, taxi tips, beach guides, and trip planning advice from ZipGoa — your trusted Goa taxi service.",
   keywords: [

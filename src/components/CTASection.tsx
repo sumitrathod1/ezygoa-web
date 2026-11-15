@@ -6,6 +6,7 @@ import { BUSINESS, buildWhatsAppUrl } from "@/lib/constants";
 export default function CTASection() {
   return (
     <section
+      data-track-location="cta_section"
       className="py-20 px-4 sm:px-6 lg:px-8 gradient-hero relative overflow-hidden"
     >
       {/* Decorative blobs */}
@@ -89,7 +90,7 @@ export default function CTASection() {
 
         {/* Trust line */}
         <p className="text-white/50 text-sm mt-8">
-          Trusted by 10,000+ travellers · No advance payment · Free cancellation 6hrs before
+          No advance payment · Free cancellation up to 24 hrs before
         </p>
       </div>
     </section>

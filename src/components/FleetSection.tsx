@@ -8,7 +8,7 @@ import SafeImage from "@/components/SafeImage";
 
 function TaxiCard({ v }: { v: Vehicle }) {
   return (
-    <div className="flex-shrink-0 w-72 bg-white rounded-2xl shadow-sm border border-border overflow-hidden card-hover group">
+    <div data-track-location="vehicle_card" data-track-service={v.name} className="flex-shrink-0 w-72 bg-white rounded-2xl shadow-sm border border-border overflow-hidden card-hover group">
       <div
         className="h-40 relative overflow-hidden"
         style={{ background: `linear-gradient(135deg, ${v.color ?? "#1a365d"}22, ${v.color ?? "#1a365d"}44)` }}
@@ -68,7 +68,7 @@ function SelfDriveCard({ v }: { v: SelfDriveVehicle }) {
   const waUrl = `https://wa.me/917026889254?text=${encodeURIComponent(waMsg)}`;
 
   return (
-    <div className="flex-shrink-0 w-72 bg-white rounded-2xl shadow-sm border border-border overflow-hidden card-hover group">
+    <div data-track-location="vehicle_card" data-track-service={v.name} className="flex-shrink-0 w-72 bg-white rounded-2xl shadow-sm border border-border overflow-hidden card-hover group">
       <div className="h-40 relative overflow-hidden" style={{ background: "linear-gradient(135deg,#22c55e12,#22c55e28)" }}>
         {v.image ? (
           <SafeImage

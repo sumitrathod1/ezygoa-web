@@ -21,7 +21,7 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return { title: "Post Not Found" };
   return {
-    title: `${post.title} | ZipGoa Blog`,
+    title: `${post.title} | Blog`,
     description: post.excerpt,
     keywords: post.tags,
     openGraph: {

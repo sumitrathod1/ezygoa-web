@@ -109,7 +109,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Getting Around Goa",
         paragraphs: [
-          "Goa has no metro or reliable public transport for tourists. The best ways to get around are: hire a taxi (most practical for families/groups), rent a scooter (popular with solo travellers), or rent a self-drive car (best for flexibility). Pre-booked taxis from a reliable operator like ZipGoa guarantee fixed rates — no negotiating at the stand, no surprise fares.",
+          "Goa has no metro or reliable public transport for tourists. The best ways to get around are: hire a taxi (most practical for families/groups), rent a scooter (popular with solo travellers), or rent a self-drive car (best for flexibility). Pre-booked taxis from an operator like ZipGoa give you a rate confirmed before the trip — no negotiating at the stand.",
         ],
         tip: "The North–South Goa distance is about 60km. Don't try to see everything in one day. Split North Goa and South Goa across different days, and give Dudhsagar its own full day.",
       },
@@ -146,14 +146,14 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Taxi Prices: Mopa Airport to Calangute (2026)",
         paragraphs: [
-          "Pre-booked taxi prices from Mopa Airport to Calangute are approximately: Maruti Dzire (4 seats) — ₹1,200; Maruti Ertiga (6 seats) — ₹1,500; Toyota Innova Crysta (7 seats) — ₹2,000. For groups of 10–12, a Tempo Traveller starts at ₹2,500.",
+          "Pre-booked taxi prices from Mopa Airport to Calangute are approximately: Maruti Dzire (4 seats) — ₹1,300; Maruti Ertiga (6 seats) — ₹1,500; Toyota Innova Crysta (7 seats) — ₹2,000. For groups of 10–12, a Tempo Traveller starts at ₹3,800.",
           "Walk-in taxis at Mopa Airport charge significantly more — typically ₹1,800–2,500 for a sedan. Pre-booking online or via WhatsApp before your flight lands is always cheaper and means a driver is waiting with your name on a board.",
         ],
       },
       {
         heading: "Taxi Prices: Dabolim Airport to Calangute (2026)",
         paragraphs: [
-          "Pre-booked prices from Dabolim to Calangute: Dzire ₹1,500; Ertiga ₹1,800; Innova ₹2,200. The Dabolim Airport taxi stand charges ₹2,200–3,000 for an unmetered sedan — often more than double the fair pre-booked rate.",
+          "Pre-booked prices from Dabolim to Calangute: Dzire ₹1,400; Ertiga ₹1,800; Innova ₹2,500. The Dabolim Airport taxi stand charges ₹2,200–3,000 for an unmetered sedan — often more than double the fair pre-booked rate.",
           "The drive from Dabolim is longer (1.5–2 hours) and passes through Panjim city traffic, especially in peak season afternoons. We recommend booking early morning arrivals if possible to avoid peak traffic.",
         ],
       },
@@ -342,36 +342,36 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Airport Transfer Rates (One-Way, Pre-Booked)",
         list: [
-          "Mopa Airport → Calangute: Dzire ₹1,200 | Ertiga ₹1,500 | Innova ₹2,000",
-          "Mopa Airport → Panjim: Dzire ₹1,100 | Ertiga ₹1,200 | Innova ₹1,600",
+          "Mopa Airport → Calangute: Dzire ₹1,300 | Ertiga ₹1,500 | Innova ₹2,000",
+          "Mopa Airport → Panjim: Dzire ₹1,200 | Ertiga ₹1,200 | Innova ₹1,600",
           "Mopa Airport → Anjuna/Vagator: Dzire ₹1,400 | Ertiga ₹1,700 | Innova ₹2,300",
-          "Dabolim Airport → Calangute: Dzire ₹1,500 | Ertiga ₹1,800 | Innova ₹2,500",
-          "Dabolim Airport → Panjim: Dzire ₹1,100 | Ertiga ₹1,500 | Innova ₹2,000",
-          "Dabolim Airport → Margao: Dzire ₹1,000 | Ertiga ₹1,200 | Innova ₹1,500",
+          "Dabolim Airport → Calangute: Dzire ₹1,400 | Ertiga ₹1,800 | Innova ₹2,500",
+          "Dabolim Airport → Panjim: Dzire ₹1,100 | Ertiga ₹1,200 | Innova ₹1,600",
+          "Dabolim Airport → Margao: Dzire ₹800 | Ertiga ₹1,000 | Innova ₹1,500",
         ],
         tip: "Pre-booked rates are 30–50% cheaper than walk-in airport taxi stands. Always pre-book — you'll also have a driver waiting with your name, which reduces stress on arrival.",
       },
       {
         heading: "Per Km Rates (2026)",
         paragraphs: [
-          "For point-to-point trips without a package, fair per-km rates in 2026 are: Maruti Dzire ₹12/km; Maruti Ertiga ₹16/km; Toyota Innova Crysta ₹20/km; Tempo Traveller 12-seater ₹25/km; Tempo Traveller 14-seater ₹28/km; Tempo Traveller 20-seater ₹35/km; Force Urbania 17-seater ₹45/km. Most operators have a minimum fare of ₹300–500.",
+          "For point-to-point trips without a package, fair per-km rates in 2026 are: Maruti Dzire ₹19/km; Maruti Ertiga ₹22/km; Toyota Innova Crysta ₹25/km; Tempo Traveller 12-seater ₹35/km; Tempo Traveller 14-seater ₹40/km; Tempo Traveller 20-seater ₹45/km; Force Urbania 17-seater ₹50/km. Most operators have a minimum fare of ₹300–500.",
         ],
       },
       {
         heading: "Package Rates for Sightseeing",
         paragraphs: [
-          "For full-day sightseeing, the 8-hour/80km and 12-hour/120km packages offer better value than per-km rates: 8hr/80km package — Dzire ₹1,800; Ertiga ₹2,500; Innova ₹3,500; 12hr/120km package — Dzire ₹2,500; Ertiga ₹3,500; Innova ₹4,500. These packages cover unlimited stops within the time/km limit, which is perfect for a day of sightseeing.",
+          "For full-day sightseeing, the 8-hour/80km and 12-hour/120km packages offer better value than per-km rates: 8hr/80km package — Dzire ₹2,500; Ertiga ₹3,000; Innova ₹4,000; 12hr/120km package — Dzire ₹3,000; Ertiga ₹3,500; Innova ₹5,000. These packages cover unlimited stops within the time/km limit, which is perfect for a day of sightseeing.",
           "Specific tour packages (North Goa Full Day, South Goa Full Day, Dudhsagar) have fixed prices that include planning, driver knowledge, and sometimes priority routing through traffic. These are generally ₹200–500 more than a raw package but often worth it for the hassle-free experience.",
         ],
       },
       {
         heading: "Outstation Trip Rates",
         list: [
-          "Goa to Mumbai (580km): Dzire ₹9,000 | Ertiga ₹11,000 | Innova ₹14,000",
-          "Goa to Pune (450km): Dzire ₹7,500 | Ertiga ₹9,000 | Innova ₹12,000",
-          "Goa to Bangalore (570km): Dzire ₹9,000 | Ertiga ₹11,000 | Innova ₹14,000",
-          "Goa to Hampi (370km): Dzire ₹6,000 | Ertiga ₹7,500 | Innova ₹10,000",
-          "Goa to Gokarna (150km): Dzire ₹2,800 | Ertiga ₹3,500 | Innova ₹4,500",
+          "Goa to Mumbai (580km): Dzire ₹20,000 | Ertiga ₹25,000 | Innova ₹35,000",
+          "Goa to Pune (450km): Dzire ₹20,000 | Ertiga ₹25,000 | Innova ₹35,000",
+          "Goa to Bangalore (570km): Dzire ₹20,000 | Ertiga ₹25,000 | Innova ₹35,000",
+          "Goa to Hampi (370km): Dzire ₹12,000 | Ertiga ₹16,000 | Innova ₹25,000",
+          "Goa to Gokarna (150km): Dzire ₹8,000 | Ertiga ₹10,000 | Innova ₹15,000",
           "Driver allowance ₹500/day + night halt ₹500/night + tolls at actuals",
         ],
       },
@@ -388,8 +388,8 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Self-Drive: When It Makes More Sense Than Taxis",
         paragraphs: [
-          "If you're staying 5+ days and plan to move freely between beaches and towns, self-drive car rental is often cheaper than daily taxi hire. A Maruti Baleno costs ₹1,500/day including 200 free km. For context, a full day of sightseeing in taxis would typically cost ₹1,800–2,500. The math often favours self-drive for longer stays.",
-          "Self-drive requires a valid driving licence and a ₹5,000 refundable deposit. It's legal and practical for most travellers who are comfortable driving on Indian roads.",
+          "If you're staying 5+ days and plan to move freely between beaches and towns, self-drive car rental is often cheaper than daily taxi hire. A Maruti Baleno costs ₹1,500/day including 200 free km. For context, a full day of sightseeing in taxis would typically cost ₹2,500–3,000. The math often favours self-drive for longer stays.",
+          "Self-drive requires a valid driving licence and a refundable security deposit. It's legal and practical for most travellers who are comfortable driving on Indian roads.",
         ],
       },
     ],
@@ -632,7 +632,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Why One Tempo Traveller Beats Multiple Smaller Cars",
         paragraphs: [
           "The most common mistake groups make is booking two or three Innovas instead of a single Tempo Traveller. With multiple vehicles: someone always gets left behind, coordination becomes a constant headache, and you pay more per head. One vehicle means everyone is always together — the conversations, the jokes, the collective experience of seeing something beautiful. That's what a group trip is for.",
-          "Cost-wise, a 12-seater Tempo Traveller at ₹4,000 for an 8hr/80km package serves 12 people at ₹333 per head. Three Dzires serving 4 each would cost ₹1,800 × 3 = ₹5,400 total — ₹150 per head more expensive and three times the coordination.",
+          "Cost-wise, a 12-seater Tempo Traveller at ₹4,000 for an 8hr/80km package serves 12 people at ₹333 per head. Three Dzires serving 4 each would cost ₹2,500 × 3 = ₹7,500 total — ₹625 per head, nearly double, and three times the coordination.",
         ],
       },
       {
@@ -650,7 +650,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Tempo Traveller Pricing 2026",
         paragraphs: [
-          "Standard 12-seater rates: ₹4,000 for 8hr/80km; ₹5,500 for 12hr/120km; ₹25/km for outstation. Airport transfers from Mopa: approximately ₹2,500 for the 12-seater. The 14-seater runs about ₹500–1,000 more per package, and the 20-seater about ₹1,500 more.",
+          "Standard 12-seater rates: ₹4,000 for 8hr/80km; ₹6,000 for 12hr/120km; ₹35/km for outstation. Airport transfers from Mopa to North Goa: ₹3,800 for the 12-seater. The 14-seater runs about ₹500 more per package, and the 20-seater about ₹1,500–2,000 more.",
           "For multi-day corporate retreats, negotiated daily rates typically apply — WhatsApp the operator with your full itinerary (days, distances, activities) for a custom quote that's usually 10–20% below standard rates.",
         ],
       },

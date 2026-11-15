@@ -45,7 +45,6 @@ const businessSchema = {
   "@context": "https://schema.org",
   "@type": "TaxiService",
   "name": "ZipGoa",
-  "alternateName": "ZipGoa Taxi Services",
   "description": "Goa's premium taxi and car rental service. Quick bookings, verified drivers, transparent pricing.",
   "slogan": "Quick. Reliable. Trusted.",
   "url": "https://zipgoa.com",
@@ -57,7 +56,7 @@ const businessSchema = {
   "founder": { "@type": "Person", "name": "Sumit Rathod" },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Parra",
+    "streetAddress": "532/1 W, Muddo Vado, Parra",
     "addressLocality": "North Goa",
     "addressRegion": "Goa",
     "postalCode": "403510",
@@ -83,13 +82,6 @@ const businessSchema = {
     "https://www.facebook.com/zipgoa",
     "https://www.instagram.com/zipgoa",
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "500",
-    "bestRating": "5",
-    "worstRating": "1",
-  },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Taxi & Car Rental Services",

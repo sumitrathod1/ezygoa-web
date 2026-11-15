@@ -4,9 +4,10 @@ import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import SightseeingPackages from "@/components/SightseeingPackages";
+import NorthGoaPickupNotice from "@/components/NorthGoaPickupNotice";
 
 export const metadata: Metadata = {
-  title: "Goa Sightseeing Tours | North & South Goa | ZipGoa Taxi",
+  title: "Goa Sightseeing Tours | North & South Goa",
   description:
     "Explore Goa's top attractions with ZipGoa sightseeing tours. Beaches, churches, forts, markets, waterfalls. Custom and fixed itinerary tours available.",
   keywords: ["Goa sightseeing", "Goa tour taxi", "North Goa tour", "South Goa tour", "Goa tourist places"],
@@ -46,8 +47,9 @@ export default function GoaSightseeingPage() {
             <h2 className="text-3xl font-bold" style={{ fontFamily: "var(--font-poppins)", color: "var(--brand-primary)" }}>
               Choose Your Tour
             </h2>
-            <p className="text-muted-foreground mt-2">Select your vehicle on each card and book instantly via WhatsApp.</p>
+            <p className="text-muted-foreground mt-2">Select your vehicle on each card and book quickly via WhatsApp.</p>
           </div>
+          <NorthGoaPickupNotice tourName="Goa Sightseeing Tour" className="mb-8" />
           <SightseeingPackages />
         </div>
       </section>

@@ -1,5 +1,5 @@
 {
-  "name": "ZipGoa Taxi Services",
+  "name": "ZipGoa",
   "short_name": "ZipGoa",
   "description": "Quick. Reliable. Trusted. - Goa's premium taxi service. Book your taxi in 30 seconds.",
   "start_url": "/",
@@ -28,14 +28,14 @@
     {
       "name": "Book a Taxi",
       "short_name": "Book",
-      "description": "Quickly book a taxi with ZipGoa Taxi Services",
+      "description": "Quickly book a taxi with ZipGoa",
       "url": "/booking",
       "icons": [{ "src": "/logo/logo-icon.png", "sizes": "192x192" }]
     },
     {
       "name": "Airport Taxi",
       "short_name": "Airport",
-      "description": "Book an airport transfer with ZipGoa Taxi Services",
+      "description": "Book an airport transfer with ZipGoa",
       "url": "/airport-taxi",
       "icons": [{ "src": "/logo/logo-icon.png", "sizes": "192x192" }]
     }

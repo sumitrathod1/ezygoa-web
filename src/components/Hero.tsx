@@ -5,11 +5,10 @@ import Image from "next/image";
 import { MessageCircle, Car, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TRUST_BADGES, buildWhatsAppUrl } from "@/lib/constants";
-import { trackWhatsAppClick } from "@/lib/analytics";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+    <section data-track-location="hero" className="relative min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Background: real photo with dark overlay */}
       <div className="absolute inset-0" aria-hidden>
         <Image
@@ -93,7 +92,6 @@ export default function Hero() {
               href={buildWhatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackWhatsAppClick("hero_section")}
             >
               <Button
                 size="lg"

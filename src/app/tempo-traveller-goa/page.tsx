@@ -6,10 +6,11 @@ import CTASection from "@/components/CTASection";
 import SafeImage from "@/components/SafeImage";
 import TempoBookingWidget from "@/components/TempoBookingWidget";
 import { BUSINESS } from "@/lib/constants";
+import { taxiRates, tourPrices, airportPrices } from "@/lib/data";
 
 /* ─────────────── Metadata ─────────────── */
 export const metadata: Metadata = {
-  title: "Tempo Traveller in Goa | 12, 14, 20 Seater | Urbania Rental | ZipGoa",
+  title: "Tempo Traveller in Goa | 12, 14, 20 Seater | Urbania Rental",
   description:
     "Book Tempo Traveller in Goa — 12, 14, 20 seater AC vans. Force Urbania 17-seater luxury bus available. Group bookings, weddings, airport pickup. WhatsApp booking.",
   keywords: [
@@ -47,10 +48,10 @@ const pageSchema = {
   },
   areaServed: { "@type": "State", name: "Goa" },
   offers: [
-    { "@type": "Offer", name: "Tempo Traveller 12 Seater", price: "25", priceCurrency: "INR", description: "Per km, starting price" },
-    { "@type": "Offer", name: "Tempo Traveller 14 Seater", price: "28", priceCurrency: "INR", description: "Per km, starting price" },
-    { "@type": "Offer", name: "Tempo Traveller 20 Seater", price: "35", priceCurrency: "INR", description: "Per km, starting price" },
-    { "@type": "Offer", name: "Force Urbania 17 Seater", price: "45", priceCurrency: "INR", description: "Per km, starting price" },
+    { "@type": "Offer", name: "Tempo Traveller 12 Seater", price: String(taxiRates.t12.perKm), priceCurrency: "INR", description: "Per km, starting price" },
+    { "@type": "Offer", name: "Tempo Traveller 14 Seater", price: String(taxiRates.t14.perKm), priceCurrency: "INR", description: "Per km, starting price" },
+    { "@type": "Offer", name: "Tempo Traveller 20 Seater", price: String(taxiRates.t20.perKm), priceCurrency: "INR", description: "Per km, starting price" },
+    { "@type": "Offer", name: "Force Urbania 17 Seater", price: String(taxiRates.urb.perKm), priceCurrency: "INR", description: "Per km, starting price" },
   ],
 };
 
@@ -61,9 +62,9 @@ const VEHICLES = [
     name: "Tempo Traveller 12 Seater",
     image: "/images/taxi/tempo-traveller-12.jpg",
     capacity: "12 passengers + driver",
-    pricePerDay: 4000,
-    extraKm: 35,
-    extraHr: 300,
+    pricePerDay: taxiRates.t12.pkg8,
+    extraKm: taxiRates.t12.perKm,
+    extraHr: taxiRates.t12.perHour,
     baggage: "8 bags",
     features: ["AC", "Push-back seats", "Music system"],
     bestFor: "Small groups, families",
@@ -76,9 +77,9 @@ const VEHICLES = [
     name: "Tempo Traveller 14 Seater",
     image: "/images/taxi/tempo-traveller-17.jpg",
     capacity: "14 passengers + driver",
-    pricePerDay: 4500,
-    extraKm: 40,
-    extraHr: 300,
+    pricePerDay: taxiRates.t14.pkg8,
+    extraKm: taxiRates.t14.perKm,
+    extraHr: taxiRates.t14.perHour,
     baggage: "10 bags",
     features: ["AC", "Push-back seats", "Music system"],
     bestFor: "Medium groups, corporate",
@@ -91,9 +92,9 @@ const VEHICLES = [
     name: "Tempo Traveller 20 Seater",
     image: "/images/taxi/tempo-traveller-20.jpg",
     capacity: "20 passengers + driver",
-    pricePerDay: 6000,
-    extraKm: 45,
-    extraHr: 400,
+    pricePerDay: taxiRates.t20.pkg8,
+    extraKm: taxiRates.t20.perKm,
+    extraHr: taxiRates.t20.perHour,
     baggage: "15 bags",
     features: ["AC", "Reclining seats", "Sound system"],
     bestFor: "Large groups, weddings, school trips",
@@ -106,26 +107,26 @@ const VEHICLES = [
     name: "Force Urbania 17 Seater",
     image: "/images/taxi/urbania-17.jpg",
     capacity: "17 passengers + driver",
-    pricePerDay: 7500,
-    extraKm: 50,
-    extraHr: 400,
+    pricePerDay: taxiRates.urb.pkg8,
+    extraKm: taxiRates.urb.perKm,
+    extraHr: taxiRates.urb.perHour,
     baggage: "12 bags",
     features: ["Luxury AC", "Premium leather seats", "USB charging"],
     bestFor: "Luxury group travel, VIP transport, weddings",
     whatsapp: `Hi ZipGoa! 👋 I want to book Force Urbania 17-seater Luxury Bus.\nFrom: ___\nTo: ___\nDate: ___\nPassengers: ___\nPlease share rates.`,
-    badge: "MOST PREMIUM" as string | null,
+    badge: "Premium" as string | null,
     isPremium: true,
   },
 ];
 
 const ROUTES = [
-  { to: "Calangute", distance: "40km", t12: 3500, t14: 4000, t20: 4200, urb: 6000 },
-  { to: "Panjim",    distance: "40km", t12: 3500, t14: 4000, t20: 4200, urb: 6000 },
-  { to: "Baga",      distance: "38km", t12: 3500, t14: 4000, t20: 4200, urb: 6000 },
-  { to: "Anjuna",    distance: "40km", t12: 3500, t14: 4000, t20: 4200, urb: 6000 },
-  { to: "Vagator",   distance: "40km", t12: 3500, t14: 4000, t20: 4200, urb: 6000 },
+  { to: "Calangute", distance: "40km", ...airportPrices("Mopa Airport", "Calangute") },
+  { to: "Panjim", distance: "40km", ...airportPrices("Mopa Airport", "Panjim") },
+  { to: "Baga", distance: "38km", ...airportPrices("Mopa Airport", "Baga") },
+  { to: "Anjuna", distance: "40km", ...airportPrices("Mopa Airport", "Anjuna") },
+  { to: "Vagator", distance: "40km", ...airportPrices("Mopa Airport", "Vagator") },
   { to: "Candolim",  distance: "42km", t12: 3500, t14: 4000, t20: 4200, urb: 6000 },
-  { to: "Margao",    distance: "80km", t12: 6000, t14: 6500, t20: 7000, urb: 8500 },
+  { to: "Margao", distance: "80km", ...airportPrices("Mopa Airport", "Margao") },
 ];
 
 const USE_CASES = [
@@ -143,7 +144,7 @@ const WHY_US = [
   { icon: "🚐", title: "Wide Range of Vehicles",  desc: "12 to 20 seater options + luxury Urbania" },
   { icon: "🔧", title: "Well-Maintained Fleet",   desc: "Regular servicing, clean interiors" },
   { icon: "👨‍✈️", title: "Professional Drivers",  desc: "Experienced, verified, courteous" },
-  { icon: "💰", title: "Transparent Pricing",     desc: "No hidden charges, price confirmed upfront" },
+  { icon: "💰", title: "Transparent Pricing",     desc: "All extra charges (tolls, parking, night charges) listed upfront" },
   { icon: "📱", title: "Easy WhatsApp Booking",   desc: "Book in 30 seconds via WhatsApp" },
   { icon: "🕐", title: "24/7 Availability",       desc: "Early morning or late night — we're available" },
   { icon: "🛡️", title: "Verified Drivers",        desc: "Background-checked, licensed drivers" },
@@ -161,10 +162,10 @@ const PACKAGES = [
     spec1Label: "Duration",  spec1Value: "8 Hours",
     spec2Label: "Distance",  spec2Value: "80 km included",
     vehicles: [
-      { emoji: "🚐", label: "12 Seater", price: 4000, wa: "Tempo Traveller 12-seater" },
-      { emoji: "🚐", label: "14 Seater", price: 4500, wa: "Tempo Traveller 14-seater" },
-      { emoji: "🚌", label: "20 Seater", price: 6000, wa: "Tempo Traveller 20-seater" },
-      { emoji: "⭐", label: "Urbania 17", price: 7000, wa: "Force Urbania 17-seater" },
+      { emoji: "🚐", label: "12 Seater", price: taxiRates.t12.pkg8, wa: "Tempo Traveller 12-seater" },
+      { emoji: "🚐", label: "14 Seater", price: taxiRates.t14.pkg8, wa: "Tempo Traveller 14-seater" },
+      { emoji: "🚌", label: "20 Seater", price: taxiRates.t20.pkg8, wa: "Tempo Traveller 20-seater" },
+      { emoji: "⭐", label: "Urbania 17", price: taxiRates.urb.pkg8, wa: "Force Urbania 17-seater" },
     ],
   },
   {
@@ -177,10 +178,10 @@ const PACKAGES = [
     spec1Label: "Duration",  spec1Value: "6–7 Hours",
     spec2Label: "Stops",     spec2Value: "8–10 places",
     vehicles: [
-      { emoji: "🚐", label: "12 Seater", price: 3500, wa: "Tempo Traveller 12-seater" },
-      { emoji: "🚐", label: "14 Seater", price: 4000, wa: "Tempo Traveller 14-seater" },
-      { emoji: "🚌", label: "20 Seater", price: 4500, wa: "Tempo Traveller 20-seater" },
-      { emoji: "⭐", label: "Urbania 17", price: 7000, wa: "Force Urbania 17-seater" },
+      { emoji: "🚐", label: "12 Seater", price: tourPrices.northGoa.t12, wa: "Tempo Traveller 12-seater" },
+      { emoji: "🚐", label: "14 Seater", price: tourPrices.northGoa.t14, wa: "Tempo Traveller 14-seater" },
+      { emoji: "🚌", label: "20 Seater", price: tourPrices.northGoa.t20, wa: "Tempo Traveller 20-seater" },
+      { emoji: "⭐", label: "Urbania 17", price: tourPrices.northGoa.urb, wa: "Force Urbania 17-seater" },
     ],
   },
   {
@@ -193,10 +194,10 @@ const PACKAGES = [
     spec1Label: "Duration",  spec1Value: "7–8 Hours",
     spec2Label: "Stops",     spec2Value: "6–8 places",
     vehicles: [
-      { emoji: "🚐", label: "12 Seater", price: 4000, wa: "Tempo Traveller 12-seater" },
-      { emoji: "🚐", label: "14 Seater", price: 4500, wa: "Tempo Traveller 14-seater" },
-      { emoji: "🚌", label: "20 Seater", price: 5000, wa: "Tempo Traveller 20-seater" },
-      { emoji: "⭐", label: "Urbania 17", price: 7500, wa: "Force Urbania 17-seater" },
+      { emoji: "🚐", label: "12 Seater", price: tourPrices.southGoa.t12, wa: "Tempo Traveller 12-seater" },
+      { emoji: "🚐", label: "14 Seater", price: tourPrices.southGoa.t14, wa: "Tempo Traveller 14-seater" },
+      { emoji: "🚌", label: "20 Seater", price: tourPrices.southGoa.t20, wa: "Tempo Traveller 20-seater" },
+      { emoji: "⭐", label: "Urbania 17", price: tourPrices.southGoa.urb, wa: "Force Urbania 17-seater" },
     ],
   },
   {
@@ -205,14 +206,14 @@ const PACKAGES = [
     badge: "Day Trip",
     badgeCls: "bg-cyan-50 text-cyan-700",
     title: "Dudhsagar Waterfall",
-    subtitle: "India's tallest waterfall · Spice farm option",
+    subtitle: "One of India's tallest waterfalls · Spice farm option",
     spec1Label: "Duration",  spec1Value: "Full Day",
     spec2Label: "Distance",  spec2Value: "~95 km from Calangute",
     vehicles: [
-      { emoji: "🚐", label: "12 Seater", price: 7000,  wa: "Tempo Traveller 12-seater" },
-      { emoji: "🚐", label: "14 Seater", price: 7500,  wa: "Tempo Traveller 14-seater" },
-      { emoji: "🚌", label: "20 Seater", price: 9000,  wa: "Tempo Traveller 20-seater" },
-      { emoji: "⭐", label: "Urbania 17", price: 10000, wa: "Force Urbania 17-seater" },
+      { emoji: "🚐", label: "12 Seater", price: tourPrices.dudhsagar.t12, wa: "Tempo Traveller 12-seater" },
+      { emoji: "🚐", label: "14 Seater", price: tourPrices.dudhsagar.t14, wa: "Tempo Traveller 14-seater" },
+      { emoji: "🚌", label: "20 Seater", price: tourPrices.dudhsagar.t20, wa: "Tempo Traveller 20-seater" },
+      { emoji: "⭐", label: "Urbania 17", price: tourPrices.dudhsagar.urb, wa: "Force Urbania 17-seater" },
     ],
   },
 ];
@@ -240,7 +241,7 @@ const FAQS = [
   },
   {
     q: "What is the cancellation policy?",
-    a: "Cancellations 6+ hours before the trip are fully refunded. Under 6 hours, a partial charge may apply. WhatsApp us if your plans change — we always try to be fair.",
+    a: "Free cancellation up to 24 hrs before pickup for local and airport transfers. Day tours need 48 hrs' notice and outstation trips 72 hrs — see our Refund Policy for full terms. WhatsApp us if your plans change.",
   },
   {
     q: "Do you provide airport group pickup?",
@@ -248,7 +249,7 @@ const FAQS = [
   },
   {
     q: "Are tolls and parking charges included?",
-    a: "Tolls and parking are extra, paid on actuals. We communicate these clearly before your trip so there are no surprises.",
+    a: "Tolls and parking are extra, paid on actuals. All extra charges (tolls, parking, night charges) are listed upfront before your trip.",
   },
 ];
 

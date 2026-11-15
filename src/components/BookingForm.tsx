@@ -4,8 +4,8 @@ import { useState, useMemo } from "react";
 import { MessageCircle, ArrowRight, User, Phone, Mail, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { vehicles } from "@/lib/data";
+import { trackLead } from "@/lib/track";
 import { BUSINESS } from "@/lib/constants";
-import { trackBookingComplete } from "@/lib/analytics";
 
 const SERVICES = [
   "Airport Pickup",
@@ -132,7 +132,7 @@ export default function BookingForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    trackBookingComplete(selectedVehicle?.name ?? form.vehicle);
+    trackLead("booking_form_submit", { form_name: "booking_form", service: form.service || undefined });
     window.open(buildMessage(), "_blank");
   };
 

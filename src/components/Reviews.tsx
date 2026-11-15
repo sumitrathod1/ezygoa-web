@@ -46,12 +46,6 @@ export default function Reviews() {
             </h2>
           </div>
           <div className="flex items-center gap-3">
-            {/* Overall rating */}
-            <div className="flex items-center gap-2 px-4 py-2 bg-white rounded-xl border border-border shadow-sm">
-              <Star className="w-5 h-5" fill="var(--brand-accent)" stroke="var(--brand-accent)" />
-              <span className="font-bold text-lg" style={{ color: "var(--brand-primary)" }}>4.9</span>
-              <span className="text-muted-foreground text-sm">/ 5 · 500+ reviews</span>
-            </div>
             {/* Nav */}
             <div className="flex gap-2">
               <button

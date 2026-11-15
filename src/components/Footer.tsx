@@ -148,8 +148,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/50 text-xs">
+          <p className="text-white/50 text-xs text-center sm:text-left">
             © {currentYear} {BUSINESS.name}. All rights reserved.
+            <br />
+            Udyam Reg. No: {BUSINESS.udyam}
           </p>
           <div className="flex items-center gap-4">
             {[

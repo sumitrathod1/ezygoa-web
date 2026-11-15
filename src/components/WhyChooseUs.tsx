@@ -3,7 +3,7 @@
     emoji: "✅",
     title: "Transparent Pricing",
     description:
-      "No hidden charges, no surprise fees. Fixed rates shared upfront before you confirm your booking.",
+      "All extra charges (tolls, parking, night charges) listed upfront. Rates shared before you confirm your booking.",
   },
   {
     emoji: "👨‍✈️",
@@ -27,7 +27,7 @@
     emoji: "📱",
     title: "Easy Booking",
     description:
-      "Book via WhatsApp, phone call, or our website. Get instant confirmation within minutes.",
+      "Book via WhatsApp, phone call, or our website. Quick booking via WhatsApp.",
   },
   {
     emoji: "🌴",
@@ -53,8 +53,7 @@ export default function WhyChooseUs() {
             Why Choose Us?
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Over 10,000 happy customers trust ZipGoa for their travels across Goa.
-            Here&apos;s what makes us different.
+            Here&apos;s what makes ZipGoa different.
           </p>
         </div>
 
@@ -82,31 +81,6 @@ export default function WhyChooseUs() {
               </p>
             </div>
           ))}
-        </div>
-
-        {/* Stats bar */}
-        <div
-          className="mt-14 rounded-2xl p-8"
-          style={{ backgroundColor: "var(--brand-primary)" }}
-        >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-            {[
-              { value: "10,000+", label: "Trips Completed" },
-              { value: "5,000+", label: "Happy Customers" },
-              { value: "4.9★", label: "Average Rating" },
-              { value: "10+", label: "Years in Goa" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <div
-                  className="text-3xl font-extrabold mb-1"
-                  style={{ fontFamily: "var(--font-poppins)", color: "var(--brand-accent)" }}
-                >
-                  {stat.value}
-                </div>
-                <div className="text-white/70 text-sm">{stat.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

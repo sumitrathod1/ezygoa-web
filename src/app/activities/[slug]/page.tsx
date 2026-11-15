@@ -21,7 +21,7 @@ export async function generateMetadata({
   const act = activities.find((a) => a.slug === slug);
   if (!act) return { title: "Not Found" };
   return {
-    title: `${act.title} | Goa Activities | ZipGoa`,
+    title: `${act.title} | Goa Activities`,
     description: act.shortDescription,
     keywords: [act.title, act.category, "Goa activities", "ZipGoa", act.location],
     openGraph: {

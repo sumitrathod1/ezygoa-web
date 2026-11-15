@@ -1,12 +1,12 @@
 ﻿import type { Metadata } from "next";
-import { Award, Users, ThumbsUp, MapPin, Heart, Star } from "lucide-react";
+import { Award, ThumbsUp, MapPin, Heart, Star } from "lucide-react";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import { BUSINESS } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "About Us | ZipGoa — Your Goa Travel Partner",
+  title: "About Us — Your Goa Travel Partner",
   description:
     "Learn about ZipGoa — your trusted Goa travel partner for taxis, self-drive cars, sightseeing tours, and airport transfers. Our story and our values.",
   keywords: ["ZipGoa about", "Goa taxi company", "ZipGoa story", "Goa travel partner"],
@@ -27,7 +27,7 @@ const VALUES = [
   { icon: Heart, title: "Customer First", desc: "Every decision we make starts with the customer's comfort, safety, and satisfaction." },
   { icon: Star, title: "Excellence", desc: "We raise the bar on every trip — punctuality, cleanliness, courtesy, and value." },
   { icon: Award, title: "Integrity", desc: "Transparent pricing, honest communication, no shortcuts. Always." },
-  { icon: ThumbsUp, title: "Reliability", desc: "We've never missed an airport pickup. Not once. That's our track record." },
+  { icon: ThumbsUp, title: "Reliability", desc: "We track flights and plan every pickup so your driver is ready when you are." },
 ];
 
 const SERVICE_AREAS = [
@@ -37,12 +37,6 @@ const SERVICE_AREAS = [
   "Mopa International Airport (GOX)",
   "Dabolim Airport (GOI)",
   "Outstation: Mumbai, Pune, Bangalore, Hampi, Gokarna",
-];
-
-const TEAM = [
-  { name: "Rajan Naik", role: "Founder & Director", emoji: "👨‍💼", years: "10+ years in transport" },
-  { name: "Suresh Dessai", role: "Fleet Manager", emoji: "🔧", years: "Expert in vehicle maintenance" },
-  { name: "Preetam Gaonkar", role: "Senior Driver", emoji: "🚗", years: "8+ years, 5000+ trips" },
 ];
 
 export default function AboutPage() {
@@ -75,7 +69,7 @@ export default function AboutPage() {
                   We cover all of Goa — from Arambol in the north to Palolem in the south — and offer outstation trips across the Konkan coast. Our fleet spans compact sedans, spacious SUVs, Tempo Travellers, and self-drive cars.
                 </p>
                 <p>
-                  Every trip reflects our commitment to punctuality, transparent pricing, and genuine Goa hospitality. No hidden charges. No surprises.
+                  Every trip reflects our commitment to punctuality, transparent pricing, and genuine Goa hospitality. All extra charges (tolls, parking, night charges) listed upfront.
                 </p>
                 <p>
                   <strong style={{ color: "var(--brand-primary)" }}>Our mission:</strong> Make every journey in Goa easy, comfortable, and memorable — so you can focus on the incredible destination, not the logistics.
@@ -127,37 +121,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold" style={{ fontFamily: "var(--font-poppins)", color: "var(--brand-primary)" }}>
-              Meet Our Team
-            </h2>
-            <p className="text-muted-foreground mt-2">Friendly professionals who live and breathe Goa.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            {TEAM.map((member) => (
-              <div key={member.name} className="bg-white rounded-2xl p-6 border border-border shadow-sm card-hover text-center">
-                <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center text-3xl mx-auto mb-4"
-                  style={{ background: "oklch(0.265 0.078 254 / 0.08)" }}
-                >
-                  {member.emoji}
-                </div>
-                <h3 className="font-bold mb-0.5" style={{ fontFamily: "var(--font-poppins)", color: "var(--brand-primary)" }}>
-                  {member.name}
-                </h3>
-                <p className="text-sm text-muted-foreground mb-1">{member.role}</p>
-                <p className="text-xs text-muted-foreground">{member.years}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Service Areas */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold" style={{ fontFamily: "var(--font-poppins)", color: "var(--brand-primary)" }}>

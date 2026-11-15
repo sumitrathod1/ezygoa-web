@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { X, Calendar, Clock, Bus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { buildWhatsAppUrl } from "@/lib/constants";
+import { trackLead } from "@/lib/track";
 
 /* ─── Time slots ─── */
 const TIME_SLOTS = [
@@ -34,6 +35,7 @@ interface BookingModalProps {
   vehicle?: string;   // if passed, pre-selects and hides the picker
   from?: string;
   to?: string;
+  askPickupArea?: boolean; // adds a "Pickup area: ___" line to the WhatsApp message
 }
 
 export function BookingModal({
@@ -44,6 +46,7 @@ export function BookingModal({
   vehicle: vehicleProp,
   from,
   to,
+  askPickupArea,
 }: BookingModalProps) {
   const [date, setDate]           = useState("");
   const [time, setTime]           = useState("");
@@ -70,7 +73,9 @@ export function BookingModal({
       to,
       date: formattedDate,
       time: time || "Flexible",
+      askPickupArea,
     });
+    trackLead("whatsapp_click", { button_location: "booking_modal", service: service || vehicle || undefined });
     window.open(url, "_blank");
     onClose();
     setDate("");

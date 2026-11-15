@@ -8,6 +8,7 @@ export default function CallButton() {
     <a
       href={`tel:${BUSINESS.phone}`}
       aria-label={`Call ${BUSINESS.phoneDisplay}`}
+      data-track-location="floating_call_button"
       className="fixed bottom-6 left-6 z-50 group sm:hidden"
     >
       <div className="relative">

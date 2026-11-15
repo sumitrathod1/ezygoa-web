@@ -6,9 +6,9 @@ import SelfDriveGrid from "@/components/SelfDriveGrid";
 import { selfDriveVehicles } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Self Drive Car Rental Goa 2026 | Swift, Creta, Thar, Innova | ZipGoa",
+  title: "Self Drive Car Rental Goa 2026 | Swift, Creta, Thar, Innova",
   description:
-    "Rent self-drive cars in Goa starting ₹1,200/day. Swift, Baleno, i20, Creta, Ertiga, Innova Crysta, Hycross Hybrid, Thar 4x4. All new models, insured, 24/7 support.",
+    "Rent self-drive cars in Goa starting ₹1,400/day. Swift, Baleno, i20, Creta, Ertiga, Innova Crysta, Hycross Hybrid, Thar 4x4. All new models, insured, 24/7 support.",
   keywords: [
     "self drive car rental Goa",
     "rent car Goa",
@@ -21,18 +21,18 @@ export const metadata: Metadata = {
     "Ertiga rental Goa",
   ],
   openGraph: {
-    title: "Self Drive Car Rental Goa | ZipGoa — From ₹1,200/day",
-    description: "18 cars available. Economy to premium. Swift, Creta, Thar, Hycross. Instant booking.",
+    title: "Self Drive Car Rental Goa | ZipGoa — From ₹1,400/day",
+    description: "18 cars available. Economy to premium. Swift, Creta, Thar, Hycross. Quick booking via WhatsApp.",
   },
 };
 
 const WHY_RENT = [
   { emoji: "🔑", title: "Full Freedom", desc: "Go where you want, when you want — zero waiting or scheduling." },
-  { emoji: "💰", title: "Transparent Rates", desc: "Fixed daily prices. No hidden charges, no surprise fees." },
+  { emoji: "💰", title: "Transparent Rates", desc: "Fixed daily prices. All extra charges (fuel, tolls, parking) listed upfront." },
   { emoji: "🚗", title: "All New Models", desc: "2023–2025 vehicles freshly serviced before every rental." },
   { emoji: "📍", title: "Flexible Pickup", desc: "Collect from Panjim, Calangute, Mapusa or any Goa airport." },
   { emoji: "📞", title: "24/7 Support", desc: "Our team is on call for help, directions or roadside assistance." },
-  { emoji: "📄", title: "Simple Process", desc: "WhatsApp your documents — car delivered in 30 minutes." },
+  { emoji: "📄", title: "Simple Process", desc: "WhatsApp your documents and we'll arrange your car." },
 ];
 
 const REQUIREMENTS = [

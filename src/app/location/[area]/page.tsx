@@ -20,7 +20,7 @@ export async function generateMetadata({
   const loc = locations.find((l) => l.id === id);
   if (!loc) return { title: "Not Found" };
   return {
-    title: `Taxi in ${loc.name}, Goa | ZipGoa`,
+    title: `Taxi in ${loc.name}, Goa`,
     description: `Book a reliable taxi in ${loc.name}, Goa. Airport transfers, sightseeing tours, local trips. Dzire from ₹${loc.routes[0]?.prices.dzire ?? 300}. Book via WhatsApp.`,
     keywords: [
       `taxi ${loc.name} Goa`,
@@ -31,8 +31,8 @@ export async function generateMetadata({
       "ZipGoa taxi",
     ],
     openGraph: {
-      title: `Taxi Service in ${loc.name} | ZipGoa Goa`,
-      description: `Reliable taxi in ${loc.name}. ${loc.shortDesc} Instant booking, fixed rates.`,
+      title: `Taxi Service in ${loc.name} | ZipGoa`,
+      description: `Reliable taxi in ${loc.name}. ${loc.shortDesc} Quick booking via WhatsApp, fixed rates.`,
     },
   };
 }
@@ -248,9 +248,9 @@ export default async function LocationPage({
                 <ul className="space-y-2 mt-3">
                   {[
                     `Local drivers who know ${loc.name} well`,
-                    "Fixed transparent fares — no surprises",
-                    "Pickup in under 30 minutes",
-                    "No surge pricing at any hour",
+                    "All extra charges (tolls, parking, night charges) listed upfront",
+                    "Quick booking via WhatsApp",
+                    "Fares confirmed before booking",
                     "24/7 availability including late night",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-white/85">
@@ -323,7 +323,7 @@ export default async function LocationPage({
               Book Your Taxi from {loc.name}
             </h2>
             <p className="text-white/80 mb-8 max-w-xl mx-auto">
-              Instant confirmation via WhatsApp. Local drivers. Fixed rates. No surge pricing.
+              Quick booking via WhatsApp. Local drivers. Fixed rates, confirmed before booking.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a href={bookingUrl} target="_blank" rel="noopener noreferrer">

@@ -5,7 +5,7 @@ import FleetGrid from "@/components/FleetGrid";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "Our Fleet | ZipGoa — Premium Vehicles Goa",
+  title: "Our Fleet — Premium Vehicles Goa",
   description:
     "Browse ZipGoa's complete fleet — Dzire, Ertiga, Innova Crysta, Tempo Travellers, Urbania luxury bus, and self-drive cars in Goa. Transparent, fixed pricing.",
   keywords: ["Goa taxi fleet", "Innova Crysta Goa", "Tempo Traveller Goa", "self drive Goa", "Urbania bus Goa"],

@@ -2,7 +2,7 @@
 
 import Script from "next/script";
 
-const GA_MEASUREMENT_ID = "G-0XH49G88GM";
+import { GA_MEASUREMENT_ID, ADS_ID } from "@/lib/analytics";
 // const CLARITY_ID = "YOUR_CLARITY_ID"; // Uncomment and set your Clarity project ID
 
 export default function Analytics() {
@@ -21,6 +21,7 @@ export default function Analytics() {
           gtag('config', '${GA_MEASUREMENT_ID}', {
             page_path: window.location.pathname,
           });
+          gtag('config', '${ADS_ID}');
         `}
       </Script>
 

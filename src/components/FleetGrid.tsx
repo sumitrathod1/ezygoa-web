@@ -22,7 +22,7 @@ const SEGMENT_THEME: Record<string, { bg: string; badge: string }> = {
 /* ── Taxi Vehicle Card ──────────────────────────────────────────────── */
 function TaxiCard({ v }: { v: Vehicle }) {
   return (
-    <div className="bg-white rounded-2xl border border-border shadow-sm card-hover overflow-hidden group flex flex-col">
+    <div data-track-location="vehicle_card" data-track-service={v.name} className="bg-white rounded-2xl border border-border shadow-sm card-hover overflow-hidden group flex flex-col">
       <div
         className="h-44 relative overflow-hidden"
         style={{ background: `linear-gradient(135deg, ${v.color ?? "#1a365d"}18, ${v.color ?? "#1a365d"}38)` }}
@@ -125,7 +125,7 @@ function SelfDriveCard({ v }: { v: SelfDriveVehicle }) {
   const waUrl = `https://wa.me/917026889254?text=${encodeURIComponent(waMsg)}`;
 
   return (
-    <div className="bg-white rounded-2xl border border-border shadow-sm card-hover overflow-hidden group flex flex-col">
+    <div data-track-location="vehicle_card" data-track-service={v.name} className="bg-white rounded-2xl border border-border shadow-sm card-hover overflow-hidden group flex flex-col">
       <div
         className="h-44 relative overflow-hidden"
         style={{ background: `linear-gradient(135deg, ${theme.bg}12, ${theme.bg}28)` }}

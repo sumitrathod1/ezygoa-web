@@ -6,9 +6,9 @@ import ContactForm from "@/components/ContactForm";
 import { BUSINESS, buildWhatsAppUrl } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "Contact Us | ZipGoa",
+  title: "Contact Us",
   description:
-    "Get in touch with ZipGoa. Call, WhatsApp, or email us anytime. 24/7 support. Parra, North Goa.",
+    "Get in touch with ZipGoa. Call, WhatsApp, or email us anytime. 24/7 support. 532/1 W, Muddo Vado, Parra, North Goa, Goa 403510.",
   keywords: ["ZipGoa contact", "taxi Goa phone", "book taxi Goa", "Goa taxi WhatsApp"],
   openGraph: {
     title: "Contact ZipGoa",
@@ -46,7 +46,7 @@ const CONTACT_CARDS = [
     icon: MapPin,
     title: "Our Location",
     value: BUSINESS.address,
-    sub: "North Goa, India",
+    sub: `Udyam Reg. No: ${BUSINESS.udyam}`,
     href: "https://maps.google.com/?q=Parra,Goa,India",
     color: "#e53e3e",
     target: "_blank",
@@ -83,7 +83,7 @@ export default function ContactPage() {
                   <Icon className="w-6 h-6" style={{ color }} />
                 </div>
                 <h3 className="font-bold text-sm mb-1" style={{ fontFamily: "var(--font-poppins)" }}>{title}</h3>
-                <p className="text-sm font-medium break-all mb-1" style={{ color: "var(--brand-primary)" }}>{value}</p>
+                <p className="text-sm font-medium break-words mb-1" style={{ color: "var(--brand-primary)" }}>{value}</p>
                 <p className="text-xs text-muted-foreground">{sub}</p>
               </a>
             ))}
@@ -156,7 +156,7 @@ export default function ContactPage() {
                 >
                   <div className="text-center">
                     <MapPin className="w-8 h-8 mx-auto mb-2" style={{ color: "var(--brand-primary)" }} />
-                    <p className="text-sm font-medium" style={{ color: "var(--brand-primary)" }}>Parra, North Goa</p>
+                    <p className="text-sm font-medium px-4" style={{ color: "var(--brand-primary)" }}>{BUSINESS.address}</p>
                     <a
                       href="https://maps.google.com/?q=Parra,Goa,India"
                       target="_blank"

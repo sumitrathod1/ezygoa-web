@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Search, MapPin, Calendar, Users, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { buildWhatsAppUrl } from "@/lib/constants";
+import { trackLead } from "@/lib/track";
 
 const SERVICES = [
   "Airport Pickup",
@@ -49,6 +50,7 @@ export default function BookingWidget() {
       time: time || undefined,
       passengers: pax,
     });
+    trackLead("whatsapp_click", { button_location: "booking_widget", service: service || undefined });
     window.open(url, "_blank");
   };
 
@@ -200,7 +202,7 @@ export default function BookingWidget() {
               color: "white",
             }}
           >
-            Get Instant Price via WhatsApp
+            Get Price via WhatsApp
             <ArrowRight className="w-4 h-4" />
           </Button>
         </div>

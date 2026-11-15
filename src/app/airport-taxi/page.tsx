@@ -4,9 +4,10 @@ import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import { BookingButton } from "@/components/BookingButton";
+import { airportRoute, type Airport } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Airport Taxi Goa | Mopa & Dabolim Airport Transfer | ZipGoa",
+  title: "Airport Taxi Goa | Mopa & Dabolim Airport Transfer",
   description:
     "Reliable airport taxi in Goa. Pickup and drop service from Mopa (GOX) and Dabolim (GOI) airports. Flight tracking, no waiting charges. Book now!",
   keywords: ["Mopa airport taxi", "Dabolim airport taxi", "Goa airport transfer", "GOX taxi", "GOI taxi Goa"],
@@ -16,26 +17,34 @@ export const metadata: Metadata = {
   },
 };
 
-const MOPA_ROUTES = [
-  { to: "Calangute / Baga", distance: "40 km", duration: "1h 10m", dzire: 1250, ertiga: 1500, innova: 2000, t12: 3800, t14: 3800, t20: 4200, urb: 5500 },
-  { to: "Panjim (Panaji)", distance: "40 km", duration: "50m", dzire: 1200, ertiga: 1200, innova: 1600, t12: 3800, t14: 3800, t20: 3400, urb: 4500 },
-  { to: "Anjuna / Vagator", distance: "48 km", duration: "1h 20m", dzire: 1400, ertiga: 1700, innova: 2300, t12: 3800, t14: 3700, t20: 4800, urb: 6200 },
-  { to: "Mapusa", distance: "28 km", duration: "40m", dzire: 800, ertiga: 1200, innova: 1500, t12: 3500, t14: 3500, t20: 3700, urb: 4200 },
-  { to: "Margao (South Goa)", distance: "80 km", duration: "2h", dzire: 2000, ertiga: 2500, innova: 3200, t12: 5500, t14: 5700, t20: 6800, urb: 9000 },
-];
+// Fares, distances and durations come from src/lib/data.ts (single source of truth).
+function airportRows(airport: Airport, rows: { to: string; place: string }[]) {
+  return rows.map(({ to, place }) => {
+    const r = airportRoute(airport, place);
+    return { to, distance: `${r.distance} km`, duration: r.duration, ...r.prices };
+  });
+}
 
-const DABOLIM_ROUTES = [
-  { to: "Calangute / Baga", distance: "45 km", duration: "1h 30m", dzire: 1400, ertiga: 1800, innova: 2200, t12: 3800, t14: 4000, t20: 4800, urb: 6200 },
-  { to: "Panjim (Panaji)", distance: "30 km", duration: "45m", dzire: 1100, ertiga: 1200, innova: 1600, t12: 3800, t14: 3800, t20: 4000, urb: 4500 },
-  { to: "Margao / Colva", distance: "12 km", duration: "25m", dzire: 800, ertiga: 100, innova: 1500, t12: 3200, t14: 3500, t20: 3800, urb: 4800 },
-  { to: "Palolem Beach", distance: "60 km", duration: "1h 30m", dzire: 2500, ertiga: 3000, innova: 3800, t12: 5500, t14: 6000, t20: 7800, urb: 10000 },
-  { to: "Anjuna / Vagator", distance: "55 km", duration: "1h 40m", dzire: 1800, ertiga: 2200, innova: 2800, t12: 4000, t14: 4600, t20: 6000, urb: 7800 },
-];
+const MOPA_ROUTES = airportRows("Mopa Airport", [
+  { to: "Calangute / Baga", place: "Calangute" },
+  { to: "Panjim (Panaji)", place: "Panjim" },
+  { to: "Anjuna / Vagator", place: "Anjuna" },
+  { to: "Mapusa", place: "Mapusa" },
+  { to: "Margao (South Goa)", place: "Margao" },
+]);
+
+const DABOLIM_ROUTES = airportRows("Dabolim Airport", [
+  { to: "Calangute / Baga", place: "Calangute" },
+  { to: "Panjim (Panaji)", place: "Panjim" },
+  { to: "Margao / Colva", place: "Margao" },
+  { to: "Palolem Beach", place: "Palolem" },
+  { to: "Anjuna / Vagator", place: "Anjuna" },
+]);
 
 const WHY_AIRPORT = [
   { icon: Bell, title: "Flight Tracking", desc: "We track your flight in real-time. No extra charge for delays — driver waits." },
-  { icon: Clock, title: "On-Time Guarantee", desc: "Driver arrives 15 minutes before scheduled pickup. Never miss a flight." },
-  { icon: Shield, title: "Fixed Fares", desc: "Price confirmed before booking. No surge pricing, no surprises at the airport." },
+  { icon: Clock, title: "On-Time Pickup", desc: "Your driver aims to arrive 15 minutes before the scheduled pickup." },
+  { icon: Shield, title: "Fixed Fares", desc: "Price confirmed before booking. All extra charges (tolls, parking, night charges) listed upfront." },
   { icon: Users, title: "Meet & Greet", desc: "Driver with name board inside the arrival hall. Easy to spot, stress-free." },
 ];
 

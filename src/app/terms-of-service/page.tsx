@@ -4,7 +4,7 @@ import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | ZipGoa",
+  title: "Terms of Service",
   description:
     "Terms and conditions for using ZipGoa in Goa — taxi booking, car rental, airport transfers, sightseeing tours, and adventure trips.",
   robots: { index: true, follow: true },
@@ -50,7 +50,7 @@ export default function TermsOfServicePage() {
 
           {/* Meta info */}
           <div className="bg-secondary/50 rounded-2xl p-5 mb-10 flex flex-wrap gap-6 text-sm text-muted-foreground">
-            <div><span className="font-semibold text-foreground">Business:</span> ZipGoa Taxi Services</div>
+            <div><span className="font-semibold text-foreground">Business:</span> ZipGoa</div>
             <div><span className="font-semibold text-foreground">Last Updated:</span> {LAST_UPDATED}</div>
             <div><span className="font-semibold text-foreground">Jurisdiction:</span> Goa, India</div>
           </div>
@@ -69,7 +69,7 @@ export default function TermsOfServicePage() {
             </Section>
 
             <Section id="services" title="2. Services Offered">
-              <p>ZipGoa Taxi Services provides:</p>
+              <p>ZipGoa provides:</p>
               <Ul items={[
                 "Local taxi booking across Goa",
                 "Airport transfers — Dabolim (GOI) & Mopa (GOX)",
@@ -236,7 +236,7 @@ export default function TermsOfServicePage() {
             <Section id="ip" title="12. Intellectual Property">
               <p>
                 All content on this website — including logos, text, images, and design — is the exclusive property
-                of ZipGoa Taxi Services. Unauthorised reproduction or use is strictly prohibited.
+                of ZipGoa. Unauthorised reproduction or use is strictly prohibited.
               </p>
             </Section>
 
@@ -270,9 +270,9 @@ export default function TermsOfServicePage() {
                 className="rounded-2xl p-6 space-y-1.5 text-sm"
                 style={{ background: "oklch(0.265 0.078 254 / 0.06)" }}
               >
-                <p className="font-bold text-foreground text-base">ZipGoa Taxi Services</p>
+                <p className="font-bold text-foreground text-base">ZipGoa</p>
                 <p>Owner: Sumit Rathod</p>
-                <p>Parra, North Goa, 403510, India</p>
+                <p>532/1 W, Muddo Vado, Parra, North Goa, Goa 403510, India</p>
                 <p>
                   Phone / WhatsApp:{" "}
                   <a href="tel:+917026889254" className="underline" style={{ color: "var(--brand-primary)" }}>

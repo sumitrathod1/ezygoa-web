@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Search, MapPin, Calendar, Users, Bus, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BUSINESS } from "@/lib/constants";
+import { trackLead } from "@/lib/track";
 
 const VEHICLES = [
   "Tempo Traveller 12 Seater",
@@ -63,6 +64,7 @@ Passengers: ${pax || "—"}
 Please confirm availability and share the rate.`;
 
     const url = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(msg)}`;
+    trackLead("whatsapp_click", { button_location: "tempo_booking_widget", service: vehicle || "Tempo Traveller / Urbania" });
     window.open(url, "_blank");
   };
 
@@ -223,7 +225,7 @@ Please confirm availability and share the rate.`;
                 color: "white",
               }}
             >
-              Get Instant Quote via WhatsApp
+              Get Quote via WhatsApp
               <ArrowRight className="w-4 h-4" />
             </Button>
             <p className="text-xs text-muted-foreground">

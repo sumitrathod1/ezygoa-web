@@ -1,17 +1,18 @@
 ﻿import type { Metadata } from "next";
 import { CheckCircle, AlertCircle } from "lucide-react";
+import { tourPrices, type TaxiKey } from "@/lib/data";
 import PageWrapper from "@/components/PageWrapper";
 import PageHero from "@/components/PageHero";
 import CTASection from "@/components/CTASection";
 import { BookingButton } from "@/components/BookingButton";
 
 export const metadata: Metadata = {
-  title: "Dudhsagar Waterfall Trip from Goa | Full Day Tour | ZipGoa",
+  title: "Dudhsagar Waterfall Trip from Goa | Full Day Tour",
   description:
     "Full-day Dudhsagar Waterfall trip from Goa. Jeep safari, spice plantation, jungle trail. India's 4th tallest waterfall. Taxi from ₹3,500. Book with ZipGoa.",
   keywords: ["Dudhsagar trip", "Dudhsagar waterfall Goa", "Dudhsagar jeep safari", "Goa waterfall tour", "Dudhsagar full day trip"],
   openGraph: {
-    title: "Dudhsagar Waterfall Trip | ZipGoa Taxi",
+    title: "Dudhsagar Waterfall Trip | ZipGoa",
     description: "India's 4th tallest waterfall. Full-day trip with jeep safari from Goa. From ₹3,500.",
   },
 };
@@ -26,15 +27,18 @@ const TRIP_FLOW = [
   { time: "5:30 PM", step: "Drop at Hotel", desc: "Back at your hotel, tired but happy." },
 ];
 
-const PRICES = [
-  { vehicle: "Maruti Dzire", seats: "1–4 people", price: 3500 },
-  { vehicle: "Maruti Ertiga", seats: "1–6 people", price: 4200 },
-  { vehicle: "Toyota Innova Crysta", seats: "1–7 people", price: 5000 },
-  { vehicle: "Tempo Traveller 12", seats: "1–12 people", price: 7000 },
-  { vehicle: "Tempo Traveller 14", seats: "1–14 people", price: 9500 },
-  { vehicle: "Tempo Traveller 20", seats: "1–20 people", price: 9500 },
-  { vehicle: "Force Urbania 17", seats: "1–17 people", price: 13000 },
+// Prices come from src/lib/data.ts (single source of truth).
+const PRICE_ROWS: { key: TaxiKey; vehicle: string; seats: string }[] = [
+  { key: "dzire", vehicle: "Maruti Dzire", seats: "1–4 people" },
+  { key: "ertiga", vehicle: "Maruti Ertiga", seats: "1–6 people" },
+  { key: "innova", vehicle: "Toyota Innova Crysta", seats: "1–7 people" },
+  { key: "t12", vehicle: "Tempo Traveller 12", seats: "1–12 people" },
+  { key: "t14", vehicle: "Tempo Traveller 14", seats: "1–14 people" },
+  { key: "t20", vehicle: "Tempo Traveller 20", seats: "1–20 people" },
+  { key: "urb", vehicle: "Force Urbania 17", seats: "1–17 people" },
 ];
+
+const PRICES = PRICE_ROWS.map((row) => ({ ...row, price: tourPrices.dudhsagar[row.key] }));
 
 const WHAT_TO_BRING = [
   "Swimwear and towel (if you want to swim)",
@@ -72,7 +76,7 @@ export default function DudhsagarTripPage() {
             {[
               { label: "Duration", value: "10–12 Hours", emoji: "⏱️" },
               { label: "Waterfall Height", value: "310 Metres", emoji: "🌊" },
-              { label: "Taxi Starts At", value: "₹3,500", emoji: "💰" },
+              { label: "Taxi Starts At", value: `₹${tourPrices.dudhsagar.dzire.toLocaleString("en-IN")}`, emoji: "💰" },
               { label: "Jeep Safari", value: "₹600/person", emoji: "🚙" },
             ].map((s) => (
               <div key={s.label} className="bg-white rounded-2xl p-5 border border-border shadow-sm text-center card-hover">

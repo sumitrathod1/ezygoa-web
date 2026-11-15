@@ -24,7 +24,7 @@ export async function generateMetadata({
 
   const baseName = v.name.replace(/\s*\(.*?\)\s*/g, "").trim();
   return {
-    title: `Rent ${baseName} in Goa | ${v.transmission} ${v.type} | ₹${v.pricePerDay}/day | ZipGoa`,
+    title: `Rent ${baseName} in Goa | ${v.transmission} ${v.type} | ₹${v.pricePerDay}/day`,
     description: `Rent ${v.name} in Goa starting ₹${v.pricePerDay}/day. ${v.isNewModel ? "New 2024/25 model." : ""} ${v.transmission} transmission, ${v.fuelType}, ${v.seats} seats. Insured, sanitised, 24/7 support. Book now!`,
     keywords: [
       `${baseName} rental Goa`,
@@ -37,7 +37,7 @@ export async function generateMetadata({
     ],
     openGraph: {
       title: `Rent ${baseName} in Goa | ${v.transmission} | ZipGoa`,
-      description: `${v.name} — ₹${v.pricePerDay}/day. Insured, new model, instant booking via WhatsApp.`,
+      description: `${v.name} — ₹${v.pricePerDay}/day. Insured, new model, quick booking via WhatsApp.`,
     },
   };
 }

@@ -21,7 +21,7 @@ export default function PopularRoutes() {
             Most Booked Routes
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Fixed fares for the most popular routes in Goa. No surprises — just great service.
+            Fixed fares for popular routes in Goa. All extra charges (tolls, parking, night charges) listed upfront.
           </p>
         </div>
 
