@@ -9,6 +9,16 @@ RUN npm ci
 # Copy source
 COPY . .
 
+# NEXT_PUBLIC_* values are baked into the bundle during `npm run build`, so they
+# must exist at build time. The host passes them as build args; without these
+# ARG lines Docker ignores them and the bundle is built with empty values.
+ARG NEXT_PUBLIC_ADS_LABEL_FORM
+ARG NEXT_PUBLIC_ADS_LABEL_WHATSAPP
+ARG NEXT_PUBLIC_ADS_LABEL_CALL
+ENV NEXT_PUBLIC_ADS_LABEL_FORM=$NEXT_PUBLIC_ADS_LABEL_FORM \
+    NEXT_PUBLIC_ADS_LABEL_WHATSAPP=$NEXT_PUBLIC_ADS_LABEL_WHATSAPP \
+    NEXT_PUBLIC_ADS_LABEL_CALL=$NEXT_PUBLIC_ADS_LABEL_CALL
+
 # Build the application
 RUN npm run build
 
